@@ -1,0 +1,181 @@
+/*작업일 2022-04-24 오후 02:21 시작*/
+
+USE standardmes;
+
+/*수주정보 마스터*/
+CREATE TABLE Sales_OrderMaster
+(
+LotNo			VARCHAR(10)	NOT NULL UNIQUE PRIMARY KEY,
+OrderCustCode	VARCHAR(10),
+OutCustCode		VARCHAR(10),
+OrderDate		DATETIME,
+EndDate			DATETIME,
+Remark			VARCHAR(500),
+UseYn			CHAR(1),
+CreDt			DATETIME,
+CreID			VARCHAR(100),
+CreIP			VARCHAR(15),
+ModDt			DATETIME,
+ModID			VARCHAR(100),
+ModIP			VARCHAR(15)
+);
+
+/*수주정보 상세*/
+CREATE TABLE Sales_OrderDetail
+(
+HighLotNo	VARCHAR(10),
+LotSeq		SMALLINT,
+ProductCode	VARCHAR(10),
+OrderQty	FLOAT,
+PlanStatus	CHAR(1),
+Remark		VARCHAR(500),
+UseYn		CHAR(1),
+CreDt		DATETIME,
+CreID		VARCHAR(100),
+CreIP		VARCHAR(15),
+ModDt		DATETIME,
+ModID		VARCHAR(100),
+ModIP		VARCHAR(15)
+);
+
+/*수주품 출고*/
+CREATE TABLE Sales_OrderOut
+(
+LotNo		VARCHAR(10)	NOT NULL UNIQUE PRIMARY KEY,
+HighLotNo	VARCHAR(10),
+HighLotSeq	SMALLINT,
+ProductCode	VARCHAR(10),
+OrderQty	FLOAT,
+OutDate		DATETIME,
+Remark		VARCHAR(500),
+UseYn		CHAR(1),
+CreDt		DATETIME,
+CreID		VARCHAR(100),
+CreIP		VARCHAR(15),
+ModDt		DATETIME,
+ModID		VARCHAR(100),
+ModIP		VARCHAR(15)
+);
+
+
+/*생산계획정보 상세*/
+CREATE TABLE Product_PlanMaster
+(
+LotNo		VARCHAR(10)	NOT NULL UNIQUE PRIMARY KEY,
+HighLotNo	VARCHAR(10),
+HighLotSeq	SMALLINT,
+ProductCode	VARCHAR(10),
+PlanQty		FLOAT,
+PlanDate	DATETIME,
+PlanStatus	CHAR(1),
+Remark		VARCHAR(500),
+UseYn		CHAR(1),
+CreDt		DATETIME,
+CreID		VARCHAR(100),
+CreIP		VARCHAR(15),
+ModDt		DATETIME,
+ModID		VARCHAR(100),
+ModIP		VARCHAR(15)
+);
+
+
+/*생산계획정보 상세*/
+CREATE TABLE Product_PlanDetail
+(
+HighLotNo	VARCHAR(10),
+ProcSeq		SMALLINT,
+ProcCode	VARCHAR(10),
+ProductCode	VARCHAR(10),
+PlanQty		FLOAT,
+PlanStatus	CHAR(1),
+Remark		VARCHAR(500),
+UseYn		CHAR(1),
+CreDt		DATETIME,
+CreID		VARCHAR(100),
+CreIP		VARCHAR(15),
+ModDt		DATETIME,
+ModID		VARCHAR(100),
+ModIP		VARCHAR(15)
+);
+
+
+/*자재 정보*/
+CREATE TABLE Info_Material
+(
+MaterialCode	VARCHAR(10)		NOT NULL UNIQUE PRIMARY KEY,
+MaterialName	VARCHAR(100),
+MaterialAlias	VARCHAR(100),
+MaterialType	SMALLINT,
+MaterialSpec	VARCHAR(100),
+UnitCOde		VARCHAR(10),
+CustCode		VARCHAR(10),
+Remark			VARCHAR(500),
+UseYn			CHAR(1),
+CreDt			DATETIME,
+CreID			VARCHAR(100),
+CreIP			VARCHAR(15),
+ModDt			DATETIME,
+ModID			VARCHAR(100),
+ModIP			VARCHAR(15)
+);
+
+
+/*거래처 정보*/
+CREATE TABLE Info_Customer
+(
+CustCode		VARCHAR(10)		NOT NULL UNIQUE PRIMARY KEY,
+CustName		VARCHAR(100),
+CustType		SMALLINT,
+CustNo			VARCHAR(20),
+Presi			VARCHAR(100),
+Address			VARCHAR(100),
+Post			VARCHAR(20),
+CallNum			VARCHAR(20),
+Fax				VARCHAR(20),
+Mail			VARCHAR(100),
+Category		VARCHAR(100),
+ConditionName	VARCHAR(100),
+Remark			VARCHAR(500),
+UseYn			CHAR(1),
+CreDt			DATETIME,
+CreID			VARCHAR(100),
+CreIP			VARCHAR(15),
+ModDt			DATETIME,
+ModID			VARCHAR(100),
+ModIP			VARCHAR(15)
+);
+
+
+/*기타코드 관리*/
+CREATE TABLE Info_CategoryItem
+(
+CateCode	VARCHAR(50)		NOT NULL UNIQUE PRIMARY KEY,
+Level		TINYINT,
+HighCate	VARCHAR(50),
+CateValue	VARCHAR(100),
+Remark		VARCHAR(500),
+UseYn		CHAR(1),
+CreDt		DATETIME,
+CreID		VARCHAR(100),
+CreIP		VARCHAR(15),
+ModDt		DATETIME,
+ModID		VARCHAR(100),
+ModIP		VARCHAR(15)
+);
+
+
+/*공정 정보*/
+CREATE TABLE Info_Process
+(
+ProcessCode	VARCHAR(10)		NOT NULL UNIQUE PRIMARY KEY,
+ProcessName	VARCHAR(100),
+ProcessType	SMALLINT,
+Remark		VARCHAR(500),
+UseYn		CHAR(1),
+CreDt		DATETIME,
+CreID		VARCHAR(100),
+CreIP		VARCHAR(15),
+ModDt		DATETIME,
+ModID		VARCHAR(100),
+ModIP		VARCHAR(15)
+);
