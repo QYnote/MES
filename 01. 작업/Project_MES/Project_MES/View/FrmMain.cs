@@ -21,6 +21,16 @@ namespace Project_MES.View
             InitializeComponent();
         }
 
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ConnectDatabase()
+        {
+
+        }
+
         private void Tree_Menu_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             OpenForm(e.Node.Name);//노드 더블클릭시 해당 화면 열기
@@ -68,5 +78,6 @@ namespace Project_MES.View
 
             frm.Show(); //Form 보이기
         }
+
     }
 }

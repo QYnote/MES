@@ -147,6 +147,7 @@ namespace Project_MES.View
             this.Controls.Add(this.PnlMenu);
             this.Name = "FrmMain";
             this.Text = "메인화면";
+            this.Load += new System.EventHandler(this.FrmMain_Load);
             this.PnlMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 

@@ -117,6 +117,9 @@
     <EmbeddedResource Include="View\00_Basic\Frm_Info_Customer.resx">
       <DependentUpon>Frm_Info_Customer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\01_Sales\Frm_Sales_Order.resx">
+      <DependentUpon>Frm_Sales_Order.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
