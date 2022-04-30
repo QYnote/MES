@@ -1,4 +1,5 @@
-﻿using Project_MES.View._00_Basic;
+﻿using Project_MES.Control.Global;
+using Project_MES.View._00_Basic;
 using Project_MES.View._01_Sales;
 using Project_MES.View._02_Product;
 using Project_MES.View._03_POP;
@@ -23,13 +24,28 @@ namespace Project_MES.View
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-
+            ConnectDatabase();
         }
+
+        private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            DisConnectDatabase();
+        }
+
+        #region DB 연동
+        private Global_Database db = new Global_Database();
 
         private void ConnectDatabase()
         {
-
+            db.ConnectDatabase_MySQL();
         }
+
+        private void DisConnectDatabase()
+        {
+            db.DisConnectDatabase_MySQL();
+        }
+
+        #endregion DB 연동 End
 
         private void Tree_Menu_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
