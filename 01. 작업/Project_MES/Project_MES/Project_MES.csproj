@@ -67,6 +67,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Control\CustomUc\Common\Uc_LblCbo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\CustomUc\Common\Uc_LblCbo.Designer.cs">
+      <DependentUpon>Uc_LblCbo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\CustomUc\Common\Uc_LblDtp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\CustomUc\Common\Uc_LblDtp.Designer.cs">
+      <DependentUpon>Uc_LblDtp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\CustomUc\Common\Uc_LblTxt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\CustomUc\Common\Uc_LblTxt.Designer.cs">
+      <DependentUpon>Uc_LblTxt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\Global\Global_Database.cs" />
     <Compile Include="View\00_Basic\Frm_Info_Customer.cs">
       <SubType>Form</SubType>
@@ -86,17 +104,17 @@
     <Compile Include="View\00_Basic\Frm_Info_Process.Designer.cs">
       <DependentUpon>Frm_Info_Process.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\01_Sales\Frm_Sales_Order.cs">
+    <Compile Include="View\01_Sales\Frm_SalesOrder_Create.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\01_Sales\Frm_Sales_Order.Designer.cs">
-      <DependentUpon>Frm_Sales_Order.cs</DependentUpon>
+    <Compile Include="View\01_Sales\Frm_SalesOrder_Create.Designer.cs">
+      <DependentUpon>Frm_SalesOrder_Create.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\01_Sales\Frm_Sales_Out.cs">
+    <Compile Include="View\01_Sales\Frm_SalesOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\01_Sales\Frm_Sales_Out.Designer.cs">
-      <DependentUpon>Frm_Sales_Out.cs</DependentUpon>
+    <Compile Include="View\01_Sales\Frm_SalesOrder.Designer.cs">
+      <DependentUpon>Frm_SalesOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="View\02_Product\Frm_Product_WorkOrder.cs">
       <SubType>Form</SubType>
@@ -136,11 +154,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Control\CustomUc\Common\Uc_LblCbo.resx">
+      <DependentUpon>Uc_LblCbo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\CustomUc\Common\Uc_LblDtp.resx">
+      <DependentUpon>Uc_LblDtp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\CustomUc\Common\Uc_LblTxt.resx">
+      <DependentUpon>Uc_LblTxt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\00_Basic\Frm_Info_Customer.resx">
       <DependentUpon>Frm_Info_Customer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\01_Sales\Frm_Sales_Order.resx">
-      <DependentUpon>Frm_Sales_Order.cs</DependentUpon>
+    <EmbeddedResource Include="View\01_Sales\Frm_SalesOrder_Create.resx">
+      <DependentUpon>Frm_SalesOrder_Create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\01_Sales\Frm_SalesOrder.resx">
+      <DependentUpon>Frm_SalesOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>

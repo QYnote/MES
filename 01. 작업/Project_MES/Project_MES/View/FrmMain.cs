@@ -37,15 +37,24 @@ namespace Project_MES.View
 
         private void ConnectDatabase()
         {
+            Lbl_StatusMain.Text = "Database 연결중...";
+
             db.ConnectDatabase_MySQL();
+
+            Lbl_StatusMain.Text = "Database 연결완료";
+
         }
 
         private void DisConnectDatabase()
         {
+            Lbl_StatusMain.Text = "Database 연결 해제중...";
+
             db.DisConnectDatabase_MySQL();
         }
 
         #endregion DB 연동 End
+
+        #region Oepn 컨텐츠
 
         private void Tree_Menu_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
@@ -64,8 +73,8 @@ namespace Project_MES.View
                 case "InfoProcess":  frm = new Frm_Info_Process(); break;  //공정관리
 
                 //////////////////영업관리//////////////////
-                case "SalesOrder": frm = new Frm_Sales_Order(); break;   //수주관리
-                case "SalesOut":   frm = new Frm_Sales_Out(); break;     //출하관리
+                case "SalesOrder": frm = new Frm_SalesOrder(); break;   //수주관리
+                //case "SalesOut":   frm = new Frm_Sales_Out(); break;     //출하관리
 
                 //////////////////생산관리//////////////////
                 case "WorkPlan":  frm = new Frm_Product_WorkPlan(); break;     //생산계획
@@ -95,5 +104,6 @@ namespace Project_MES.View
             frm.Show(); //Form 보이기
         }
 
+        #endregion Open 컨텐츠 End
     }
 }

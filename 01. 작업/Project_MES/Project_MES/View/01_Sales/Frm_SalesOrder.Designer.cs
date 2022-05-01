@@ -1,7 +1,7 @@
 ﻿
 namespace Project_MES.View._01_Sales
 {
-    partial class Frm_Sales_Order
+    partial class Frm_SalesOrder
     {
         /// <summary>
         /// Required designer variable.
@@ -30,11 +30,16 @@ namespace Project_MES.View._01_Sales
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
             this.Btn_Search = new System.Windows.Forms.Button();
             this.Lbl_OrderMaster = new System.Windows.Forms.Label();
             this.Lbl_OrderDetail = new System.Windows.Forms.Label();
@@ -43,8 +48,6 @@ namespace Project_MES.View._01_Sales
             this.Btn_Create = new System.Windows.Forms.Button();
             this.Btn_Update = new System.Windows.Forms.Button();
             this.Btn_Delete = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Col_OrderNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_CustName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,7 +55,10 @@ namespace Project_MES.View._01_Sales
             this.Col_OrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_OrderEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uc_LblDtp1 = new Project_MES.Control.CustomUc.Common.Uc_LblDtp();
+            this.uc_LblTxt1 = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel1.SuspendLayout();
             this.Pnl_MailTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -62,6 +68,7 @@ namespace Project_MES.View._01_Sales
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.dataGridView2, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.Lbl_OrderMaster, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.Lbl_OrderDetail, 0, 4);
@@ -77,63 +84,90 @@ namespace Project_MES.View._01_Sales
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(955, 543);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(998, 642);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.Column1,
+            this.Column2,
+            this.dataGridViewTextBoxColumn6});
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 413);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 23;
+            this.dataGridView2.Size = new System.Drawing.Size(992, 226);
+            this.dataGridView2.TabIndex = 5;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "순번";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "제품코드";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "제품명";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "제품번호";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Spec";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "수량";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "단위";
+            this.Column2.Name = "Column2";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "비고";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.dateTimePicker2);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.uc_LblTxt1);
+            this.panel1.Controls.Add(this.uc_LblDtp1);
             this.panel1.Controls.Add(this.Btn_Search);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 50);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(955, 35);
+            this.panel1.Size = new System.Drawing.Size(998, 35);
             this.panel1.TabIndex = 3;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(247, 7);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(102, 21);
-            this.dateTimePicker2.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(226, 7);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(15, 21);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "~";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(118, 7);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(102, 21);
-            this.dateTimePicker1.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(12, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 21);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "수주일자";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Btn_Search
             // 
             this.Btn_Search.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Btn_Search.Location = new System.Drawing.Point(880, 0);
+            this.Btn_Search.Location = new System.Drawing.Point(923, 0);
             this.Btn_Search.Name = "Btn_Search";
             this.Btn_Search.Size = new System.Drawing.Size(75, 35);
             this.Btn_Search.TabIndex = 1;
@@ -144,23 +178,25 @@ namespace Project_MES.View._01_Sales
             // 
             this.Lbl_OrderMaster.AutoSize = true;
             this.Lbl_OrderMaster.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Lbl_OrderMaster.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Bold);
             this.Lbl_OrderMaster.Location = new System.Drawing.Point(3, 85);
             this.Lbl_OrderMaster.Name = "Lbl_OrderMaster";
-            this.Lbl_OrderMaster.Size = new System.Drawing.Size(949, 44);
+            this.Lbl_OrderMaster.Size = new System.Drawing.Size(992, 44);
             this.Lbl_OrderMaster.TabIndex = 0;
             this.Lbl_OrderMaster.Text = "Lbl_OrderMaster";
-            this.Lbl_OrderMaster.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Lbl_OrderMaster.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Lbl_OrderDetail
             // 
             this.Lbl_OrderDetail.AutoSize = true;
             this.Lbl_OrderDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Lbl_OrderDetail.Location = new System.Drawing.Point(3, 311);
+            this.Lbl_OrderDetail.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Bold);
+            this.Lbl_OrderDetail.Location = new System.Drawing.Point(3, 360);
             this.Lbl_OrderDetail.Name = "Lbl_OrderDetail";
-            this.Lbl_OrderDetail.Size = new System.Drawing.Size(949, 50);
+            this.Lbl_OrderDetail.Size = new System.Drawing.Size(992, 50);
             this.Lbl_OrderDetail.TabIndex = 1;
             this.Lbl_OrderDetail.Text = "Lbl_OrderDetail";
-            this.Lbl_OrderDetail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Lbl_OrderDetail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Pnl_MailTitle
             // 
@@ -172,33 +208,35 @@ namespace Project_MES.View._01_Sales
             this.Pnl_MailTitle.Location = new System.Drawing.Point(0, 0);
             this.Pnl_MailTitle.Margin = new System.Windows.Forms.Padding(0);
             this.Pnl_MailTitle.Name = "Pnl_MailTitle";
-            this.Pnl_MailTitle.Size = new System.Drawing.Size(955, 50);
+            this.Pnl_MailTitle.Size = new System.Drawing.Size(998, 50);
             this.Pnl_MailTitle.TabIndex = 2;
             // 
             // Lbl_MailTitle
             // 
             this.Lbl_MailTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Lbl_MailTitle.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold);
             this.Lbl_MailTitle.Location = new System.Drawing.Point(0, 0);
             this.Lbl_MailTitle.Name = "Lbl_MailTitle";
-            this.Lbl_MailTitle.Size = new System.Drawing.Size(730, 50);
+            this.Lbl_MailTitle.Size = new System.Drawing.Size(773, 50);
             this.Lbl_MailTitle.TabIndex = 0;
-            this.Lbl_MailTitle.Text = "Lbl_MailTitle";
-            this.Lbl_MailTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Lbl_MailTitle.Text = "Lbl_MainTitle";
+            this.Lbl_MailTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Btn_Create
             // 
             this.Btn_Create.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Btn_Create.Location = new System.Drawing.Point(730, 0);
+            this.Btn_Create.Location = new System.Drawing.Point(773, 0);
             this.Btn_Create.Name = "Btn_Create";
             this.Btn_Create.Size = new System.Drawing.Size(75, 50);
             this.Btn_Create.TabIndex = 3;
             this.Btn_Create.Text = "Btn_Create";
             this.Btn_Create.UseVisualStyleBackColor = true;
+            this.Btn_Create.Click += new System.EventHandler(this.Btn_Create_Click);
             // 
             // Btn_Update
             // 
             this.Btn_Update.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Btn_Update.Location = new System.Drawing.Point(805, 0);
+            this.Btn_Update.Location = new System.Drawing.Point(848, 0);
             this.Btn_Update.Name = "Btn_Update";
             this.Btn_Update.Size = new System.Drawing.Size(75, 50);
             this.Btn_Update.TabIndex = 2;
@@ -208,28 +246,12 @@ namespace Project_MES.View._01_Sales
             // Btn_Delete
             // 
             this.Btn_Delete.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Btn_Delete.Location = new System.Drawing.Point(880, 0);
+            this.Btn_Delete.Location = new System.Drawing.Point(923, 0);
             this.Btn_Delete.Name = "Btn_Delete";
             this.Btn_Delete.Size = new System.Drawing.Size(75, 50);
             this.Btn_Delete.TabIndex = 1;
             this.Btn_Delete.Text = "Btn_Delete";
             this.Btn_Delete.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.Location = new System.Drawing.Point(405, 7);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 21);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "수주처명";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(511, 8);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 21);
-            this.textBox1.TabIndex = 7;
             // 
             // dataGridView1
             // 
@@ -245,7 +267,7 @@ namespace Project_MES.View._01_Sales
             this.dataGridView1.Location = new System.Drawing.Point(3, 132);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(949, 176);
+            this.dataGridView1.Size = new System.Drawing.Size(992, 225);
             this.dataGridView1.TabIndex = 4;
             // 
             // Col_OrderNo
@@ -284,18 +306,45 @@ namespace Project_MES.View._01_Sales
             this.Col_Remark.Name = "Col_Remark";
             this.Col_Remark.ReadOnly = true;
             // 
-            // Frm_Sales_Order
+            // uc_LblDtp1
+            // 
+            this.uc_LblDtp1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uc_LblDtp1.DisplayFormat = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.uc_LblDtp1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.uc_LblDtp1.DtpDefaultDate = new System.DateTime(2022, 5, 1, 21, 0, 43, 183);
+            this.uc_LblDtp1.DtpRange = true;
+            this.uc_LblDtp1.LblText = "수주일자";
+            this.uc_LblDtp1.LblWidth = 100;
+            this.uc_LblDtp1.Location = new System.Drawing.Point(0, 0);
+            this.uc_LblDtp1.Name = "uc_LblDtp1";
+            this.uc_LblDtp1.Size = new System.Drawing.Size(264, 35);
+            this.uc_LblDtp1.TabIndex = 8;
+            // 
+            // uc_LblTxt1
+            // 
+            this.uc_LblTxt1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uc_LblTxt1.DisplayText = "Default Text";
+            this.uc_LblTxt1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.uc_LblTxt1.LblText = "수주처";
+            this.uc_LblTxt1.LblWidth = 100;
+            this.uc_LblTxt1.Location = new System.Drawing.Point(264, 0);
+            this.uc_LblTxt1.Name = "uc_LblTxt1";
+            this.uc_LblTxt1.Size = new System.Drawing.Size(264, 35);
+            this.uc_LblTxt1.TabIndex = 9;
+            this.uc_LblTxt1.TxtWdith = 150;
+            // 
+            // Frm_SalesOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(955, 543);
+            this.ClientSize = new System.Drawing.Size(998, 642);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "Frm_Sales_Order";
-            this.Text = "Frm_Sales_Order";
+            this.Name = "Frm_SalesOrder";
+            this.Text = "Frm_SalesOrder";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.Pnl_MailTitle.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -314,12 +363,6 @@ namespace Project_MES.View._01_Sales
         private System.Windows.Forms.Button Btn_Delete;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button Btn_Search;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_OrderNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_CustName;
@@ -327,5 +370,16 @@ namespace Project_MES.View._01_Sales
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_OrderDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_OrderEndDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Remark;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private Control.CustomUc.Common.Uc_LblDtp uc_LblDtp1;
+        private Control.CustomUc.Common.Uc_LblTxt uc_LblTxt1;
     }
 }

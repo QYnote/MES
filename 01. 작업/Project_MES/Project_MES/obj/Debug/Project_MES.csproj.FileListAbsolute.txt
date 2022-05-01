@@ -9,7 +9,6 @@ D:\00.Storage\Study\Programing\Project\MES\01. 작업\Project_MES\Project_MES\bi
 D:\00.Storage\Study\Programing\Project\MES\01. 작업\Project_MES\Project_MES\obj\Debug\Project_MES.exe
 D:\00.Storage\Study\Programing\Project\MES\01. 작업\Project_MES\Project_MES\obj\Debug\Project_MES.pdb
 D:\00.Storage\Study\Programing\Project\MES\01. 작업\Project_MES\Project_MES\obj\Debug\Project_MES.View._00_Basic.Frm_Info_Customer.resources
-D:\00.Storage\Study\Programing\Project\MES\01. 작업\Project_MES\Project_MES\obj\Debug\Project_MES.View._01_Sales.Frm_Sales_Order.resources
 D:\00.Storage\Study\Programing\Project\MES\01. 작업\Project_MES\Project_MES\obj\Debug\Project_MES.csproj.SuggestedBindingRedirects.cache
 D:\00.Storage\Study\Programing\Project\MES\01. 작업\Project_MES\Project_MES\obj\Debug\Project_MES.exe.config
 D:\00.Storage\Study\Programing\Project\MES\01. 작업\Project_MES\Project_MES\bin\Debug\MySql.Data.dll
@@ -24,3 +23,8 @@ D:\00.Storage\Study\Programing\Project\MES\01. 작업\Project_MES\Project_MES\bi
 D:\00.Storage\Study\Programing\Project\MES\01. 작업\Project_MES\Project_MES\bin\Debug\K4os.Hash.xxHash.dll
 D:\00.Storage\Study\Programing\Project\MES\01. 작업\Project_MES\Project_MES\bin\Debug\MySql.Data.xml
 D:\00.Storage\Study\Programing\Project\MES\01. 작업\Project_MES\Project_MES\obj\Debug\Project_MES.csproj.CopyComplete
+D:\00.Storage\Study\Programing\Project\MES\01. 작업\Project_MES\Project_MES\obj\Debug\Project_MES.Control.CustomUc.Common.Uc_LblTxt.resources
+D:\00.Storage\Study\Programing\Project\MES\01. 작업\Project_MES\Project_MES\obj\Debug\Project_MES.View._01_Sales.Frm_SalesOrder_Create.resources
+D:\00.Storage\Study\Programing\Project\MES\01. 작업\Project_MES\Project_MES\obj\Debug\Project_MES.View._01_Sales.Frm_SalesOrder.resources
+D:\00.Storage\Study\Programing\Project\MES\01. 작업\Project_MES\Project_MES\obj\Debug\Project_MES.Control.CustomUc.Common.Uc_LblCbo.resources
+D:\00.Storage\Study\Programing\Project\MES\01. 작업\Project_MES\Project_MES\obj\Debug\Project_MES.Control.CustomUc.Common.Uc_LblDtp.resources

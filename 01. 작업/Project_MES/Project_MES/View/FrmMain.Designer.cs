@@ -29,35 +29,38 @@ namespace Project_MES.View
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("자재관리");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("거래처관리");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("공정관리");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("기초정보관리", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3});
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("수주관리");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("출하관리");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("영업관리", new System.Windows.Forms.TreeNode[] {
-            treeNode5,
-            treeNode6});
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("생산계획");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("작업지시");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("생산관리", new System.Windows.Forms.TreeNode[] {
-            treeNode8,
-            treeNode9});
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("현장_First");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("현장0");
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("현장Last");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("현장시스템", new System.Windows.Forms.TreeNode[] {
-            treeNode11,
-            treeNode12,
-            treeNode13});
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("자재관리");
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("거래처관리");
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("공정관리");
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("기초정보관리", new System.Windows.Forms.TreeNode[] {
+            treeNode15,
+            treeNode16,
+            treeNode17});
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("수주관리");
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("출하관리");
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("영업관리", new System.Windows.Forms.TreeNode[] {
+            treeNode19,
+            treeNode20});
+            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("생산계획");
+            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("작업지시");
+            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("생산관리", new System.Windows.Forms.TreeNode[] {
+            treeNode22,
+            treeNode23});
+            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("현장_First");
+            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("현장0");
+            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("현장Last");
+            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("현장시스템", new System.Windows.Forms.TreeNode[] {
+            treeNode25,
+            treeNode26,
+            treeNode27});
             this.PnlMenu = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.Tree_Menu = new System.Windows.Forms.TreeView();
             this.PnlContents = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.Lbl_StatusMain = new System.Windows.Forms.Label();
             this.PnlMenu.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // PnlMenu
@@ -72,7 +75,7 @@ namespace Project_MES.View
             this.PnlMenu.RowCount = 2;
             this.PnlMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.PnlMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.PnlMenu.Size = new System.Drawing.Size(250, 546);
+            this.PnlMenu.Size = new System.Drawing.Size(250, 656);
             this.PnlMenu.TabIndex = 0;
             // 
             // button1
@@ -93,40 +96,40 @@ namespace Project_MES.View
             this.Tree_Menu.Location = new System.Drawing.Point(0, 50);
             this.Tree_Menu.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.Tree_Menu.Name = "Tree_Menu";
-            treeNode1.Name = "Node_InfoMaterial";
-            treeNode1.Text = "자재관리";
-            treeNode2.Name = "Node_InfoCustomer";
-            treeNode2.Text = "거래처관리";
-            treeNode3.Name = "Node_InfoProcess";
-            treeNode3.Text = "공정관리";
-            treeNode4.Name = "Node_Basic";
-            treeNode4.Text = "기초정보관리";
-            treeNode5.Name = "Node_SalesOrder";
-            treeNode5.Text = "수주관리";
-            treeNode6.Name = "Node_SalesOut";
-            treeNode6.Text = "출하관리";
-            treeNode7.Name = "Node_Sales";
-            treeNode7.Text = "영업관리";
-            treeNode8.Name = "Node_Plan";
-            treeNode8.Text = "생산계획";
-            treeNode9.Name = "Node_WorkOrder";
-            treeNode9.Text = "작업지시";
-            treeNode10.Name = "Node_Product";
-            treeNode10.Text = "생산관리";
-            treeNode11.Name = "Node_Product0";
-            treeNode11.Text = "현장_First";
-            treeNode12.Name = "Node_Product1";
-            treeNode12.Text = "현장0";
-            treeNode13.Name = "Node_Product2";
-            treeNode13.Text = "현장Last";
-            treeNode14.Name = "Node_POP";
-            treeNode14.Text = "현장시스템";
+            treeNode15.Name = "Node_InfoMaterial";
+            treeNode15.Text = "자재관리";
+            treeNode16.Name = "Node_InfoCustomer";
+            treeNode16.Text = "거래처관리";
+            treeNode17.Name = "Node_InfoProcess";
+            treeNode17.Text = "공정관리";
+            treeNode18.Name = "Node_Basic";
+            treeNode18.Text = "기초정보관리";
+            treeNode19.Name = "Node_SalesOrder";
+            treeNode19.Text = "수주관리";
+            treeNode20.Name = "Node_SalesOut";
+            treeNode20.Text = "출하관리";
+            treeNode21.Name = "Node_Sales";
+            treeNode21.Text = "영업관리";
+            treeNode22.Name = "Node_Plan";
+            treeNode22.Text = "생산계획";
+            treeNode23.Name = "Node_WorkOrder";
+            treeNode23.Text = "작업지시";
+            treeNode24.Name = "Node_Product";
+            treeNode24.Text = "생산관리";
+            treeNode25.Name = "Node_Product0";
+            treeNode25.Text = "현장_First";
+            treeNode26.Name = "Node_Product1";
+            treeNode26.Text = "현장0";
+            treeNode27.Name = "Node_Product2";
+            treeNode27.Text = "현장Last";
+            treeNode28.Name = "Node_POP";
+            treeNode28.Text = "현장시스템";
             this.Tree_Menu.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode4,
-            treeNode7,
-            treeNode10,
-            treeNode14});
-            this.Tree_Menu.Size = new System.Drawing.Size(247, 496);
+            treeNode18,
+            treeNode21,
+            treeNode24,
+            treeNode28});
+            this.Tree_Menu.Size = new System.Drawing.Size(247, 606);
             this.Tree_Menu.TabIndex = 2;
             this.Tree_Menu.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.Tree_Menu_NodeMouseDoubleClick);
             // 
@@ -135,21 +138,42 @@ namespace Project_MES.View
             this.PnlContents.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PnlContents.Location = new System.Drawing.Point(250, 0);
             this.PnlContents.Name = "PnlContents";
-            this.PnlContents.Size = new System.Drawing.Size(802, 546);
+            this.PnlContents.Size = new System.Drawing.Size(1014, 656);
             this.PnlContents.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.Lbl_StatusMain);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 656);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1264, 25);
+            this.panel1.TabIndex = 2;
+            // 
+            // Lbl_StatusMain
+            // 
+            this.Lbl_StatusMain.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Lbl_StatusMain.Location = new System.Drawing.Point(0, 0);
+            this.Lbl_StatusMain.Name = "Lbl_StatusMain";
+            this.Lbl_StatusMain.Size = new System.Drawing.Size(942, 25);
+            this.Lbl_StatusMain.TabIndex = 0;
+            this.Lbl_StatusMain.Text = "상태바";
+            this.Lbl_StatusMain.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1052, 546);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.PnlContents);
             this.Controls.Add(this.PnlMenu);
+            this.Controls.Add(this.panel1);
             this.Name = "FrmMain";
             this.Text = "메인화면";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMain_FormClosed);
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.PnlMenu.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -160,6 +184,8 @@ namespace Project_MES.View
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TreeView Tree_Menu;
         private System.Windows.Forms.Panel PnlContents;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label Lbl_StatusMain;
     }
 }
 

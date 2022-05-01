@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Project_MES.View._01_Sales
 {
-    public partial class Frm_Sales_Order : Form
+    public partial class Frm_SalesOrder_Create : Form
     {
-        public Frm_Sales_Order()
+        public Frm_SalesOrder_Create()
         {
             InitializeComponent();
         }
