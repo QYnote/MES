@@ -170,8 +170,6 @@ namespace Project_MES.View
             this.Controls.Add(this.panel1);
             this.Name = "FrmMain";
             this.Text = "메인화면";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMain_FormClosed);
-            this.Load += new System.EventHandler(this.FrmMain_Load);
             this.PnlMenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

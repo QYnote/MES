@@ -22,39 +22,7 @@ namespace Project_MES.View
             InitializeComponent();
         }
 
-        private void FrmMain_Load(object sender, EventArgs e)
-        {
-            ConnectDatabase();
-        }
-
-        private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            DisConnectDatabase();
-        }
-
-        #region DB 연동
-        private Global_Database db = new Global_Database();
-
-        private void ConnectDatabase()
-        {
-            Lbl_StatusMain.Text = "Database 연결중...";
-
-            db.ConnectDatabase_MySQL();
-
-            Lbl_StatusMain.Text = "Database 연결완료";
-
-        }
-
-        private void DisConnectDatabase()
-        {
-            Lbl_StatusMain.Text = "Database 연결 해제중...";
-
-            db.DisConnectDatabase_MySQL();
-        }
-
-        #endregion DB 연동 End
-
-        #region Oepn 컨텐츠
+        #region Open 컨텐츠
 
         private void Tree_Menu_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {

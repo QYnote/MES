@@ -22,6 +22,9 @@ namespace Project_MES.Control.CustomUc.Common
 
         #endregion Property End
 
+        public ComboBox CboContents = new ComboBox();
+
+
         public Uc_LblCbo()
         {
             InitializeComponent();
@@ -59,20 +62,18 @@ namespace Project_MES.Control.CustomUc.Common
 
         private void CreateCbo()
         {
-            ComboBox combo = new ComboBox();
-
-            combo.Size = new Size(CboWdith, 23);
-            combo.Text = CboDefaultText;
-            combo.DataSource = CboDataSource;
-            combo.Parent = this;
+            CboContents.Size = new Size(CboWdith, 23);
+            CboContents.Text = CboDefaultText;
+            CboContents.DataSource = CboDataSource;
+            CboContents.Parent = this;
 
             //위치 셋팅
             int locationX, locationY;
 
             locationX = 9 + LblWidth;
-            locationY = (this.Size.Height - combo.Size.Height) / 2 - 1;
+            locationY = (this.Size.Height - CboContents.Size.Height) / 2 - 1;
 
-            combo.Location = new Point(locationX, locationY);
+            CboContents.Location = new Point(locationX, locationY);
         }
 
     }

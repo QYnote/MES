@@ -21,6 +21,8 @@ namespace Project_MES.Control.CustomUc.Common
 
         #endregion Property End
 
+        public TextBox TxtContents = new TextBox();
+
         public Uc_LblTxt()
         {
             InitializeComponent();
@@ -58,19 +60,17 @@ namespace Project_MES.Control.CustomUc.Common
 
         private void CreateText()
         {
-            TextBox txt = new TextBox();
-
-            txt.Size = new Size(TxtWdith, 23);
-            txt.Text = DisplayText;
-            txt.Parent = this;
+            TxtContents.Size = new Size(TxtWdith, 23);
+            TxtContents.Text = DisplayText;
+            TxtContents.Parent = this;
 
             //위치 셋팅
             int locationX, locationY;
 
             locationX = 9 + LblWidth;
-            locationY = (this.Size.Height - txt.Size.Height) / 2 - 1;
+            locationY = (this.Size.Height - TxtContents.Size.Height) / 2 - 1;
 
-            txt.Location = new Point(locationX, locationY);
+            TxtContents.Location = new Point(locationX, locationY);
         }
 
     }

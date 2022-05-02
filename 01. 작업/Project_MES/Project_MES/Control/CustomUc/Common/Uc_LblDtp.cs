@@ -23,6 +23,9 @@ namespace Project_MES.Control.CustomUc.Common
 
         #endregion Property End
 
+        public DateTimePicker DtpStartDate = new DateTimePicker();
+        public DateTimePicker DtpEndDate = new DateTimePicker();
+
         public Uc_LblDtp()
         {
             InitializeComponent();
@@ -66,20 +69,18 @@ namespace Project_MES.Control.CustomUc.Common
         private void CreateDtp()
         {
             //DatetimePicker StartDate 셋팅
-            DateTimePicker dtp = new DateTimePicker();
-
             //정보 셋팅
-            dtp.Size = new Size(DtpWidth, 23);
-            dtp.Value = DtpDefaultDate;
-            dtp.Format = DisplayFormat;
-            dtp.Parent = this;
+            DtpStartDate.Size = new Size(DtpWidth, 23);
+            DtpStartDate.Value = DtpDefaultDate;
+            DtpStartDate.Format = DisplayFormat;
+            DtpStartDate.Parent = this;
 
             //위치 셋팅
             int locationX, locationY;
 
             locationX = 9 + LblWidth;
-            locationY = (this.Size.Height - dtp.Size.Height) / 2 - 1;
-            dtp.Location = new Point(locationX, locationY);
+            locationY = (this.Size.Height - DtpStartDate.Size.Height) / 2 - 1;
+            DtpStartDate.Location = new Point(locationX, locationY);
 
 
 
@@ -103,18 +104,16 @@ namespace Project_MES.Control.CustomUc.Common
 
 
                 //EndDate 셋팅
-                DateTimePicker dtpEnd = new DateTimePicker();
-
                 //정보 셋팅
-                dtpEnd.Size = new Size(DtpWidth, 23);
-                dtpEnd.Value = DtpDefaultDate;
-                dtpEnd.Format = DisplayFormat;
-                dtpEnd.Parent = this;
+                DtpEndDate.Size = new Size(DtpWidth, 23);
+                DtpEndDate.Value = DtpDefaultDate;
+                DtpEndDate.Format = DisplayFormat;
+                DtpEndDate.Parent = this;
 
                 //위치 셋팅
                 locationX = this.Margin.Left + (LblWidth + 6) + (DtpWidth + 6) + (midLbl.Size.Width + 6);
-                locationY = (this.Size.Height - dtpEnd.Size.Height) / 2 - 1;
-                dtpEnd.Location = new Point(locationX, locationY);
+                locationY = (this.Size.Height - DtpEndDate.Size.Height) / 2 - 1;
+                DtpEndDate.Location = new Point(locationX, locationY);
 
 
 

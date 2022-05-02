@@ -20,7 +20,17 @@ namespace Project_MES.Control.Global
         readonly string connect_dbName = ConfigurationManager.AppSettings["DBConnection_DBName"].ToString();
 
         //Connect 정보
-        MySqlConnection connection = null;
+        MySqlConnection connection = new MySqlConnection();
+
+        public Global_Database()
+        {
+            string conn = $@"Server = {connect_Server};
+                                 Database = {connect_dbName};
+                                 UID = {connect_id};
+                                 password = {connect_pw};";
+
+            connection.ConnectionString = conn;
+        }
 
         public void ConnectDatabase_MySQL()
         {
@@ -36,6 +46,11 @@ namespace Project_MES.Control.Global
                 //DB 연동
                 connection = new MySqlConnection(conn);
                 connection.Open();
+
+                if(connection.State != ConnectionState.Open)
+                {
+                    MessageBox.Show($"MySQL 연결 오류");
+                }
             }
             catch (Exception ex)
             {
@@ -62,6 +77,7 @@ namespace Project_MES.Control.Global
 
                 //table에 데이터 채우기
                 adapter.SelectCommand = new MySqlCommand(query, connection);
+                adapter.SelectCommand.CommandTimeout = 180;
                 adapter.Fill(table);
 
                 return table;
@@ -75,17 +91,22 @@ namespace Project_MES.Control.Global
 
         public void ExcuteQuery_MySQL(string query)
         {
+            MySqlCommand cmd = new MySqlCommand(query, connection);
             try
             {
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                
                 //query문 실행
+                cmd.CommandTimeout = 180;
+                ConnectDatabase_MySQL();
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"ExcuteQuery_MySQL 오류\n{ex.Message}");
                 throw;
+            }
+            finally
+            {
+                DisConnectDatabase_MySQL();
             }
         }
 
