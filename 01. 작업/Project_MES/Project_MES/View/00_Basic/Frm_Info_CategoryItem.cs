@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Project_MES.View._00_Basic
 {
-    public partial class Frm_Info_Customer : Form
+    public partial class Frm_Info_CategoryItem : Form
     {
-        public Frm_Info_Customer()
+        public Frm_Info_CategoryItem()
         {
             InitializeComponent();
             SetDesign();
@@ -23,18 +23,16 @@ namespace Project_MES.View._00_Basic
         private void SetDesign()
         {
             //타이틀영역
-            Lbl_MailTitle.Text = "거래처정보 관리";
-
-            //조회 영역
-            Btn_Search.Text = "조회";
+            Lbl_MailTitle.Text = "종합코드관리";
 
             //컨텐츠 영역
-            Lbl_Contents0.Text = "거래처 정보";
-            Btn_Create.Text = "신규등록";
-            Btn_Delete.Text = "삭제";
+            Lbl_Contents0.Text = "카테고리 그룹";
+            Btn_Save_Group.Text = "하위 추가";
+            Btn_Delete_Group.Text = "수정";
 
-            Lbl_Contents1.Text = "거래처 상세정보";
-            Btn_Save.Text = "저장";
+            Lbl_Contents1.Text = "카테고리 내용";
+            Btn_Save_Item.Text = "저장";
+            Btn_Delete_Item.Text = "수정";
         }
 
         #endregion UI 디자인 Setting

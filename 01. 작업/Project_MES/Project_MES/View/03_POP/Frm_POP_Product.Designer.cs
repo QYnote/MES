@@ -1,7 +1,7 @@
 ﻿
 namespace Project_MES.View._03_POP
 {
-    partial class Frm_POP_Product0
+    partial class Frm_POP_Product
     {
         /// <summary>
         /// Required designer variable.

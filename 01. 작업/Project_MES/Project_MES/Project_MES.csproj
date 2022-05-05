@@ -88,6 +88,12 @@
     <Compile Include="Control\Global\Global_Database.cs" />
     <Compile Include="Model\01_Sales\Sales_OrderDetail.cs" />
     <Compile Include="Model\01_Sales\Sales_OrderMaster.cs" />
+    <Compile Include="View\00_Basic\Frm_Info_CategoryItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\00_Basic\Frm_Info_CategoryItem.Designer.cs">
+      <DependentUpon>Frm_Info_CategoryItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\00_Basic\Frm_Info_Customer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,23 +142,11 @@
     <Compile Include="View\02_Product\Frm_Product_WorkPlan.Designer.cs">
       <DependentUpon>Frm_Product_WorkPlan.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\03_POP\Frm_POP_Product0.cs">
+    <Compile Include="View\03_POP\Frm_POP_Product.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\03_POP\Frm_POP_Product0.Designer.cs">
-      <DependentUpon>Frm_POP_Product0.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\03_POP\Frm_POP_Product1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\03_POP\Frm_POP_Product1.Designer.cs">
-      <DependentUpon>Frm_POP_Product1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\03_POP\Frm_POP_Product2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\03_POP\Frm_POP_Product2.Designer.cs">
-      <DependentUpon>Frm_POP_Product2.cs</DependentUpon>
+    <Compile Include="View\03_POP\Frm_POP_Product.Designer.cs">
+      <DependentUpon>Frm_POP_Product.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmMain.cs">
       <SubType>Form</SubType>
@@ -171,8 +165,14 @@
     <EmbeddedResource Include="Control\CustomUc\Common\Uc_LblTxt.resx">
       <DependentUpon>Uc_LblTxt.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\00_Basic\Frm_Info_CategoryItem.resx">
+      <DependentUpon>Frm_Info_CategoryItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\00_Basic\Frm_Info_Customer.resx">
       <DependentUpon>Frm_Info_Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\00_Basic\Frm_Info_Material.resx">
+      <DependentUpon>Frm_Info_Material.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\01_Sales\Frm_SalesOrder_Create.resx">
       <DependentUpon>Frm_SalesOrder_Create.cs</DependentUpon>

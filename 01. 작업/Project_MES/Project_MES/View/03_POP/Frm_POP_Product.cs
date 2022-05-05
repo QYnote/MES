@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Project_MES.View._03_POP
 {
-    public partial class Frm_POP_Product2 : Form
+    public partial class Frm_POP_Product : Form
     {
-        public Frm_POP_Product2()
+        public Frm_POP_Product()
         {
             InitializeComponent();
         }
