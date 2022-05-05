@@ -31,7 +31,7 @@ namespace Project_MES.View._01_Sales
         {
             this.Pnl_Contents = new System.Windows.Forms.TableLayoutPanel();
             this.Pnl_SalesOrderDetail = new System.Windows.Forms.Panel();
-            this.Lbl_SalesOrderDetail = new System.Windows.Forms.Label();
+            this.Lbl_Contents1 = new System.Windows.Forms.Label();
             this.Btn_Delete = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,17 +42,17 @@ namespace Project_MES.View._01_Sales
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Lbl_OrderMaster = new System.Windows.Forms.Label();
+            this.Lbl_Contents0 = new System.Windows.Forms.Label();
             this.Pnl_MailTitle = new System.Windows.Forms.Panel();
             this.Lbl_MailTitle = new System.Windows.Forms.Label();
-            this.Btn_Create = new System.Windows.Forms.Button();
+            this.Btn_Save = new System.Windows.Forms.Button();
             this.Btn_Close = new System.Windows.Forms.Button();
             this.Pnl_SalesOrderMaster = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.uc_LblTxt1 = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
             this.uc_LblDtp_EndDate = new Project_MES.Control.CustomUc.Common.Uc_LblDtp();
             this.uc_LblDtp_OrderDate = new Project_MES.Control.CustomUc.Common.Uc_LblDtp();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.uc_LblCbo_OrderOutCust = new Project_MES.Control.CustomUc.Common.Uc_LblCbo();
             this.uc_LblCbo_OrderCust = new Project_MES.Control.CustomUc.Common.Uc_LblCbo();
             this.uc_LblTxt_OrderNo = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
@@ -71,7 +71,7 @@ namespace Project_MES.View._01_Sales
             this.Pnl_Contents.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.Pnl_Contents.Controls.Add(this.Pnl_SalesOrderDetail, 0, 3);
             this.Pnl_Contents.Controls.Add(this.dataGridView2, 0, 4);
-            this.Pnl_Contents.Controls.Add(this.Lbl_OrderMaster, 0, 1);
+            this.Pnl_Contents.Controls.Add(this.Lbl_Contents0, 0, 1);
             this.Pnl_Contents.Controls.Add(this.Pnl_MailTitle, 0, 0);
             this.Pnl_Contents.Controls.Add(this.Pnl_SalesOrderMaster, 0, 2);
             this.Pnl_Contents.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -88,7 +88,7 @@ namespace Project_MES.View._01_Sales
             // 
             // Pnl_SalesOrderDetail
             // 
-            this.Pnl_SalesOrderDetail.Controls.Add(this.Lbl_SalesOrderDetail);
+            this.Pnl_SalesOrderDetail.Controls.Add(this.Lbl_Contents1);
             this.Pnl_SalesOrderDetail.Controls.Add(this.Btn_Delete);
             this.Pnl_SalesOrderDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pnl_SalesOrderDetail.Location = new System.Drawing.Point(0, 152);
@@ -97,16 +97,16 @@ namespace Project_MES.View._01_Sales
             this.Pnl_SalesOrderDetail.Size = new System.Drawing.Size(998, 44);
             this.Pnl_SalesOrderDetail.TabIndex = 10;
             // 
-            // Lbl_SalesOrderDetail
+            // Lbl_Contents1
             // 
-            this.Lbl_SalesOrderDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Lbl_SalesOrderDetail.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold);
-            this.Lbl_SalesOrderDetail.Location = new System.Drawing.Point(0, 0);
-            this.Lbl_SalesOrderDetail.Name = "Lbl_SalesOrderDetail";
-            this.Lbl_SalesOrderDetail.Size = new System.Drawing.Size(923, 44);
-            this.Lbl_SalesOrderDetail.TabIndex = 0;
-            this.Lbl_SalesOrderDetail.Text = "Lbl_SalesOrderDetail";
-            this.Lbl_SalesOrderDetail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Lbl_Contents1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Lbl_Contents1.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Bold);
+            this.Lbl_Contents1.Location = new System.Drawing.Point(0, 0);
+            this.Lbl_Contents1.Name = "Lbl_Contents1";
+            this.Lbl_Contents1.Size = new System.Drawing.Size(923, 44);
+            this.Lbl_Contents1.TabIndex = 0;
+            this.Lbl_Contents1.Text = "Lbl_SalesOrderDetail";
+            this.Lbl_Contents1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Btn_Delete
             // 
@@ -183,22 +183,22 @@ namespace Project_MES.View._01_Sales
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
-            // Lbl_OrderMaster
+            // Lbl_Contents0
             // 
-            this.Lbl_OrderMaster.AutoSize = true;
-            this.Lbl_OrderMaster.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Lbl_OrderMaster.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Bold);
-            this.Lbl_OrderMaster.Location = new System.Drawing.Point(3, 50);
-            this.Lbl_OrderMaster.Name = "Lbl_OrderMaster";
-            this.Lbl_OrderMaster.Size = new System.Drawing.Size(992, 44);
-            this.Lbl_OrderMaster.TabIndex = 0;
-            this.Lbl_OrderMaster.Text = "Lbl_OrderMaster";
-            this.Lbl_OrderMaster.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Lbl_Contents0.AutoSize = true;
+            this.Lbl_Contents0.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Lbl_Contents0.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Bold);
+            this.Lbl_Contents0.Location = new System.Drawing.Point(3, 50);
+            this.Lbl_Contents0.Name = "Lbl_Contents0";
+            this.Lbl_Contents0.Size = new System.Drawing.Size(992, 44);
+            this.Lbl_Contents0.TabIndex = 0;
+            this.Lbl_Contents0.Text = "Lbl_SalesOrderMaster";
+            this.Lbl_Contents0.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Pnl_MailTitle
             // 
             this.Pnl_MailTitle.Controls.Add(this.Lbl_MailTitle);
-            this.Pnl_MailTitle.Controls.Add(this.Btn_Create);
+            this.Pnl_MailTitle.Controls.Add(this.Btn_Save);
             this.Pnl_MailTitle.Controls.Add(this.Btn_Close);
             this.Pnl_MailTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pnl_MailTitle.Location = new System.Drawing.Point(0, 0);
@@ -218,15 +218,15 @@ namespace Project_MES.View._01_Sales
             this.Lbl_MailTitle.Text = "Lbl_MainTitle";
             this.Lbl_MailTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // Btn_Create
+            // Btn_Save
             // 
-            this.Btn_Create.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Btn_Create.Location = new System.Drawing.Point(848, 0);
-            this.Btn_Create.Name = "Btn_Create";
-            this.Btn_Create.Size = new System.Drawing.Size(75, 50);
-            this.Btn_Create.TabIndex = 3;
-            this.Btn_Create.Text = "Btn_Save";
-            this.Btn_Create.UseVisualStyleBackColor = true;
+            this.Btn_Save.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Btn_Save.Location = new System.Drawing.Point(848, 0);
+            this.Btn_Save.Name = "Btn_Save";
+            this.Btn_Save.Size = new System.Drawing.Size(75, 50);
+            this.Btn_Save.TabIndex = 3;
+            this.Btn_Save.Text = "Btn_Save";
+            this.Btn_Save.UseVisualStyleBackColor = true;
             // 
             // Btn_Close
             // 
@@ -260,6 +260,47 @@ namespace Project_MES.View._01_Sales
             this.panel3.Size = new System.Drawing.Size(998, 29);
             this.panel3.TabIndex = 4;
             // 
+            // uc_LblTxt1
+            // 
+            this.uc_LblTxt1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uc_LblTxt1.DisplayText = "Txt 기본 Text";
+            this.uc_LblTxt1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.uc_LblTxt1.LblText = "비고";
+            this.uc_LblTxt1.LblWidth = 100;
+            this.uc_LblTxt1.Location = new System.Drawing.Point(552, 0);
+            this.uc_LblTxt1.Name = "uc_LblTxt1";
+            this.uc_LblTxt1.Size = new System.Drawing.Size(314, 29);
+            this.uc_LblTxt1.TabIndex = 3;
+            this.uc_LblTxt1.TxtWdith = 200;
+            // 
+            // uc_LblDtp_EndDate
+            // 
+            this.uc_LblDtp_EndDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uc_LblDtp_EndDate.DisplayFormat = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.uc_LblDtp_EndDate.Dock = System.Windows.Forms.DockStyle.Left;
+            this.uc_LblDtp_EndDate.DtpDefaultDate = new System.DateTime(2022, 5, 1, 19, 16, 26, 808);
+            this.uc_LblDtp_EndDate.DtpRange = false;
+            this.uc_LblDtp_EndDate.LblText = "마감일자";
+            this.uc_LblDtp_EndDate.LblWidth = 100;
+            this.uc_LblDtp_EndDate.Location = new System.Drawing.Point(338, 0);
+            this.uc_LblDtp_EndDate.Name = "uc_LblDtp_EndDate";
+            this.uc_LblDtp_EndDate.Size = new System.Drawing.Size(214, 29);
+            this.uc_LblDtp_EndDate.TabIndex = 1;
+            // 
+            // uc_LblDtp_OrderDate
+            // 
+            this.uc_LblDtp_OrderDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uc_LblDtp_OrderDate.DisplayFormat = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.uc_LblDtp_OrderDate.Dock = System.Windows.Forms.DockStyle.Left;
+            this.uc_LblDtp_OrderDate.DtpDefaultDate = new System.DateTime(2022, 5, 1, 19, 16, 26, 808);
+            this.uc_LblDtp_OrderDate.DtpRange = true;
+            this.uc_LblDtp_OrderDate.LblText = "수주일자";
+            this.uc_LblDtp_OrderDate.LblWidth = 100;
+            this.uc_LblDtp_OrderDate.Location = new System.Drawing.Point(0, 0);
+            this.uc_LblDtp_OrderDate.Name = "uc_LblDtp_OrderDate";
+            this.uc_LblDtp_OrderDate.Size = new System.Drawing.Size(338, 29);
+            this.uc_LblDtp_OrderDate.TabIndex = 0;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.uc_LblCbo_OrderOutCust);
@@ -270,45 +311,6 @@ namespace Project_MES.View._01_Sales
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(998, 29);
             this.panel2.TabIndex = 3;
-            // 
-            // uc_LblTxt1
-            // 
-            this.uc_LblTxt1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_LblTxt1.DisplayText = "Txt 기본 Text";
-            this.uc_LblTxt1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.uc_LblTxt1.LblText = "비고";
-            this.uc_LblTxt1.LblWidth = 100;
-            this.uc_LblTxt1.Location = new System.Drawing.Point(528, 0);
-            this.uc_LblTxt1.Name = "uc_LblTxt1";
-            this.uc_LblTxt1.Size = new System.Drawing.Size(314, 29);
-            this.uc_LblTxt1.TabIndex = 3;
-            this.uc_LblTxt1.TxtWdith = 200;
-            // 
-            // uc_LblDtp_EndDate
-            // 
-            this.uc_LblDtp_EndDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_LblDtp_EndDate.Dock = System.Windows.Forms.DockStyle.Left;
-            this.uc_LblDtp_EndDate.DtpDefaultDate = new System.DateTime(2022, 5, 1, 19, 16, 26, 808);
-            this.uc_LblDtp_EndDate.DtpRange = false;
-            this.uc_LblDtp_EndDate.LblText = "마감일자";
-            this.uc_LblDtp_EndDate.LblWidth = 100;
-            this.uc_LblDtp_EndDate.Location = new System.Drawing.Point(264, 0);
-            this.uc_LblDtp_EndDate.Name = "uc_LblDtp_EndDate";
-            this.uc_LblDtp_EndDate.Size = new System.Drawing.Size(264, 29);
-            this.uc_LblDtp_EndDate.TabIndex = 1;
-            // 
-            // uc_LblDtp_OrderDate
-            // 
-            this.uc_LblDtp_OrderDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_LblDtp_OrderDate.Dock = System.Windows.Forms.DockStyle.Left;
-            this.uc_LblDtp_OrderDate.DtpDefaultDate = new System.DateTime(2022, 5, 1, 19, 16, 26, 808);
-            this.uc_LblDtp_OrderDate.DtpRange = true;
-            this.uc_LblDtp_OrderDate.LblText = "수주일자";
-            this.uc_LblDtp_OrderDate.LblWidth = 100;
-            this.uc_LblDtp_OrderDate.Location = new System.Drawing.Point(0, 0);
-            this.uc_LblDtp_OrderDate.Name = "uc_LblDtp_OrderDate";
-            this.uc_LblDtp_OrderDate.Size = new System.Drawing.Size(264, 29);
-            this.uc_LblDtp_OrderDate.TabIndex = 0;
             // 
             // uc_LblCbo_OrderOutCust
             // 
@@ -375,10 +377,10 @@ namespace Project_MES.View._01_Sales
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel Pnl_Contents;
-        private System.Windows.Forms.Label Lbl_OrderMaster;
+        private System.Windows.Forms.Label Lbl_Contents0;
         private System.Windows.Forms.Panel Pnl_MailTitle;
         private System.Windows.Forms.Label Lbl_MailTitle;
-        private System.Windows.Forms.Button Btn_Create;
+        private System.Windows.Forms.Button Btn_Save;
         private System.Windows.Forms.Button Btn_Close;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
@@ -390,7 +392,7 @@ namespace Project_MES.View._01_Sales
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.Panel Pnl_SalesOrderDetail;
-        private System.Windows.Forms.Label Lbl_SalesOrderDetail;
+        private System.Windows.Forms.Label Lbl_Contents1;
         private System.Windows.Forms.Button Btn_Delete;
         private System.Windows.Forms.Panel Pnl_SalesOrderMaster;
         private Control.CustomUc.Common.Uc_LblTxt uc_LblTxt_OrderNo;

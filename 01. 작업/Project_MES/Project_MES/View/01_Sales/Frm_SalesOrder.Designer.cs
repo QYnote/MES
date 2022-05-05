@@ -30,7 +30,7 @@ namespace Project_MES.View._01_Sales
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.gvOrderDetail = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,40 +40,40 @@ namespace Project_MES.View._01_Sales
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.uc_LblTxt_CustName = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
+            this.uc_LblDtp_OrderDate = new Project_MES.Control.CustomUc.Common.Uc_LblDtp();
             this.Btn_Search = new System.Windows.Forms.Button();
-            this.Lbl_OrderMaster = new System.Windows.Forms.Label();
-            this.Lbl_OrderDetail = new System.Windows.Forms.Label();
+            this.Lbl_Contents0 = new System.Windows.Forms.Label();
+            this.Lbl_Contents1 = new System.Windows.Forms.Label();
             this.Pnl_MailTitle = new System.Windows.Forms.Panel();
             this.Lbl_MailTitle = new System.Windows.Forms.Label();
             this.Btn_Create = new System.Windows.Forms.Button();
             this.Btn_Update = new System.Windows.Forms.Button();
             this.Btn_Delete = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gvOrderMaster = new System.Windows.Forms.DataGridView();
             this.Col_OrderNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_CustName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_OutCustName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_OrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_OrderEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.uc_LblDtp1 = new Project_MES.Control.CustomUc.Common.Uc_LblDtp();
-            this.uc_LblTxt1 = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvOrderDetail)).BeginInit();
             this.panel1.SuspendLayout();
             this.Pnl_MailTitle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvOrderMaster)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.dataGridView2, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.gvOrderDetail, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.Lbl_OrderMaster, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.Lbl_OrderDetail, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.Lbl_Contents0, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.Lbl_Contents1, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.Pnl_MailTitle, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.gvOrderMaster, 0, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -87,10 +87,10 @@ namespace Project_MES.View._01_Sales
             this.tableLayoutPanel1.Size = new System.Drawing.Size(998, 642);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // dataGridView2
+            // gvOrderDetail
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gvOrderDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvOrderDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
@@ -99,12 +99,12 @@ namespace Project_MES.View._01_Sales
             this.Column1,
             this.Column2,
             this.dataGridViewTextBoxColumn6});
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 413);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(992, 226);
-            this.dataGridView2.TabIndex = 5;
+            this.gvOrderDetail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvOrderDetail.Location = new System.Drawing.Point(3, 413);
+            this.gvOrderDetail.Name = "gvOrderDetail";
+            this.gvOrderDetail.RowTemplate.Height = 23;
+            this.gvOrderDetail.Size = new System.Drawing.Size(992, 226);
+            this.gvOrderDetail.TabIndex = 5;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -154,8 +154,8 @@ namespace Project_MES.View._01_Sales
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.uc_LblTxt1);
-            this.panel1.Controls.Add(this.uc_LblDtp1);
+            this.panel1.Controls.Add(this.uc_LblTxt_CustName);
+            this.panel1.Controls.Add(this.uc_LblDtp_OrderDate);
             this.panel1.Controls.Add(this.Btn_Search);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 50);
@@ -163,6 +163,33 @@ namespace Project_MES.View._01_Sales
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(998, 35);
             this.panel1.TabIndex = 3;
+            // 
+            // uc_LblTxt_CustName
+            // 
+            this.uc_LblTxt_CustName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uc_LblTxt_CustName.DisplayText = "Default Text";
+            this.uc_LblTxt_CustName.Dock = System.Windows.Forms.DockStyle.Left;
+            this.uc_LblTxt_CustName.LblText = "수주처";
+            this.uc_LblTxt_CustName.LblWidth = 100;
+            this.uc_LblTxt_CustName.Location = new System.Drawing.Point(338, 0);
+            this.uc_LblTxt_CustName.Name = "uc_LblTxt_CustName";
+            this.uc_LblTxt_CustName.Size = new System.Drawing.Size(264, 35);
+            this.uc_LblTxt_CustName.TabIndex = 9;
+            this.uc_LblTxt_CustName.TxtWdith = 150;
+            // 
+            // uc_LblDtp_OrderDate
+            // 
+            this.uc_LblDtp_OrderDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uc_LblDtp_OrderDate.DisplayFormat = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.uc_LblDtp_OrderDate.Dock = System.Windows.Forms.DockStyle.Left;
+            this.uc_LblDtp_OrderDate.DtpDefaultDate = new System.DateTime(2022, 5, 1, 21, 0, 43, 183);
+            this.uc_LblDtp_OrderDate.DtpRange = true;
+            this.uc_LblDtp_OrderDate.LblText = "수주일자";
+            this.uc_LblDtp_OrderDate.LblWidth = 100;
+            this.uc_LblDtp_OrderDate.Location = new System.Drawing.Point(0, 0);
+            this.uc_LblDtp_OrderDate.Name = "uc_LblDtp_OrderDate";
+            this.uc_LblDtp_OrderDate.Size = new System.Drawing.Size(338, 35);
+            this.uc_LblDtp_OrderDate.TabIndex = 8;
             // 
             // Btn_Search
             // 
@@ -174,29 +201,29 @@ namespace Project_MES.View._01_Sales
             this.Btn_Search.Text = "Btn_Search";
             this.Btn_Search.UseVisualStyleBackColor = true;
             // 
-            // Lbl_OrderMaster
+            // Lbl_Contents0
             // 
-            this.Lbl_OrderMaster.AutoSize = true;
-            this.Lbl_OrderMaster.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Lbl_OrderMaster.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Bold);
-            this.Lbl_OrderMaster.Location = new System.Drawing.Point(3, 85);
-            this.Lbl_OrderMaster.Name = "Lbl_OrderMaster";
-            this.Lbl_OrderMaster.Size = new System.Drawing.Size(992, 44);
-            this.Lbl_OrderMaster.TabIndex = 0;
-            this.Lbl_OrderMaster.Text = "Lbl_OrderMaster";
-            this.Lbl_OrderMaster.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Lbl_Contents0.AutoSize = true;
+            this.Lbl_Contents0.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Lbl_Contents0.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Bold);
+            this.Lbl_Contents0.Location = new System.Drawing.Point(3, 85);
+            this.Lbl_Contents0.Name = "Lbl_Contents0";
+            this.Lbl_Contents0.Size = new System.Drawing.Size(992, 44);
+            this.Lbl_Contents0.TabIndex = 0;
+            this.Lbl_Contents0.Text = "Lbl_OrderMaster";
+            this.Lbl_Contents0.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // Lbl_OrderDetail
+            // Lbl_Contents1
             // 
-            this.Lbl_OrderDetail.AutoSize = true;
-            this.Lbl_OrderDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Lbl_OrderDetail.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Bold);
-            this.Lbl_OrderDetail.Location = new System.Drawing.Point(3, 360);
-            this.Lbl_OrderDetail.Name = "Lbl_OrderDetail";
-            this.Lbl_OrderDetail.Size = new System.Drawing.Size(992, 50);
-            this.Lbl_OrderDetail.TabIndex = 1;
-            this.Lbl_OrderDetail.Text = "Lbl_OrderDetail";
-            this.Lbl_OrderDetail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Lbl_Contents1.AutoSize = true;
+            this.Lbl_Contents1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Lbl_Contents1.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Bold);
+            this.Lbl_Contents1.Location = new System.Drawing.Point(3, 360);
+            this.Lbl_Contents1.Name = "Lbl_Contents1";
+            this.Lbl_Contents1.Size = new System.Drawing.Size(992, 50);
+            this.Lbl_Contents1.TabIndex = 1;
+            this.Lbl_Contents1.Text = "Lbl_OrderDetail";
+            this.Lbl_Contents1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Pnl_MailTitle
             // 
@@ -253,22 +280,22 @@ namespace Project_MES.View._01_Sales
             this.Btn_Delete.Text = "Btn_Delete";
             this.Btn_Delete.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // gvOrderMaster
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gvOrderMaster.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvOrderMaster.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Col_OrderNo,
             this.Col_CustName,
             this.Col_OutCustName,
             this.Col_OrderDate,
             this.Col_OrderEndDate,
             this.Col_Remark});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 132);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(992, 225);
-            this.dataGridView1.TabIndex = 4;
+            this.gvOrderMaster.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvOrderMaster.Location = new System.Drawing.Point(3, 132);
+            this.gvOrderMaster.Name = "gvOrderMaster";
+            this.gvOrderMaster.RowTemplate.Height = 23;
+            this.gvOrderMaster.Size = new System.Drawing.Size(992, 225);
+            this.gvOrderMaster.TabIndex = 4;
             // 
             // Col_OrderNo
             // 
@@ -306,33 +333,6 @@ namespace Project_MES.View._01_Sales
             this.Col_Remark.Name = "Col_Remark";
             this.Col_Remark.ReadOnly = true;
             // 
-            // uc_LblDtp1
-            // 
-            this.uc_LblDtp1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_LblDtp1.DisplayFormat = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.uc_LblDtp1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.uc_LblDtp1.DtpDefaultDate = new System.DateTime(2022, 5, 1, 21, 0, 43, 183);
-            this.uc_LblDtp1.DtpRange = true;
-            this.uc_LblDtp1.LblText = "수주일자";
-            this.uc_LblDtp1.LblWidth = 100;
-            this.uc_LblDtp1.Location = new System.Drawing.Point(0, 0);
-            this.uc_LblDtp1.Name = "uc_LblDtp1";
-            this.uc_LblDtp1.Size = new System.Drawing.Size(264, 35);
-            this.uc_LblDtp1.TabIndex = 8;
-            // 
-            // uc_LblTxt1
-            // 
-            this.uc_LblTxt1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_LblTxt1.DisplayText = "Default Text";
-            this.uc_LblTxt1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.uc_LblTxt1.LblText = "수주처";
-            this.uc_LblTxt1.LblWidth = 100;
-            this.uc_LblTxt1.Location = new System.Drawing.Point(264, 0);
-            this.uc_LblTxt1.Name = "uc_LblTxt1";
-            this.uc_LblTxt1.Size = new System.Drawing.Size(264, 35);
-            this.uc_LblTxt1.TabIndex = 9;
-            this.uc_LblTxt1.TxtWdith = 150;
-            // 
             // Frm_SalesOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -341,12 +341,13 @@ namespace Project_MES.View._01_Sales
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Frm_SalesOrder";
             this.Text = "Frm_SalesOrder";
+            this.Load += new System.EventHandler(this.Frm_SalesOrder_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvOrderDetail)).EndInit();
             this.panel1.ResumeLayout(false);
             this.Pnl_MailTitle.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvOrderMaster)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -354,8 +355,8 @@ namespace Project_MES.View._01_Sales
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label Lbl_OrderMaster;
-        private System.Windows.Forms.Label Lbl_OrderDetail;
+        private System.Windows.Forms.Label Lbl_Contents0;
+        private System.Windows.Forms.Label Lbl_Contents1;
         private System.Windows.Forms.Panel Pnl_MailTitle;
         private System.Windows.Forms.Label Lbl_MailTitle;
         private System.Windows.Forms.Button Btn_Create;
@@ -363,14 +364,14 @@ namespace Project_MES.View._01_Sales
         private System.Windows.Forms.Button Btn_Delete;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button Btn_Search;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView gvOrderMaster;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_OrderNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_CustName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_OutCustName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_OrderDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_OrderEndDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Remark;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView gvOrderDetail;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -379,7 +380,7 @@ namespace Project_MES.View._01_Sales
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private Control.CustomUc.Common.Uc_LblDtp uc_LblDtp1;
-        private Control.CustomUc.Common.Uc_LblTxt uc_LblTxt1;
+        private Control.CustomUc.Common.Uc_LblDtp uc_LblDtp_OrderDate;
+        private Control.CustomUc.Common.Uc_LblTxt uc_LblTxt_CustName;
     }
 }

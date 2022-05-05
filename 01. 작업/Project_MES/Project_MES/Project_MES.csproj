@@ -86,6 +86,7 @@
       <DependentUpon>Uc_LblTxt.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\Global\Global_Database.cs" />
+    <Compile Include="Model\01_Sales\Sales_OrderDetail.cs" />
     <Compile Include="Model\01_Sales\Sales_OrderMaster.cs" />
     <Compile Include="View\00_Basic\Frm_Info_Customer.cs">
       <SubType>Form</SubType>
@@ -116,6 +117,12 @@
     </Compile>
     <Compile Include="View\01_Sales\Frm_SalesOrder.Designer.cs">
       <DependentUpon>Frm_SalesOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\02_Product\Frm_Product_WorkPlan_Write.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\02_Product\Frm_Product_WorkPlan_Write.Designer.cs">
+      <DependentUpon>Frm_Product_WorkPlan_Write.cs</DependentUpon>
     </Compile>
     <Compile Include="View\02_Product\Frm_Product_WorkOrder.cs">
       <SubType>Form</SubType>
@@ -172,6 +179,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\01_Sales\Frm_SalesOrder.resx">
       <DependentUpon>Frm_SalesOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\02_Product\Frm_Product_WorkPlan_Write.resx">
+      <DependentUpon>Frm_Product_WorkPlan_Write.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\02_Product\Frm_Product_WorkOrder.resx">
+      <DependentUpon>Frm_Product_WorkOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\02_Product\Frm_Product_WorkPlan.resx">
+      <DependentUpon>Frm_Product_WorkPlan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
