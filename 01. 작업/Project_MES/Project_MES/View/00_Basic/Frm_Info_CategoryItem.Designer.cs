@@ -32,6 +32,7 @@
             this.Pnl_Contents0_Base = new System.Windows.Forms.Panel();
             this.Tree_CateGroup = new System.Windows.Forms.TreeView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.uc_LblTxt_GroupName = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Btn_Save_Group = new System.Windows.Forms.Button();
             this.Btn_Delete_Group = new System.Windows.Forms.Button();
@@ -43,7 +44,6 @@
             this.Btn_Save_Item = new System.Windows.Forms.Button();
             this.Btn_Delete_Item = new System.Windows.Forms.Button();
             this.Lbl_Contents1 = new System.Windows.Forms.Label();
-            this.uc_LblTxt_GroupName = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
             this.TableLayoutMain.SuspendLayout();
             this.Pnl_Contents0_Base.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -102,6 +102,19 @@
             this.panel2.Size = new System.Drawing.Size(326, 29);
             this.panel2.TabIndex = 8;
             // 
+            // uc_LblTxt_GroupName
+            // 
+            this.uc_LblTxt_GroupName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uc_LblTxt_GroupName.DisplayText = "Default Text";
+            this.uc_LblTxt_GroupName.Dock = System.Windows.Forms.DockStyle.Top;
+            this.uc_LblTxt_GroupName.LblText = "추가이름";
+            this.uc_LblTxt_GroupName.LblWidth = 100;
+            this.uc_LblTxt_GroupName.Location = new System.Drawing.Point(0, 0);
+            this.uc_LblTxt_GroupName.Name = "uc_LblTxt_GroupName";
+            this.uc_LblTxt_GroupName.Size = new System.Drawing.Size(326, 29);
+            this.uc_LblTxt_GroupName.TabIndex = 0;
+            this.uc_LblTxt_GroupName.TxtWdith = 218;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.Btn_Save_Group);
@@ -134,6 +147,7 @@
             this.Btn_Delete_Group.TabIndex = 2;
             this.Btn_Delete_Group.Text = "Btn_Delete_Group";
             this.Btn_Delete_Group.UseVisualStyleBackColor = true;
+            this.Btn_Delete_Group.Click += new System.EventHandler(this.Btn_Delete_Group_Click);
             // 
             // Lbl_Contents0
             // 
@@ -177,6 +191,7 @@
             this.gv_CateItem.RowTemplate.Height = 23;
             this.gv_CateItem.Size = new System.Drawing.Size(660, 542);
             this.gv_CateItem.TabIndex = 5;
+            this.gv_CateItem.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.gv_CateItem_CellValueChanged);
             // 
             // Pnl_Contents1
             // 
@@ -199,6 +214,7 @@
             this.Btn_Save_Item.TabIndex = 3;
             this.Btn_Save_Item.Text = "Btn_Save_Item";
             this.Btn_Save_Item.UseVisualStyleBackColor = true;
+            this.Btn_Save_Item.Click += new System.EventHandler(this.Btn_Save_Item_Click);
             // 
             // Btn_Delete_Item
             // 
@@ -209,6 +225,7 @@
             this.Btn_Delete_Item.TabIndex = 2;
             this.Btn_Delete_Item.Text = "Btn_Delete_Item";
             this.Btn_Delete_Item.UseVisualStyleBackColor = true;
+            this.Btn_Delete_Item.Click += new System.EventHandler(this.Btn_Delete_Item_Click);
             // 
             // Lbl_Contents1
             // 
@@ -220,19 +237,6 @@
             this.Lbl_Contents1.TabIndex = 1;
             this.Lbl_Contents1.Text = "Lbl_CateItem";
             this.Lbl_Contents1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // uc_LblTxt_GroupName
-            // 
-            this.uc_LblTxt_GroupName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_LblTxt_GroupName.DisplayText = "Default Text";
-            this.uc_LblTxt_GroupName.Dock = System.Windows.Forms.DockStyle.Top;
-            this.uc_LblTxt_GroupName.LblText = "추가이름";
-            this.uc_LblTxt_GroupName.LblWidth = 100;
-            this.uc_LblTxt_GroupName.Location = new System.Drawing.Point(0, 0);
-            this.uc_LblTxt_GroupName.Name = "uc_LblTxt_GroupName";
-            this.uc_LblTxt_GroupName.Size = new System.Drawing.Size(326, 29);
-            this.uc_LblTxt_GroupName.TabIndex = 0;
-            this.uc_LblTxt_GroupName.TxtWdith = 218;
             // 
             // Frm_Info_CategoryItem
             // 

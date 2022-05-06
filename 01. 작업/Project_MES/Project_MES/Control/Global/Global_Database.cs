@@ -24,10 +24,10 @@ namespace Project_MES.Control.Global
 
         public Global_Database()
         {
-            string conn = $@"Server = {connect_Server};
-                                 Database = {connect_dbName};
-                                 UID = {connect_id};
-                                 password = {connect_pw};";
+            string conn = $@"Server   = {connect_Server};
+                             Database = {connect_dbName};
+                             UID      = {connect_id};
+                             password = {connect_pw};";
 
             connection.ConnectionString = conn;
         }

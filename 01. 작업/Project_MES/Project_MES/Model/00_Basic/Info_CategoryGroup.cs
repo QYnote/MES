@@ -34,11 +34,18 @@ namespace Project_MES.Model._00_Basic
 
         public void Insert_Frm_Info_CategoryItem()
         {
-            query = $@"CALL Info_CU_CategoryGroup('{GroupName}',
-                                                  {Level},
+            query = $@"CALL Info_CategoryGroup_C('{GroupName}',
+                                                   {Level},
                                                   '{HighGroup}',
                                                   '{Global_DataStorage.ClientName}',
                                                   '{Global_DataStorage.ClientIP}')";
+
+            db.ExcuteQuery_MySQL(query);
+        }
+
+        public void Delete_Frm_Info_CategoryItem()
+        {
+            query = $@"CALL Info_CategoryGroup_D('{GroupCode}')";
 
             db.ExcuteQuery_MySQL(query);
         }

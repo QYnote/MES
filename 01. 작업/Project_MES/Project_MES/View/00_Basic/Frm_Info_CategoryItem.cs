@@ -29,11 +29,11 @@ namespace Project_MES.View._00_Basic
             //컨텐츠 영역
             Lbl_Contents0.Text = "카테고리 그룹";
             Btn_Save_Group.Text = "하위 추가";
-            Btn_Delete_Group.Text = "수정";
+            Btn_Delete_Group.Text = "삭제";
 
-            Lbl_Contents1.Text = "카테고리 내용";
+            Lbl_Contents1.Text = "카테고리 아이템";
             Btn_Save_Item.Text = "저장";
-            Btn_Delete_Item.Text = "수정";
+            Btn_Delete_Item.Text = "삭제";
         }
 
         #endregion UI 디자인 Setting
@@ -48,8 +48,9 @@ namespace Project_MES.View._00_Basic
             SetTreeList(Tree_CateGroup);
         }
 
-        #region 카테고리 그룹 그리기
+        #region 카테고리 그룹 기능
 
+        //조회
         private void SetTreeList(TreeView tree)
         {
             Info_CategoryGroup cateGroup = new Info_CategoryGroup();
@@ -83,6 +84,8 @@ namespace Project_MES.View._00_Basic
                     //최상위노드 treeView에 추가
                     tree.Nodes.Add(rootNode);
                 }
+
+                tree.ExpandAll();
             }
         }
 
@@ -110,34 +113,69 @@ namespace Project_MES.View._00_Basic
             }
         }
 
-        #endregion 카테고리그룹 그리기 End
-
-        #region 카테고리 그룹 기능
-
+        //하위항목 신규 생성
         private void Btn_Save_Group_Click(object sender, EventArgs e)
         {
-            //선택된 노드 없을시 취소
+            //취소 조건
             if (Tree_CateGroup.SelectedNode == null) return;
-            if (Tree_CateGroup.SelectedNode.Level > 3) return;
+            if (Tree_CateGroup.SelectedNode.Level >= 3)
+            {
+                MessageBox.Show("더이상 하위항목을 만들 수 없습니다.");
+                return;
+            }
 
             Info_CategoryGroup cateGroup = new Info_CategoryGroup();
-            cateGroup.GroupName = uc_LblTxt_GroupName.TxtContents.Text;
-            cateGroup.Level = Tree_CateGroup.SelectedNode.Level + 1;
-            cateGroup.HighGroup = Tree_CateGroup.SelectedNode.Name;
+            cateGroup.GroupName = uc_LblTxt_GroupName.TxtContents.Text; //그룹명
+            cateGroup.Level = Tree_CateGroup.SelectedNode.Level + 1;    //레벨
+            cateGroup.HighGroup = Tree_CateGroup.SelectedNode.Name;     //상위그룹
 
             cateGroup.Insert_Frm_Info_CategoryItem();
 
             DisplayData();
         }
 
+        //선택항목 삭제
+        private void Btn_Delete_Group_Click(object sender, EventArgs e)
+        {
+            //취소 조건
+            if (Tree_CateGroup.SelectedNode == null) return;
+
+            TreeNode parentNode = Tree_CateGroup.SelectedNode;
+
+            Info_CategoryGroup cateGroup = new Info_CategoryGroup();
+            cateGroup.GroupCode = parentNode.Name;
+
+            //데이터, 아이템 삭제
+            cateGroup.Delete_Frm_Info_CategoryItem();
+
+            DisplayData();
+            gv_CateItem.Rows.Clear();
+        }
+
         #endregion 카테고리 그룹 기능 End
 
+        #region 카테고리 아이템 기능
+        private string SelectedGroupCode; //저장,삭제시 GroupCode 보관용
 
+        /////////////////////   조회  ///////////////
         private void Tree_CateGroup_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
+            if(dicCateItem.Count > 0)
+            {
+                if (MessageBox.Show("수정내역이 있습니다.\n화면을 변경하시겠습니까?", "경고", MessageBoxButtons.YesNo) == DialogResult.No)
+                {
+                    return;
+                }
+            }
+
+            //Item 입력
             string groupCode = e.Node.Name;
 
             SetCateItem(gv_CateItem, groupCode);
+
+            //저장 or 삭제용
+            dicCateItem.Clear();    //저장용 Dictionary 초기화
+            SelectedGroupCode = groupCode;  //신규생성시 그룹코드 보관용
         }
 
         private void SetCateItem(DataGridView gv, string groupCode)
@@ -147,6 +185,92 @@ namespace Project_MES.View._00_Basic
 
             gv.DataSource = cateItem.Select_Frm_Info_CategoryItem();
         }
+
+        ///////////////     데이터 수정, 신규 Row생성    /////////////////////
+        private Dictionary<int, DataRow> dicCateItem = new Dictionary<int, DataRow>();
+
+        private void gv_CateItem_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {   //값 변경시 데이터 저장
+            CreateDictionary(e.RowIndex);
+        }
+
+        private void CreateDictionary(int rowIdx)
+        {   //값 변경시 데이터 저장
+            DataRow dr = (gv_CateItem.Rows[rowIdx].DataBoundItem as DataRowView).Row;
+
+            //변경된 내용 딕셔너리에 저장
+            if (dicCateItem.ContainsKey(rowIdx))
+            {
+                //같은 행 수정시 기존Dic 삭제
+                dicCateItem.Remove(rowIdx);
+            }
+
+            dicCateItem.Add(rowIdx, dr);
+        }
+
+        private void Btn_Save_Item_Click(object sender, EventArgs e)
+        {
+            SaveItem();
+        }
+
+        private void SaveItem()
+        {
+            if (dicCateItem.Count < 0) return;
+
+            //변경되 내용 일괄 DB 전송
+            Info_CategoryItem cateItem = new Info_CategoryItem();
+            cateItem.GroupCode = SelectedGroupCode; //그룹코드
+
+            foreach (DataRow dr in dicCateItem.Values)
+            {
+                cateItem.ItemCode = dr["아이템 코드"].ToString();
+                cateItem.ItemValue = dr["아이템 값"].ToString();
+                cateItem.Remark = dr["비고"].ToString();
+
+                cateItem.Insert_Frm_Info_CategoryItem();
+            }
+
+            dicCateItem.Clear();    //Dictionary 초기화
+            SetCateItem(gv_CateItem, SelectedGroupCode);    //재조회
+        }
+
+        ///////////////////////////////     삭제      ////////////////////////
+        private void Btn_Delete_Item_Click(object sender, EventArgs e)
+        {
+            if (gv_CateItem.SelectedRows.Count < 0) return;
+
+            //카테고리 코드가 비어있는 신규row는 삭제
+            DataRow selectedRow = (gv_CateItem.SelectedRows[0].DataBoundItem as DataRowView).Row;
+
+            if (selectedRow["아이템 코드"].ToString() == "")
+            {
+                gv_CateItem.SelectedRows.Clear();   //해당Row 삭제
+                dicCateItem.Remove(gv_CateItem.SelectedRows[0].Index);  //Dictionary 삭제
+                return;
+            }
+
+            if (dicCateItem.Count > 0)
+            {
+                if (MessageBox.Show("작성내역이 저장됩니다.\n화면을 변경하시겠습니까?", "경고", MessageBoxButtons.YesNo) == DialogResult.No)
+                {
+                    return;
+                }
+            }
+
+            SaveItem();
+            DeleteItem(selectedRow);
+        }
+
+        private void DeleteItem(DataRow row)
+        {
+            Info_CategoryItem cateItem = new Info_CategoryItem();
+            cateItem.GroupCode = SelectedGroupCode; //그룹코드
+            cateItem.ItemCode = row["아이템 코드"].ToString();
+
+            cateItem.Delete_Frm_Info_CategoryItem();
+        }
+
+        #endregion 카테고리 아이템 기능 End
 
     }
 }
