@@ -48,13 +48,9 @@ namespace Project_MES.View
             System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("생산관리", new System.Windows.Forms.TreeNode[] {
             treeNode9,
             treeNode10});
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("현장_First");
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("현장0");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("현장Last");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("현장시스템", new System.Windows.Forms.TreeNode[] {
-            treeNode12,
-            treeNode13,
-            treeNode14});
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("실적등록");
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("현장시스템", new System.Windows.Forms.TreeNode[] {
+            treeNode12});
             this.PnlMenu = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.Tree_Menu = new System.Windows.Forms.TreeView();
@@ -120,19 +116,15 @@ namespace Project_MES.View
             treeNode10.Text = "작업지시";
             treeNode11.Name = "Node_Product";
             treeNode11.Text = "생산관리";
-            treeNode12.Name = "Node_Product0";
-            treeNode12.Text = "현장_First";
-            treeNode13.Name = "Node_Product1";
-            treeNode13.Text = "현장0";
-            treeNode14.Name = "Node_Product2";
-            treeNode14.Text = "현장Last";
-            treeNode15.Name = "Node_POP";
-            treeNode15.Text = "현장시스템";
+            treeNode12.Name = "Node_Product";
+            treeNode12.Text = "실적등록";
+            treeNode13.Name = "Node_POP";
+            treeNode13.Text = "현장시스템";
             this.Tree_Menu.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode5,
             treeNode8,
             treeNode11,
-            treeNode15});
+            treeNode13});
             this.Tree_Menu.Size = new System.Drawing.Size(247, 606);
             this.Tree_Menu.TabIndex = 2;
             this.Tree_Menu.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.Tree_Menu_NodeMouseDoubleClick);

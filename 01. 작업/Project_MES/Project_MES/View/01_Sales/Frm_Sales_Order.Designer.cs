@@ -1,7 +1,7 @@
 ﻿
 namespace Project_MES.View._01_Sales
 {
-    partial class Frm_SalesOrder
+    partial class Frm_Sales_Order
     {
         /// <summary>
         /// Required designer variable.
@@ -341,7 +341,7 @@ namespace Project_MES.View._01_Sales
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Frm_SalesOrder";
             this.Text = "Frm_SalesOrder";
-            this.Load += new System.EventHandler(this.Frm_SalesOrder_Load);
+            this.Load += new System.EventHandler(this.Frm_Sales_Order_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvOrderDetail)).EndInit();

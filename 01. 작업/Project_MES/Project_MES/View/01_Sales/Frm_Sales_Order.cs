@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Project_MES.View._01_Sales
 {
-    public partial class Frm_SalesOrder : Form
+    public partial class Frm_Sales_Order : Form
     {
-        public Frm_SalesOrder()
+        public Frm_Sales_Order()
         {
             InitializeComponent();
             SetDesign();
@@ -35,14 +35,14 @@ namespace Project_MES.View._01_Sales
             Lbl_Contents1.Text = "수주 상세내역";
         }
 
-        private void Frm_SalesOrder_Load(object sender, EventArgs e)
+        private void Frm_Sales_Order_Load(object sender, EventArgs e)
         {
             DisplayData();
         }
 
         private void Btn_Create_Click(object sender, EventArgs e)
         {
-            Frm_SalesOrder_Create frmCreate = new Frm_SalesOrder_Create();
+            Frm_Sales_Order_Create frmCreate = new Frm_Sales_Order_Create();
             
             if(frmCreate.ShowDialog() == DialogResult.OK)
             {

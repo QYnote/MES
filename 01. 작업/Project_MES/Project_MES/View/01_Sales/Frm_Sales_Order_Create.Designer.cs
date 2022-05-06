@@ -1,7 +1,7 @@
 ﻿
 namespace Project_MES.View._01_Sales
 {
-    partial class Frm_SalesOrder_Create
+    partial class Frm_Sales_Order_Create
     {
         /// <summary>
         /// Required designer variable.

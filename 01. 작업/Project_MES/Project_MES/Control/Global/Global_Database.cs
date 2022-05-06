@@ -32,42 +32,6 @@ namespace Project_MES.Control.Global
             connection.ConnectionString = conn;
         }
 
-        public void ConnectDatabase_MySQL()
-        {
-            //비연결 확인상태에서 연결 시작
-            //연동string 지정
-            string conn = $@"Server = {connect_Server};
-                                 Database = {connect_dbName};
-                                 UID = {connect_id};
-                                 password = {connect_pw};";
-
-            try
-            {
-                //DB 연동
-                connection = new MySqlConnection(conn);
-                connection.Open();
-
-                if(connection.State != ConnectionState.Open)
-                {
-                    MessageBox.Show($"MySQL 연결 오류");
-                }
-            }
-            catch (Exception ex)
-            {
-                //연결 오류, 실패시 메시지 출력
-                MessageBox.Show($"MySQL 연결 오류\n{ex.Message}");
-            }
-        }
-
-        public void DisConnectDatabase_MySQL()
-        {
-            //연결 상태시 열결 해제
-            if (connection.State == ConnectionState.Open)
-            {
-                connection.Close();
-            }
-        }
-
         public DataTable GetDataTable_MySQL(string query)
         {
             try
@@ -96,8 +60,8 @@ namespace Project_MES.Control.Global
             {
                 //query문 실행
                 cmd.CommandTimeout = 180;
-                ConnectDatabase_MySQL();
-                cmd.ExecuteNonQuery();
+                cmd.Connection.Open();  //DB 연결
+                cmd.ExecuteNonQuery();  //Query 작동
             }
             catch (Exception ex)
             {
@@ -106,7 +70,7 @@ namespace Project_MES.Control.Global
             }
             finally
             {
-                DisConnectDatabase_MySQL();
+                cmd.Connection.Close(); //DB 연결 해제
             }
         }
 
