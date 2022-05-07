@@ -338,7 +338,6 @@
             // uc_LblCbo_OrderCust
             // 
             this.uc_LblCbo_OrderCust.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_LblCbo_OrderCust.CboDataSource = null;
             this.uc_LblCbo_OrderCust.CboDefaultText = "Cbo 기본 Text";
             this.uc_LblCbo_OrderCust.CboWdith = 150;
             this.uc_LblCbo_OrderCust.Dock = System.Windows.Forms.DockStyle.Left;

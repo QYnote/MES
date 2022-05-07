@@ -315,7 +315,6 @@ namespace Project_MES.View._01_Sales
             // uc_LblCbo_OrderOutCust
             // 
             this.uc_LblCbo_OrderOutCust.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_LblCbo_OrderOutCust.CboDataSource = null;
             this.uc_LblCbo_OrderOutCust.CboDefaultText = "Cbo 기본 Text";
             this.uc_LblCbo_OrderOutCust.CboWdith = 150;
             this.uc_LblCbo_OrderOutCust.Dock = System.Windows.Forms.DockStyle.Left;
@@ -329,7 +328,6 @@ namespace Project_MES.View._01_Sales
             // uc_LblCbo_OrderCust
             // 
             this.uc_LblCbo_OrderCust.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_LblCbo_OrderCust.CboDataSource = null;
             this.uc_LblCbo_OrderCust.CboDefaultText = "Cbo 기본 Text";
             this.uc_LblCbo_OrderCust.CboWdith = 150;
             this.uc_LblCbo_OrderCust.Dock = System.Windows.Forms.DockStyle.Left;

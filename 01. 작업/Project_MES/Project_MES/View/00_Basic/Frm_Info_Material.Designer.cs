@@ -264,7 +264,6 @@ namespace Project_MES.View._00_Basic
             // uc_LblCbo_CustType
             // 
             this.uc_LblCbo_CustType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_LblCbo_CustType.CboDataSource = null;
             this.uc_LblCbo_CustType.CboDefaultText = "Cbo 기본 Text";
             this.uc_LblCbo_CustType.CboWdith = 150;
             this.uc_LblCbo_CustType.LblText = "자재타입";
@@ -325,7 +324,6 @@ namespace Project_MES.View._00_Basic
             // uc_LblCbo1
             // 
             this.uc_LblCbo1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_LblCbo1.CboDataSource = null;
             this.uc_LblCbo1.CboDefaultText = "Cbo 기본 Text";
             this.uc_LblCbo1.CboWdith = 150;
             this.uc_LblCbo1.LblText = "단위";
@@ -338,7 +336,6 @@ namespace Project_MES.View._00_Basic
             // uc_LblCbo2
             // 
             this.uc_LblCbo2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_LblCbo2.CboDataSource = null;
             this.uc_LblCbo2.CboDefaultText = "Cbo 기본 Text";
             this.uc_LblCbo2.CboWdith = 150;
             this.uc_LblCbo2.LblText = "거래처";

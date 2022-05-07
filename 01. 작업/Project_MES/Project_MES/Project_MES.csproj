@@ -89,6 +89,7 @@
     <Compile Include="Control\Global\Global_DataStorage.cs" />
     <Compile Include="Model\00_Basic\Info_CategoryGroup.cs" />
     <Compile Include="Model\00_Basic\Info_CategoryItem.cs" />
+    <Compile Include="Model\00_Basic\Info_Customer.cs" />
     <Compile Include="Model\01_Sales\Sales_OrderDetail.cs" />
     <Compile Include="Model\01_Sales\Sales_OrderMaster.cs" />
     <Compile Include="View\00_Basic\Frm_Info_CategoryItem.cs">
@@ -208,6 +209,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

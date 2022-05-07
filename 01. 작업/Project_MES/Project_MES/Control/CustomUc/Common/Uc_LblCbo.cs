@@ -18,7 +18,6 @@ namespace Project_MES.Control.CustomUc.Common
         public int CboWdith { get; set; } = 150;
         public string LblText { get; set; } = "Label명";
         public string CboDefaultText { get; set; } = "Cbo 기본 Text";
-        public object CboDataSource { get; set; }
 
         #endregion Property End
 
@@ -64,7 +63,6 @@ namespace Project_MES.Control.CustomUc.Common
         {
             CboContents.Size = new Size(CboWdith, 23);
             CboContents.Text = CboDefaultText;
-            CboContents.DataSource = CboDataSource;
             CboContents.Parent = this;
 
             //위치 셋팅
