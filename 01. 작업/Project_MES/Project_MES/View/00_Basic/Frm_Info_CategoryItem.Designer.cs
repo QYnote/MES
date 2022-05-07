@@ -44,6 +44,9 @@
             this.Btn_Save_Item = new System.Windows.Forms.Button();
             this.Btn_Delete_Item = new System.Windows.Forms.Button();
             this.Lbl_Contents1 = new System.Windows.Forms.Label();
+            this.Col_ItemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_ItemValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TableLayoutMain.SuspendLayout();
             this.Pnl_Contents0_Base.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -184,10 +187,16 @@
             // 
             // gv_CateItem
             // 
+            this.gv_CateItem.AllowUserToDeleteRows = false;
             this.gv_CateItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gv_CateItem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Col_ItemCode,
+            this.Col_ItemValue,
+            this.Col_Remark});
             this.gv_CateItem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gv_CateItem.Location = new System.Drawing.Point(335, 97);
             this.gv_CateItem.Name = "gv_CateItem";
+            this.gv_CateItem.ReadOnly = true;
             this.gv_CateItem.RowTemplate.Height = 23;
             this.gv_CateItem.Size = new System.Drawing.Size(660, 542);
             this.gv_CateItem.TabIndex = 5;
@@ -238,6 +247,24 @@
             this.Lbl_Contents1.Text = "Lbl_CateItem";
             this.Lbl_Contents1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // Col_ItemCode
+            // 
+            this.Col_ItemCode.HeaderText = "코드";
+            this.Col_ItemCode.Name = "Col_ItemCode";
+            this.Col_ItemCode.ReadOnly = true;
+            // 
+            // Col_ItemValue
+            // 
+            this.Col_ItemValue.HeaderText = "데이터";
+            this.Col_ItemValue.Name = "Col_ItemValue";
+            this.Col_ItemValue.ReadOnly = true;
+            // 
+            // Col_Remark
+            // 
+            this.Col_Remark.HeaderText = "비고";
+            this.Col_Remark.Name = "Col_Remark";
+            this.Col_Remark.ReadOnly = true;
+            // 
             // Frm_Info_CategoryItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -276,5 +303,8 @@
         private System.Windows.Forms.Panel Pnl_Contents0_Base;
         private System.Windows.Forms.Panel panel2;
         private Control.CustomUc.Common.Uc_LblTxt uc_LblTxt_GroupName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_ItemCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_ItemValue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Remark;
     }
 }

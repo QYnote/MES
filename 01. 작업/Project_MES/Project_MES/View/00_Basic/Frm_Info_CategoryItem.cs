@@ -34,6 +34,19 @@ namespace Project_MES.View._00_Basic
             Lbl_Contents1.Text = "카테고리 아이템";
             Btn_Save_Item.Text = "저장";
             Btn_Delete_Item.Text = "삭제";
+
+            GvSet();
+        }
+
+        private void GvSet()
+        {
+            //DataGridView 셋팅
+            gv_CateItem.AutoGenerateColumns = false; //DataSource Column생성 방지
+
+            //Grid Field명 지정
+            Col_ItemCode.DataPropertyName = "ItemCode";
+            Col_ItemValue.DataPropertyName = "ItemValue";
+            Col_Remark.DataPropertyName = "Remark";
         }
 
         #endregion UI 디자인 Setting
@@ -190,7 +203,10 @@ namespace Project_MES.View._00_Basic
         private Dictionary<int, DataRow> dicCateItem = new Dictionary<int, DataRow>();
 
         private void gv_CateItem_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {   //값 변경시 데이터 저장
+        {
+            if (e.RowIndex < 0) return;
+
+            //값 변경시 데이터 저장
             CreateDictionary(e.RowIndex);
         }
 
@@ -223,9 +239,9 @@ namespace Project_MES.View._00_Basic
 
             foreach (DataRow dr in dicCateItem.Values)
             {
-                cateItem.ItemCode = dr["아이템 코드"].ToString();
-                cateItem.ItemValue = dr["아이템 값"].ToString();
-                cateItem.Remark = dr["비고"].ToString();
+                cateItem.ItemCode = dr["ItemCode"].ToString();
+                cateItem.ItemValue = dr["ItemValue"].ToString();
+                cateItem.Remark = dr["Remark"].ToString();
 
                 cateItem.Insert_Frm_Info_CategoryItem();
             }
@@ -242,7 +258,7 @@ namespace Project_MES.View._00_Basic
             //카테고리 코드가 비어있는 신규row는 삭제
             DataRow selectedRow = (gv_CateItem.SelectedRows[0].DataBoundItem as DataRowView).Row;
 
-            if (selectedRow["아이템 코드"].ToString() == "")
+            if (selectedRow["ItemCode"].ToString() == "")
             {
                 gv_CateItem.SelectedRows.Clear();   //해당Row 삭제
                 dicCateItem.Remove(gv_CateItem.SelectedRows[0].Index);  //Dictionary 삭제
@@ -265,7 +281,7 @@ namespace Project_MES.View._00_Basic
         {
             Info_CategoryItem cateItem = new Info_CategoryItem();
             cateItem.GroupCode = SelectedGroupCode; //그룹코드
-            cateItem.ItemCode = row["아이템 코드"].ToString();
+            cateItem.ItemCode = row["ItemCode"].ToString();
 
             cateItem.Delete_Frm_Info_CategoryItem();
         }

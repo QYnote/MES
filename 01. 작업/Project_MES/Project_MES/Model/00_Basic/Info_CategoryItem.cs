@@ -28,9 +28,7 @@ namespace Project_MES.Model._00_Basic
 
         public DataTable Select_Frm_Info_CategoryItem()
         {
-            query = $@"SELECT ItemCode AS '아이템 코드',
-                              ItemValue AS '아이템 값',
-                              Remark AS '비고'
+            query = $@"SELECT ItemCode, ItemValue, Remark
                          FROM Info_CategoryItem
                         WHERE GroupCode = '{GroupCode}'";
 
