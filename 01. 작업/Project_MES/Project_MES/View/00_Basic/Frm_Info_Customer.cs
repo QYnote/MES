@@ -74,7 +74,6 @@ namespace Project_MES.View._00_Basic
             uc_LblCbo_CustType.CboContents.DisplayMember = "거래처타입";
         }
 
-
         private void LimitTxtLength()
         {
             //글자길이 제한 지정
@@ -100,7 +99,8 @@ namespace Project_MES.View._00_Basic
             DisplayData();
         }
 
-        //조회
+        #region 조회
+
         private void DisplayData()
         {
             Info_Customer cust = new Info_Customer();
@@ -132,6 +132,9 @@ namespace Project_MES.View._00_Basic
             uc_LblTxt_Remark.TxtContents.Text = dr["Remark"].ToString();            //비고
         }
 
+        #endregion 조회 End
+
+        #region Insert/Update
 
         //신규 생성
         private void Btn_Create_Click(object sender, EventArgs e)
@@ -179,7 +182,9 @@ namespace Project_MES.View._00_Basic
             DisplayData();
         }
 
-        //삭제
+        #endregion Insert/Update End
+
+        #region Delete
 
         private void Btn_Delete_Click(object sender, EventArgs e)
         {
@@ -190,5 +195,7 @@ namespace Project_MES.View._00_Basic
 
             DisplayData();
         }
+
+        #endregion Delete End
     }
 }
