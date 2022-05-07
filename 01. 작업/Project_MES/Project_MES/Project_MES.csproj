@@ -90,6 +90,7 @@
     <Compile Include="Model\00_Basic\Info_CategoryGroup.cs" />
     <Compile Include="Model\00_Basic\Info_CategoryItem.cs" />
     <Compile Include="Model\00_Basic\Info_Customer.cs" />
+    <Compile Include="Model\00_Basic\Info_Material.cs" />
     <Compile Include="Model\01_Sales\Sales_OrderDetail.cs" />
     <Compile Include="Model\01_Sales\Sales_OrderMaster.cs" />
     <Compile Include="View\00_Basic\Frm_Info_CategoryItem.cs">

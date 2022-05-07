@@ -61,18 +61,20 @@ namespace Project_MES.Model._00_Basic
                               ItemValue AS {Value_FieldName} 
                          FROM Info_CategoryItem
                         WHERE GroupCode = '{GroupCode}'";
-            /*  
-                기초정보
-                CG00001 : 자재 타입
-                CG00002 : 거래처 타입
-                CG00003 : 공정 타입
-
-                생산관리
-                CG02001 : 계획 상태
-                CG02002 : 지시 상태
-             */
 
             return db.GetDataTable_MySQL(query);
+            /*  
+                기초정보
+                CG0002 : 거래처 타입
+                CG0003 : 공정 타입
+                CG000401 : 자재 타입
+                CG000402 : 자재 단위
+
+                생산관리
+                CG0201 : 계획 상태
+                CG0202 : 지시 상태
+             */
+
         }
     }
 }

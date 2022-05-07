@@ -196,7 +196,6 @@
             this.gv_CateItem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gv_CateItem.Location = new System.Drawing.Point(335, 97);
             this.gv_CateItem.Name = "gv_CateItem";
-            this.gv_CateItem.ReadOnly = true;
             this.gv_CateItem.RowTemplate.Height = 23;
             this.gv_CateItem.Size = new System.Drawing.Size(660, 542);
             this.gv_CateItem.TabIndex = 5;
@@ -257,13 +256,11 @@
             // 
             this.Col_ItemValue.HeaderText = "데이터";
             this.Col_ItemValue.Name = "Col_ItemValue";
-            this.Col_ItemValue.ReadOnly = true;
             // 
             // Col_Remark
             // 
             this.Col_Remark.HeaderText = "비고";
             this.Col_Remark.Name = "Col_Remark";
-            this.Col_Remark.ReadOnly = true;
             // 
             // Frm_Info_CategoryItem
             // 

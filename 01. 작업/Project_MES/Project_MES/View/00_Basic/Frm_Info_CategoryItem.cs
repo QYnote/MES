@@ -162,7 +162,6 @@ namespace Project_MES.View._00_Basic
             cateGroup.Delete_Frm_Info_CategoryItem();
 
             DisplayData();
-            gv_CateItem.Rows.Clear();
         }
 
         #endregion 카테고리 그룹 기능 End

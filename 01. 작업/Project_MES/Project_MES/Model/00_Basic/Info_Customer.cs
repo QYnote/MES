@@ -76,5 +76,15 @@ namespace Project_MES.Model._00_Basic
 
             db.ExcuteQuery_MySQL(query);
         }
+
+        public DataTable Select_Cbo()
+        {
+            query = $@"SELECT CustCode AS '거래처코드',
+                              CustName AS '거래처명'
+                         FROM Info_Customer
+                        WHERE UseYn = 'Y'";
+
+            return db.GetDataTable_MySQL(query);
+        }
     }
 }

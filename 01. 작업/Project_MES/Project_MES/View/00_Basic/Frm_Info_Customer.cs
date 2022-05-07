@@ -1,4 +1,5 @@
-﻿using Project_MES.Model._00_Basic;
+﻿using Project_MES.Control.CustomUc.Common;
+using Project_MES.Model._00_Basic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,21 +58,26 @@ namespace Project_MES.View._00_Basic
         private void InitCbo()
         {
             Info_CategoryItem cateItem = new Info_CategoryItem();
-            cateItem.GroupCode = "CG00002";
+            cateItem.GroupCode = "CG0002";
             cateItem.Code_FieldName = "거래처코드";
             cateItem.Value_FieldName = "거래처타입";
 
             DataTable source = cateItem.Select_Cbo();
-            
+
+            InitCboBase(source, "거래처코드", "거래처타입", Col_CustType, uc_LblCbo_CustType);
+        }
+
+        private void InitCboBase(DataTable source, string valueStr, string displayStr, DataGridViewComboBoxColumn col, Uc_LblCbo ucCbo)
+        {
             //DataGridView 입력
-            Col_CustType.DataSource = source;
-            Col_CustType.ValueMember = "거래처코드";
-            Col_CustType.DisplayMember = "거래처타입";
+            col.DataSource = source;
+            col.ValueMember = valueStr;
+            col.DisplayMember = displayStr;
 
             //상세정보 입력
-            uc_LblCbo_CustType.CboContents.DataSource = source;
-            uc_LblCbo_CustType.CboContents.ValueMember = "거래처코드";
-            uc_LblCbo_CustType.CboContents.DisplayMember = "거래처타입";
+            ucCbo.CboContents.DataSource = source;
+            ucCbo.CboContents.ValueMember = valueStr;
+            ucCbo.CboContents.DisplayMember = displayStr;
         }
 
         private void LimitTxtLength()
