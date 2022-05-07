@@ -32,7 +32,6 @@ namespace Project_MES.View._00_Basic
             this.TableLayoutMain = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Btn_Create = new System.Windows.Forms.Button();
-            this.Btn_Delete = new System.Windows.Forms.Button();
             this.Lbl_Contents0 = new System.Windows.Forms.Label();
             this.Pnl_Search = new System.Windows.Forms.Panel();
             this.Btn_Search = new System.Windows.Forms.Button();
@@ -41,30 +40,32 @@ namespace Project_MES.View._00_Basic
             this.Pnl_Contents1 = new System.Windows.Forms.Panel();
             this.Btn_Save = new System.Windows.Forms.Button();
             this.Lbl_Contents1 = new System.Windows.Forms.Label();
-            this.gvPlanMaster = new System.Windows.Forms.DataGridView();
+            this.gvCustomer = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.uc_LblTxt_Remark = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
+            this.uc_LblTxt_CustNo = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
             this.uc_LblTxt_CustCode = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
             this.uc_LblCbo_CustType = new Project_MES.Control.CustomUc.Common.Uc_LblCbo();
             this.uc_LblTxt_CustName = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
             this.uc_LblTxt_Presi = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
-            this.uc_LblTxt_Adress = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
-            this.uc_LblTxt_Post = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
-            this.uc_LblTxt_Email = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
-            this.uc_LblTxt_Tel = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
-            this.uc_LblTxt_Fax = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
             this.uc_LblTxt_Cate = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
             this.uc_LblTxt_Condition = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
-            this.Col_CustCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_CustType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uc_LblTxt_Tel = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
+            this.uc_LblTxt_Fax = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
+            this.uc_LblTxt_Post = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
+            this.uc_LblTxt_Email = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
+            this.uc_LblTxt_Adress = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
+            this.Col_CustType = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Col_CustName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_CustNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_Adress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Btn_Delete = new System.Windows.Forms.Button();
             this.TableLayoutMain.SuspendLayout();
             this.panel1.SuspendLayout();
             this.Pnl_Search.SuspendLayout();
             this.Pnl_MailTitle.SuspendLayout();
             this.Pnl_Contents1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvPlanMaster)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvCustomer)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,7 +78,7 @@ namespace Project_MES.View._00_Basic
             this.TableLayoutMain.Controls.Add(this.Pnl_Search, 0, 1);
             this.TableLayoutMain.Controls.Add(this.Pnl_MailTitle, 0, 0);
             this.TableLayoutMain.Controls.Add(this.Pnl_Contents1, 1, 2);
-            this.TableLayoutMain.Controls.Add(this.gvPlanMaster, 0, 3);
+            this.TableLayoutMain.Controls.Add(this.gvCustomer, 0, 3);
             this.TableLayoutMain.Controls.Add(this.tableLayoutPanel1, 1, 3);
             this.TableLayoutMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TableLayoutMain.Location = new System.Drawing.Point(0, 0);
@@ -93,7 +94,6 @@ namespace Project_MES.View._00_Basic
             // panel1
             // 
             this.panel1.Controls.Add(this.Btn_Create);
-            this.panel1.Controls.Add(this.Btn_Delete);
             this.panel1.Controls.Add(this.Lbl_Contents0);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 79);
@@ -105,22 +105,13 @@ namespace Project_MES.View._00_Basic
             // Btn_Create
             // 
             this.Btn_Create.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Btn_Create.Location = new System.Drawing.Point(311, 0);
+            this.Btn_Create.Location = new System.Drawing.Point(386, 0);
             this.Btn_Create.Name = "Btn_Create";
             this.Btn_Create.Size = new System.Drawing.Size(75, 44);
             this.Btn_Create.TabIndex = 3;
             this.Btn_Create.Text = "Btn_Create";
             this.Btn_Create.UseVisualStyleBackColor = true;
-            // 
-            // Btn_Delete
-            // 
-            this.Btn_Delete.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Btn_Delete.Location = new System.Drawing.Point(386, 0);
-            this.Btn_Delete.Name = "Btn_Delete";
-            this.Btn_Delete.Size = new System.Drawing.Size(75, 44);
-            this.Btn_Delete.TabIndex = 2;
-            this.Btn_Delete.Text = "Btn_Delete";
-            this.Btn_Delete.UseVisualStyleBackColor = true;
+            this.Btn_Create.Click += new System.EventHandler(this.Btn_Create_Click);
             // 
             // Lbl_Contents0
             // 
@@ -180,6 +171,7 @@ namespace Project_MES.View._00_Basic
             // 
             this.Pnl_Contents1.Controls.Add(this.Btn_Save);
             this.Pnl_Contents1.Controls.Add(this.Lbl_Contents1);
+            this.Pnl_Contents1.Controls.Add(this.Btn_Delete);
             this.Pnl_Contents1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pnl_Contents1.Location = new System.Drawing.Point(461, 79);
             this.Pnl_Contents1.Margin = new System.Windows.Forms.Padding(0);
@@ -190,12 +182,13 @@ namespace Project_MES.View._00_Basic
             // Btn_Save
             // 
             this.Btn_Save.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Btn_Save.Location = new System.Drawing.Point(462, 0);
+            this.Btn_Save.Location = new System.Drawing.Point(387, 0);
             this.Btn_Save.Name = "Btn_Save";
             this.Btn_Save.Size = new System.Drawing.Size(75, 44);
             this.Btn_Save.TabIndex = 3;
             this.Btn_Save.Text = "Btn_Save";
             this.Btn_Save.UseVisualStyleBackColor = true;
+            this.Btn_Save.Click += new System.EventHandler(this.Btn_Save_Click);
             // 
             // Lbl_Contents1
             // 
@@ -203,62 +196,95 @@ namespace Project_MES.View._00_Basic
             this.Lbl_Contents1.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Bold);
             this.Lbl_Contents1.Location = new System.Drawing.Point(0, 0);
             this.Lbl_Contents1.Name = "Lbl_Contents1";
-            this.Lbl_Contents1.Size = new System.Drawing.Size(537, 44);
+            this.Lbl_Contents1.Size = new System.Drawing.Size(462, 44);
             this.Lbl_Contents1.TabIndex = 1;
             this.Lbl_Contents1.Text = "Lbl_CustDetail";
             this.Lbl_Contents1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // gvPlanMaster
+            // gvCustomer
             // 
-            this.gvPlanMaster.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvPlanMaster.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Col_CustCode,
+            this.gvCustomer.AllowUserToAddRows = false;
+            this.gvCustomer.AllowUserToDeleteRows = false;
+            this.gvCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Col_CustType,
             this.Col_CustName,
             this.Col_CustNo,
-            this.Col_Adress});
-            this.gvPlanMaster.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvPlanMaster.Location = new System.Drawing.Point(3, 126);
-            this.gvPlanMaster.Name = "gvPlanMaster";
-            this.gvPlanMaster.ReadOnly = true;
-            this.gvPlanMaster.RowTemplate.Height = 23;
-            this.gvPlanMaster.Size = new System.Drawing.Size(455, 513);
-            this.gvPlanMaster.TabIndex = 5;
+            this.Col_Address});
+            this.gvCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvCustomer.Location = new System.Drawing.Point(3, 126);
+            this.gvCustomer.MultiSelect = false;
+            this.gvCustomer.Name = "gvCustomer";
+            this.gvCustomer.ReadOnly = true;
+            this.gvCustomer.RowTemplate.Height = 23;
+            this.gvCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gvCustomer.Size = new System.Drawing.Size(455, 513);
+            this.gvCustomer.TabIndex = 5;
+            this.gvCustomer.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvCustomer_RowEnter);
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.uc_LblTxt_Remark, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.uc_LblTxt_CustNo, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.uc_LblTxt_CustCode, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.uc_LblCbo_CustType, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.uc_LblTxt_CustName, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.uc_LblTxt_Presi, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.uc_LblTxt_Adress, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.uc_LblTxt_Post, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.uc_LblTxt_Email, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.uc_LblTxt_Tel, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.uc_LblTxt_Fax, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.uc_LblTxt_Cate, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.uc_LblTxt_Condition, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.uc_LblTxt_Cate, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.uc_LblTxt_Condition, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.uc_LblTxt_Tel, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.uc_LblTxt_Fax, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.uc_LblTxt_Post, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.uc_LblTxt_Email, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.uc_LblTxt_Adress, 0, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(461, 123);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowCount = 8;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(537, 210);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(537, 280);
             this.tableLayoutPanel1.TabIndex = 9;
+            // 
+            // uc_LblTxt_Remark
+            // 
+            this.uc_LblTxt_Remark.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tableLayoutPanel1.SetColumnSpan(this.uc_LblTxt_Remark, 2);
+            this.uc_LblTxt_Remark.DisplayText = "Default Text";
+            this.uc_LblTxt_Remark.LblText = "비고";
+            this.uc_LblTxt_Remark.LblWidth = 100;
+            this.uc_LblTxt_Remark.Location = new System.Drawing.Point(3, 248);
+            this.uc_LblTxt_Remark.Name = "uc_LblTxt_Remark";
+            this.uc_LblTxt_Remark.Size = new System.Drawing.Size(531, 29);
+            this.uc_LblTxt_Remark.TabIndex = 13;
+            this.uc_LblTxt_Remark.TxtWdith = 418;
+            // 
+            // uc_LblTxt_CustNo
+            // 
+            this.uc_LblTxt_CustNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uc_LblTxt_CustNo.DisplayText = "Default Text";
+            this.uc_LblTxt_CustNo.LblText = "사업자번호";
+            this.uc_LblTxt_CustNo.LblWidth = 100;
+            this.uc_LblTxt_CustNo.Location = new System.Drawing.Point(3, 73);
+            this.uc_LblTxt_CustNo.Name = "uc_LblTxt_CustNo";
+            this.uc_LblTxt_CustNo.Size = new System.Drawing.Size(262, 29);
+            this.uc_LblTxt_CustNo.TabIndex = 12;
+            this.uc_LblTxt_CustNo.TxtWdith = 150;
             // 
             // uc_LblTxt_CustCode
             // 
             this.uc_LblTxt_CustCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.uc_LblTxt_CustCode.DisplayText = "Default Text";
+            this.uc_LblTxt_CustCode.Enabled = false;
             this.uc_LblTxt_CustCode.LblText = "거래처코드";
             this.uc_LblTxt_CustCode.LblWidth = 100;
             this.uc_LblTxt_CustCode.Location = new System.Drawing.Point(3, 3);
@@ -270,7 +296,6 @@ namespace Project_MES.View._00_Basic
             // uc_LblCbo_CustType
             // 
             this.uc_LblCbo_CustType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_LblCbo_CustType.CboDataSource = null;
             this.uc_LblCbo_CustType.CboDefaultText = "Cbo 기본 Text";
             this.uc_LblCbo_CustType.CboWdith = 150;
             this.uc_LblCbo_CustType.LblText = "거래처타입";
@@ -304,74 +329,13 @@ namespace Project_MES.View._00_Basic
             this.uc_LblTxt_Presi.TabIndex = 3;
             this.uc_LblTxt_Presi.TxtWdith = 150;
             // 
-            // uc_LblTxt_Adress
-            // 
-            this.uc_LblTxt_Adress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tableLayoutPanel1.SetColumnSpan(this.uc_LblTxt_Adress, 2);
-            this.uc_LblTxt_Adress.DisplayText = "Default Text";
-            this.uc_LblTxt_Adress.LblText = "주소";
-            this.uc_LblTxt_Adress.LblWidth = 100;
-            this.uc_LblTxt_Adress.Location = new System.Drawing.Point(3, 73);
-            this.uc_LblTxt_Adress.Name = "uc_LblTxt_Adress";
-            this.uc_LblTxt_Adress.Size = new System.Drawing.Size(531, 29);
-            this.uc_LblTxt_Adress.TabIndex = 4;
-            this.uc_LblTxt_Adress.TxtWdith = 418;
-            // 
-            // uc_LblTxt_Post
-            // 
-            this.uc_LblTxt_Post.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_LblTxt_Post.DisplayText = "Default Text";
-            this.uc_LblTxt_Post.LblText = "우편번호";
-            this.uc_LblTxt_Post.LblWidth = 100;
-            this.uc_LblTxt_Post.Location = new System.Drawing.Point(3, 108);
-            this.uc_LblTxt_Post.Name = "uc_LblTxt_Post";
-            this.uc_LblTxt_Post.Size = new System.Drawing.Size(262, 29);
-            this.uc_LblTxt_Post.TabIndex = 5;
-            this.uc_LblTxt_Post.TxtWdith = 150;
-            // 
-            // uc_LblTxt_Email
-            // 
-            this.uc_LblTxt_Email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_LblTxt_Email.DisplayText = "Default Text";
-            this.uc_LblTxt_Email.LblText = "이메일";
-            this.uc_LblTxt_Email.LblWidth = 100;
-            this.uc_LblTxt_Email.Location = new System.Drawing.Point(271, 108);
-            this.uc_LblTxt_Email.Name = "uc_LblTxt_Email";
-            this.uc_LblTxt_Email.Size = new System.Drawing.Size(263, 29);
-            this.uc_LblTxt_Email.TabIndex = 6;
-            this.uc_LblTxt_Email.TxtWdith = 150;
-            // 
-            // uc_LblTxt_Tel
-            // 
-            this.uc_LblTxt_Tel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_LblTxt_Tel.DisplayText = "Default Text";
-            this.uc_LblTxt_Tel.LblText = "담당자 번호";
-            this.uc_LblTxt_Tel.LblWidth = 100;
-            this.uc_LblTxt_Tel.Location = new System.Drawing.Point(3, 143);
-            this.uc_LblTxt_Tel.Name = "uc_LblTxt_Tel";
-            this.uc_LblTxt_Tel.Size = new System.Drawing.Size(262, 29);
-            this.uc_LblTxt_Tel.TabIndex = 7;
-            this.uc_LblTxt_Tel.TxtWdith = 150;
-            // 
-            // uc_LblTxt_Fax
-            // 
-            this.uc_LblTxt_Fax.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_LblTxt_Fax.DisplayText = "Default Text";
-            this.uc_LblTxt_Fax.LblText = "팩스 번호";
-            this.uc_LblTxt_Fax.LblWidth = 100;
-            this.uc_LblTxt_Fax.Location = new System.Drawing.Point(271, 143);
-            this.uc_LblTxt_Fax.Name = "uc_LblTxt_Fax";
-            this.uc_LblTxt_Fax.Size = new System.Drawing.Size(263, 29);
-            this.uc_LblTxt_Fax.TabIndex = 8;
-            this.uc_LblTxt_Fax.TxtWdith = 150;
-            // 
             // uc_LblTxt_Cate
             // 
             this.uc_LblTxt_Cate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.uc_LblTxt_Cate.DisplayText = "Default Text";
             this.uc_LblTxt_Cate.LblText = "업종";
             this.uc_LblTxt_Cate.LblWidth = 100;
-            this.uc_LblTxt_Cate.Location = new System.Drawing.Point(3, 178);
+            this.uc_LblTxt_Cate.Location = new System.Drawing.Point(3, 213);
             this.uc_LblTxt_Cate.Name = "uc_LblTxt_Cate";
             this.uc_LblTxt_Cate.Size = new System.Drawing.Size(262, 29);
             this.uc_LblTxt_Cate.TabIndex = 9;
@@ -383,21 +347,77 @@ namespace Project_MES.View._00_Basic
             this.uc_LblTxt_Condition.DisplayText = "Default Text";
             this.uc_LblTxt_Condition.LblText = "업태";
             this.uc_LblTxt_Condition.LblWidth = 100;
-            this.uc_LblTxt_Condition.Location = new System.Drawing.Point(271, 178);
+            this.uc_LblTxt_Condition.Location = new System.Drawing.Point(271, 213);
             this.uc_LblTxt_Condition.Name = "uc_LblTxt_Condition";
             this.uc_LblTxt_Condition.Size = new System.Drawing.Size(263, 29);
             this.uc_LblTxt_Condition.TabIndex = 10;
             this.uc_LblTxt_Condition.TxtWdith = 150;
             // 
-            // Col_CustCode
+            // uc_LblTxt_Tel
             // 
-            this.Col_CustCode.HeaderText = "거래처 코드";
-            this.Col_CustCode.Name = "Col_CustCode";
-            this.Col_CustCode.ReadOnly = true;
+            this.uc_LblTxt_Tel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uc_LblTxt_Tel.DisplayText = "Default Text";
+            this.uc_LblTxt_Tel.LblText = "담당자 번호";
+            this.uc_LblTxt_Tel.LblWidth = 100;
+            this.uc_LblTxt_Tel.Location = new System.Drawing.Point(3, 178);
+            this.uc_LblTxt_Tel.Name = "uc_LblTxt_Tel";
+            this.uc_LblTxt_Tel.Size = new System.Drawing.Size(262, 29);
+            this.uc_LblTxt_Tel.TabIndex = 7;
+            this.uc_LblTxt_Tel.TxtWdith = 150;
+            // 
+            // uc_LblTxt_Fax
+            // 
+            this.uc_LblTxt_Fax.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uc_LblTxt_Fax.DisplayText = "Default Text";
+            this.uc_LblTxt_Fax.LblText = "팩스 번호";
+            this.uc_LblTxt_Fax.LblWidth = 100;
+            this.uc_LblTxt_Fax.Location = new System.Drawing.Point(271, 178);
+            this.uc_LblTxt_Fax.Name = "uc_LblTxt_Fax";
+            this.uc_LblTxt_Fax.Size = new System.Drawing.Size(263, 29);
+            this.uc_LblTxt_Fax.TabIndex = 8;
+            this.uc_LblTxt_Fax.TxtWdith = 150;
+            // 
+            // uc_LblTxt_Post
+            // 
+            this.uc_LblTxt_Post.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uc_LblTxt_Post.DisplayText = "Default Text";
+            this.uc_LblTxt_Post.LblText = "우편번호";
+            this.uc_LblTxt_Post.LblWidth = 100;
+            this.uc_LblTxt_Post.Location = new System.Drawing.Point(3, 143);
+            this.uc_LblTxt_Post.Name = "uc_LblTxt_Post";
+            this.uc_LblTxt_Post.Size = new System.Drawing.Size(262, 29);
+            this.uc_LblTxt_Post.TabIndex = 5;
+            this.uc_LblTxt_Post.TxtWdith = 150;
+            // 
+            // uc_LblTxt_Email
+            // 
+            this.uc_LblTxt_Email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uc_LblTxt_Email.DisplayText = "Default Text";
+            this.uc_LblTxt_Email.LblText = "이메일";
+            this.uc_LblTxt_Email.LblWidth = 100;
+            this.uc_LblTxt_Email.Location = new System.Drawing.Point(271, 143);
+            this.uc_LblTxt_Email.Name = "uc_LblTxt_Email";
+            this.uc_LblTxt_Email.Size = new System.Drawing.Size(263, 29);
+            this.uc_LblTxt_Email.TabIndex = 6;
+            this.uc_LblTxt_Email.TxtWdith = 150;
+            // 
+            // uc_LblTxt_Adress
+            // 
+            this.uc_LblTxt_Adress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tableLayoutPanel1.SetColumnSpan(this.uc_LblTxt_Adress, 2);
+            this.uc_LblTxt_Adress.DisplayText = "Default Text";
+            this.uc_LblTxt_Adress.LblText = "주소";
+            this.uc_LblTxt_Adress.LblWidth = 100;
+            this.uc_LblTxt_Adress.Location = new System.Drawing.Point(3, 108);
+            this.uc_LblTxt_Adress.Name = "uc_LblTxt_Adress";
+            this.uc_LblTxt_Adress.Size = new System.Drawing.Size(531, 29);
+            this.uc_LblTxt_Adress.TabIndex = 4;
+            this.uc_LblTxt_Adress.TxtWdith = 418;
             // 
             // Col_CustType
             // 
-            this.Col_CustType.HeaderText = "거래처타입";
+            this.Col_CustType.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Col_CustType.HeaderText = "타입";
             this.Col_CustType.Name = "Col_CustType";
             this.Col_CustType.ReadOnly = true;
             // 
@@ -413,11 +433,22 @@ namespace Project_MES.View._00_Basic
             this.Col_CustNo.Name = "Col_CustNo";
             this.Col_CustNo.ReadOnly = true;
             // 
-            // Col_Adress
+            // Col_Address
             // 
-            this.Col_Adress.HeaderText = "주소";
-            this.Col_Adress.Name = "Col_Adress";
-            this.Col_Adress.ReadOnly = true;
+            this.Col_Address.HeaderText = "주소";
+            this.Col_Address.Name = "Col_Address";
+            this.Col_Address.ReadOnly = true;
+            // 
+            // Btn_Delete
+            // 
+            this.Btn_Delete.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Btn_Delete.Location = new System.Drawing.Point(462, 0);
+            this.Btn_Delete.Name = "Btn_Delete";
+            this.Btn_Delete.Size = new System.Drawing.Size(75, 44);
+            this.Btn_Delete.TabIndex = 4;
+            this.Btn_Delete.Text = "Btn_Delete";
+            this.Btn_Delete.UseVisualStyleBackColor = true;
+            this.Btn_Delete.Click += new System.EventHandler(this.Btn_Delete_Click);
             // 
             // Frm_Info_Customer
             // 
@@ -427,12 +458,13 @@ namespace Project_MES.View._00_Basic
             this.Controls.Add(this.TableLayoutMain);
             this.Name = "Frm_Info_Customer";
             this.Text = "거래처정보 관리";
+            this.Load += new System.EventHandler(this.Frm_Info_Customer_Load);
             this.TableLayoutMain.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.Pnl_Search.ResumeLayout(false);
             this.Pnl_MailTitle.ResumeLayout(false);
             this.Pnl_Contents1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gvPlanMaster)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvCustomer)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -443,13 +475,12 @@ namespace Project_MES.View._00_Basic
         private System.Windows.Forms.TableLayoutPanel TableLayoutMain;
         private System.Windows.Forms.Panel Pnl_MailTitle;
         private System.Windows.Forms.Label Lbl_MailTitle;
-        private System.Windows.Forms.DataGridView gvPlanMaster;
+        private System.Windows.Forms.DataGridView gvCustomer;
         private System.Windows.Forms.Panel Pnl_Contents1;
         private System.Windows.Forms.Button Btn_Save;
         private System.Windows.Forms.Label Lbl_Contents1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button Btn_Create;
-        private System.Windows.Forms.Button Btn_Delete;
         private System.Windows.Forms.Label Lbl_Contents0;
         private System.Windows.Forms.Panel Pnl_Search;
         private System.Windows.Forms.Button Btn_Search;
@@ -465,10 +496,12 @@ namespace Project_MES.View._00_Basic
         private Control.CustomUc.Common.Uc_LblTxt uc_LblTxt_Fax;
         private Control.CustomUc.Common.Uc_LblTxt uc_LblTxt_Cate;
         private Control.CustomUc.Common.Uc_LblTxt uc_LblTxt_Condition;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_CustCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_CustType;
+        private Control.CustomUc.Common.Uc_LblTxt uc_LblTxt_CustNo;
+        private Control.CustomUc.Common.Uc_LblTxt uc_LblTxt_Remark;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Col_CustType;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_CustName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_CustNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Adress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Address;
+        private System.Windows.Forms.Button Btn_Delete;
     }
 }

@@ -35,31 +35,42 @@ namespace Project_MES.Model._00_Basic
 
         public DataTable Select_Frm_Info_Customer()
         {
-            query = @"select GroupCode, GroupName, Level, HighGroup 
-                        from Info_CategoryGroup";
+            query = @"SELECT CustType, CustCode,      CustName, CustNo, Address,
+                             Presi,    Post,          Tel,      Fax,    Mail,
+                             Category, ConditionName, Remark
+                        FROM Info_Customer
+                       WHERE UseYn = 'Y'";
 
             return db.GetDataTable_MySQL(query);
         }
 
         public void InsertUpdate_Frm_Info_Customer()
         {
-            query = $@"CALL Info_Cusomer_CU('{CustCode   }',
-                                            '{CustName   }',
-                                            '{CustType   }',
-                                            '{CustNo     }',
-                                            '{Presi      }',
+            query = $@"CALL Info_Customer_CU('{CustCode   }',
+                                             '{CustName   }',
+                                             '{CustType   }',
+                                             '{CustNo     }',
+                                             '{Presi      }',
+                                            
+                                             '{Address    }',
+                                             '{Post       }',
+                                             '{Tel        }',
+                                             '{Fax        }',
+                                             '{Mail       }',
+                                            
+                                             '{Category   }',
+                                             '{Condition  }',
+                                             '{Remark     }',
+                                                         
+                                             '{Global_DataStorage.ClientName}',
+                                             '{Global_DataStorage.ClientIP}')";
 
-                                            '{Address    }',
-                                            '{Post       }',
-                                            '{Tel        }',
-                                            '{Fax        }',
-                                            '{Mail       }',
+            db.ExcuteQuery_MySQL(query);
+        }
 
-                                            '{Category   }',
-                                            '{Condition  }',
-                                            '{Remark     }',
-                                                        
-                                            '{UseYn      }',
+        public void Delete_Frm_Info_Customer()
+        {
+            query = $@"CALL Info_Customer_D('{CustCode}',
                                             '{Global_DataStorage.ClientName}',
                                             '{Global_DataStorage.ClientIP}')";
 
