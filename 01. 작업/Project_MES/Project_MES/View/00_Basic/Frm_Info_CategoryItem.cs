@@ -252,15 +252,17 @@ namespace Project_MES.View._00_Basic
         ///////////////////////////////     삭제      ////////////////////////
         private void Btn_Delete_Item_Click(object sender, EventArgs e)
         {
-            if (gv_CateItem.SelectedRows.Count < 0) return;
+            if (gv_CateItem.SelectedCells.Count < 0) return;
 
             //카테고리 코드가 비어있는 신규row는 삭제
-            DataRow selectedRow = (gv_CateItem.SelectedRows[0].DataBoundItem as DataRowView).Row;
+            int rowidx = gv_CateItem.SelectedCells[0].RowIndex;
+            DataRow selectedRow = (gv_CateItem.Rows[rowidx].DataBoundItem as DataRowView).Row;
+
+            gv_CateItem.Rows.Remove(gv_CateItem.Rows[rowidx]);      //해당Row 삭제
 
             if (selectedRow["ItemCode"].ToString() == "")
             {
-                gv_CateItem.SelectedRows.Clear();   //해당Row 삭제
-                dicCateItem.Remove(gv_CateItem.SelectedRows[0].Index);  //Dictionary 삭제
+                dicCateItem.Remove(rowidx);  //Dictionary 삭제
                 return;
             }
 
