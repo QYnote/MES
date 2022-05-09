@@ -30,6 +30,10 @@ namespace Project_MES.View._00_Basic
         private void InitializeComponent()
         {
             this.TableLayoutMain = new System.Windows.Forms.TableLayoutPanel();
+            this.GvLine = new System.Windows.Forms.DataGridView();
+            this.Col_LineCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_LineName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Remark_Line = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Btn_Save_Process = new System.Windows.Forms.Button();
             this.Btn_Delete_Process = new System.Windows.Forms.Button();
@@ -39,25 +43,21 @@ namespace Project_MES.View._00_Basic
             this.Pnl_MailTitle = new System.Windows.Forms.Panel();
             this.Lbl_MailTitle = new System.Windows.Forms.Label();
             this.Pnl_Contents1 = new System.Windows.Forms.Panel();
+            this.Btn_Delete_Line = new System.Windows.Forms.Button();
             this.Btn_Save_Line = new System.Windows.Forms.Button();
             this.Lbl_Contents1 = new System.Windows.Forms.Label();
-            this.gvPlanMaster = new System.Windows.Forms.DataGridView();
+            this.GvProcess = new System.Windows.Forms.DataGridView();
             this.Col_ProcessCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_ProcessType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_ProcessType = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Col_ProcessName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Btn_Delete_Line = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Col_LineCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_LineName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_Remark_Line = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_ProcessRemark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TableLayoutMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GvLine)).BeginInit();
             this.panel1.SuspendLayout();
             this.Pnl_Search.SuspendLayout();
             this.Pnl_MailTitle.SuspendLayout();
             this.Pnl_Contents1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvPlanMaster)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GvProcess)).BeginInit();
             this.SuspendLayout();
             // 
             // TableLayoutMain
@@ -65,12 +65,12 @@ namespace Project_MES.View._00_Basic
             this.TableLayoutMain.ColumnCount = 2;
             this.TableLayoutMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.19239F));
             this.TableLayoutMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.80761F));
-            this.TableLayoutMain.Controls.Add(this.dataGridView1, 1, 3);
+            this.TableLayoutMain.Controls.Add(this.GvLine, 1, 3);
             this.TableLayoutMain.Controls.Add(this.panel1, 0, 2);
             this.TableLayoutMain.Controls.Add(this.Pnl_Search, 0, 1);
             this.TableLayoutMain.Controls.Add(this.Pnl_MailTitle, 0, 0);
             this.TableLayoutMain.Controls.Add(this.Pnl_Contents1, 1, 2);
-            this.TableLayoutMain.Controls.Add(this.gvPlanMaster, 0, 3);
+            this.TableLayoutMain.Controls.Add(this.GvProcess, 0, 3);
             this.TableLayoutMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TableLayoutMain.Location = new System.Drawing.Point(0, 0);
             this.TableLayoutMain.Name = "TableLayoutMain";
@@ -81,6 +81,39 @@ namespace Project_MES.View._00_Basic
             this.TableLayoutMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.TableLayoutMain.Size = new System.Drawing.Size(998, 642);
             this.TableLayoutMain.TabIndex = 6;
+            // 
+            // GvLine
+            // 
+            this.GvLine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GvLine.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Col_LineCode,
+            this.Col_LineName,
+            this.Col_Remark_Line});
+            this.GvLine.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GvLine.Location = new System.Drawing.Point(464, 126);
+            this.GvLine.Name = "GvLine";
+            this.GvLine.ReadOnly = true;
+            this.GvLine.RowTemplate.Height = 23;
+            this.GvLine.Size = new System.Drawing.Size(531, 513);
+            this.GvLine.TabIndex = 9;
+            // 
+            // Col_LineCode
+            // 
+            this.Col_LineCode.HeaderText = "라인코드";
+            this.Col_LineCode.Name = "Col_LineCode";
+            this.Col_LineCode.ReadOnly = true;
+            // 
+            // Col_LineName
+            // 
+            this.Col_LineName.HeaderText = "라인명";
+            this.Col_LineName.Name = "Col_LineName";
+            this.Col_LineName.ReadOnly = true;
+            // 
+            // Col_Remark_Line
+            // 
+            this.Col_Remark_Line.HeaderText = "비고";
+            this.Col_Remark_Line.Name = "Col_Remark_Line";
+            this.Col_Remark_Line.ReadOnly = true;
             // 
             // panel1
             // 
@@ -103,6 +136,7 @@ namespace Project_MES.View._00_Basic
             this.Btn_Save_Process.TabIndex = 3;
             this.Btn_Save_Process.Text = "Btn_Save_Process";
             this.Btn_Save_Process.UseVisualStyleBackColor = true;
+            this.Btn_Save_Process.Click += new System.EventHandler(this.Btn_Save_Process_Click);
             // 
             // Btn_Delete_Process
             // 
@@ -113,6 +147,7 @@ namespace Project_MES.View._00_Basic
             this.Btn_Delete_Process.TabIndex = 2;
             this.Btn_Delete_Process.Text = "Btn_Delete_Process";
             this.Btn_Delete_Process.UseVisualStyleBackColor = true;
+            this.Btn_Delete_Process.Click += new System.EventHandler(this.Btn_Delete_Process_Click);
             // 
             // Lbl_Contents0
             // 
@@ -180,6 +215,16 @@ namespace Project_MES.View._00_Basic
             this.Pnl_Contents1.Size = new System.Drawing.Size(537, 44);
             this.Pnl_Contents1.TabIndex = 6;
             // 
+            // Btn_Delete_Line
+            // 
+            this.Btn_Delete_Line.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Btn_Delete_Line.Location = new System.Drawing.Point(387, 0);
+            this.Btn_Delete_Line.Name = "Btn_Delete_Line";
+            this.Btn_Delete_Line.Size = new System.Drawing.Size(75, 44);
+            this.Btn_Delete_Line.TabIndex = 4;
+            this.Btn_Delete_Line.Text = "Btn_Delete_Line";
+            this.Btn_Delete_Line.UseVisualStyleBackColor = true;
+            // 
             // Btn_Save_Line
             // 
             this.Btn_Save_Line.Dock = System.Windows.Forms.DockStyle.Right;
@@ -201,21 +246,22 @@ namespace Project_MES.View._00_Basic
             this.Lbl_Contents1.Text = "Lbl_CustDetail";
             this.Lbl_Contents1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // gvPlanMaster
+            // GvProcess
             // 
-            this.gvPlanMaster.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvPlanMaster.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.GvProcess.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GvProcess.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Col_ProcessCode,
             this.Col_ProcessType,
             this.Col_ProcessName,
-            this.Col_Remark});
-            this.gvPlanMaster.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvPlanMaster.Location = new System.Drawing.Point(3, 126);
-            this.gvPlanMaster.Name = "gvPlanMaster";
-            this.gvPlanMaster.ReadOnly = true;
-            this.gvPlanMaster.RowTemplate.Height = 23;
-            this.gvPlanMaster.Size = new System.Drawing.Size(455, 513);
-            this.gvPlanMaster.TabIndex = 5;
+            this.Col_ProcessRemark});
+            this.GvProcess.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GvProcess.Location = new System.Drawing.Point(3, 126);
+            this.GvProcess.Name = "GvProcess";
+            this.GvProcess.RowTemplate.Height = 23;
+            this.GvProcess.Size = new System.Drawing.Size(455, 513);
+            this.GvProcess.TabIndex = 5;
+            this.GvProcess.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.GvProcess_CellValueChanged);
+            this.GvProcess.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.GvProcess_RowEnter);
             // 
             // Col_ProcessCode
             // 
@@ -227,62 +273,18 @@ namespace Project_MES.View._00_Basic
             // 
             this.Col_ProcessType.HeaderText = "공정타입";
             this.Col_ProcessType.Name = "Col_ProcessType";
-            this.Col_ProcessType.ReadOnly = true;
+            this.Col_ProcessType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Col_ProcessType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Col_ProcessName
             // 
             this.Col_ProcessName.HeaderText = "공정명";
             this.Col_ProcessName.Name = "Col_ProcessName";
-            this.Col_ProcessName.ReadOnly = true;
             // 
-            // Col_Remark
+            // Col_ProcessRemark
             // 
-            this.Col_Remark.HeaderText = "비고";
-            this.Col_Remark.Name = "Col_Remark";
-            this.Col_Remark.ReadOnly = true;
-            // 
-            // Btn_Delete_Line
-            // 
-            this.Btn_Delete_Line.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Btn_Delete_Line.Location = new System.Drawing.Point(387, 0);
-            this.Btn_Delete_Line.Name = "Btn_Delete_Line";
-            this.Btn_Delete_Line.Size = new System.Drawing.Size(75, 44);
-            this.Btn_Delete_Line.TabIndex = 4;
-            this.Btn_Delete_Line.Text = "Btn_Delete_Line";
-            this.Btn_Delete_Line.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Col_LineCode,
-            this.Col_LineName,
-            this.Col_Remark_Line});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(464, 126);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(531, 513);
-            this.dataGridView1.TabIndex = 9;
-            // 
-            // Col_LineCode
-            // 
-            this.Col_LineCode.HeaderText = "라인코드";
-            this.Col_LineCode.Name = "Col_LineCode";
-            this.Col_LineCode.ReadOnly = true;
-            // 
-            // Col_LineName
-            // 
-            this.Col_LineName.HeaderText = "라인명";
-            this.Col_LineName.Name = "Col_LineName";
-            this.Col_LineName.ReadOnly = true;
-            // 
-            // Col_Remark_Line
-            // 
-            this.Col_Remark_Line.HeaderText = "비고";
-            this.Col_Remark_Line.Name = "Col_Remark_Line";
-            this.Col_Remark_Line.ReadOnly = true;
+            this.Col_ProcessRemark.HeaderText = "비고";
+            this.Col_ProcessRemark.Name = "Col_ProcessRemark";
             // 
             // Frm_Info_Process
             // 
@@ -292,13 +294,14 @@ namespace Project_MES.View._00_Basic
             this.Controls.Add(this.TableLayoutMain);
             this.Name = "Frm_Info_Process";
             this.Text = "Frm_Info_Process";
+            this.Load += new System.EventHandler(this.Frm_Info_Process_Load);
             this.TableLayoutMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GvLine)).EndInit();
             this.panel1.ResumeLayout(false);
             this.Pnl_Search.ResumeLayout(false);
             this.Pnl_MailTitle.ResumeLayout(false);
             this.Pnl_Contents1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gvPlanMaster)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GvProcess)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -317,15 +320,15 @@ namespace Project_MES.View._00_Basic
         private System.Windows.Forms.Panel Pnl_Contents1;
         private System.Windows.Forms.Button Btn_Save_Line;
         private System.Windows.Forms.Label Lbl_Contents1;
-        private System.Windows.Forms.DataGridView gvPlanMaster;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_ProcessCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_ProcessType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_ProcessName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Remark;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView GvProcess;
+        private System.Windows.Forms.DataGridView GvLine;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_LineCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_LineName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Remark_Line;
         private System.Windows.Forms.Button Btn_Delete_Line;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_ProcessCode;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Col_ProcessType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_ProcessName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_ProcessRemark;
     }
 }
