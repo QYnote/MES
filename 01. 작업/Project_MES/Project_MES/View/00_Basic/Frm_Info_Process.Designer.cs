@@ -271,6 +271,7 @@ namespace Project_MES.View._00_Basic
             // 
             // Col_ProcessType
             // 
+            this.Col_ProcessType.DisplayStyleForCurrentCellOnly = true;
             this.Col_ProcessType.HeaderText = "공정타입";
             this.Col_ProcessType.Name = "Col_ProcessType";
             this.Col_ProcessType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
