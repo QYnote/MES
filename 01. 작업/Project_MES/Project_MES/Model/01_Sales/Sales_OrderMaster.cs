@@ -33,9 +33,9 @@ namespace Project_MES.Model._01_Sales
 
         public DataTable Select_FrmSalesOrder()
         {
-            query = @"SELECT OrderNo, OrderCustCode, OutCustCode, OrderDate, EndDate, 
-                             Remark
-                        FROM Sales_OrderMaster";
+            query = $@"CALL Sales_OrderMaster_R('{Search_StartDate}',
+                                                '{Search_EndDate}',
+                                                '{Search_CustName}')";
 
             return db.GetDataTable_MySQL(query);
         }

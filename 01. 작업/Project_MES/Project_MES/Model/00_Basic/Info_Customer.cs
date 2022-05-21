@@ -86,5 +86,15 @@ namespace Project_MES.Model._00_Basic
 
             return db.GetDataTable_MySQL(query);
         }
+
+        public DataTable Select_InItCbo_OrderCust()
+        {
+            query = $@"SELECT CustCode, CustName, CustType
+                         FROM Info_Customer
+                        WHERE UseYn = 'Y'
+                          AND (CustType = 'CI02' OR CustType = 'CI04')";
+
+            return db.GetDataTable_MySQL(query);
+        }
     }
 }

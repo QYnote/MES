@@ -22,7 +22,7 @@ namespace Project_MES.Model._01_Sales
 
         public DataTable Select_FrmSalesOrder()
         {
-            query = $@"CALL Sales_Get_OrderDetail('{HighLotNo}')";
+            query = $@"CALL Sales_OrderDetail_R('{HighLotNo}')";
 
             return db.GetDataTable_MySQL(query);
         }

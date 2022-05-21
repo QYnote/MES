@@ -74,5 +74,19 @@ namespace Project_MES.Model._00_Basic
 
             return db.GetDataTable_MySQL(query);
         }
+
+        public DataTable Select_InitCbo_SalesOrder()
+        {
+            //조건 : 거래사용중, 완제품
+            query = @"SELECT ma.MaterialCode, ma.MaterialName, ma.Alias, ma.Spec, ma.CustCode,
+                             ci.ItemValue AS UnitName
+                        FROM Info_Material ma
+                  INNER JOIN Info_CategoryItem ci ON ci.ItemCode = ma.UnitCode
+                                                 AND ci.GroupCode = 'CG000402'
+                       WHERE ma.UseYn = 'Y'
+                         AND ma.MaterialType = 'CI01'";
+
+            return db.GetDataTable_MySQL(query);
+        }
     }
 }

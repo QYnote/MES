@@ -130,6 +130,12 @@
     <Compile Include="View\01_Sales\Frm_Sales_PlaceOrderView.Designer.cs">
       <DependentUpon>Frm_Sales_PlaceOrderView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\01_Sales\Frm_Sales_SalesOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\01_Sales\Frm_Sales_SalesOrder.Designer.cs">
+      <DependentUpon>Frm_Sales_SalesOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\02_Product\Frm_Product_WorkOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,11 +189,17 @@
     <EmbeddedResource Include="View\01_Sales\Frm_Sales_PlaceOrderView.resx">
       <DependentUpon>Frm_Sales_PlaceOrderView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\01_Sales\Frm_Sales_SalesOrder.resx">
+      <DependentUpon>Frm_Sales_SalesOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\02_Product\Frm_Product_WorkOrder.resx">
       <DependentUpon>Frm_Product_WorkOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\02_Product\Frm_Product_WorkPlan.resx">
       <DependentUpon>Frm_Product_WorkPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\03_POP\Frm_POP_Product.resx">
+      <DependentUpon>Frm_POP_Product.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
