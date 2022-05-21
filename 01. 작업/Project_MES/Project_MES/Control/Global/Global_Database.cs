@@ -53,7 +53,7 @@ namespace Project_MES.Control.Global
             }
         }
 
-        public void ExcuteQuery_MySQL(string query)
+        public bool ExcuteQuery_MySQL(string query)
         {
             MySqlCommand cmd = new MySqlCommand(query, connection);
             try
@@ -66,12 +66,15 @@ namespace Project_MES.Control.Global
             catch (Exception ex)
             {
                 MessageBox.Show($"ExcuteQuery_MySQL 오류\n{ex.Message}");
-                throw;
+                return false;
             }
             finally
             {
                 cmd.Connection.Close(); //DB 연결 해제
+
             }
+
+            return true;
         }
 
         #endregion MySQL 연결방식 End

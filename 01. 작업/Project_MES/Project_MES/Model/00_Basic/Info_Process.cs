@@ -42,7 +42,7 @@ namespace Project_MES.Model._00_Basic
             return db.GetDataTable_MySQL(query);
         }
 
-        public void InsertUpdate_Frm_Info_Process()
+        public bool InsertUpdate_Frm_Info_Process()
         {
             query = $@"CALL Info_Process_CU('{ProcessCode}',
                                              '{ProcessName}',
@@ -52,16 +52,16 @@ namespace Project_MES.Model._00_Basic
                                              '{Global_DataStorage.ClientName}',
                                              '{Global_DataStorage.ClientIP}')";
 
-            db.ExcuteQuery_MySQL(query);
+            return db.ExcuteQuery_MySQL(query);
         }
 
-        public void Delete_Frm_Info_Process()
+        public bool Delete_Frm_Info_Process()
         {
             query = $@"CALL Info_Process_D('{ProcessCode}',
                                            '{Global_DataStorage.ClientName}',
                                            '{Global_DataStorage.ClientIP}')";
 
-            db.ExcuteQuery_MySQL(query);
+            return db.ExcuteQuery_MySQL(query);
         }
 
     }

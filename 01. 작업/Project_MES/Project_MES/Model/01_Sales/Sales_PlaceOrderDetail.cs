@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Project_MES.Model._01_Sales
 {
-    internal class Sales_OrderDetail
+    internal class Sales_PlaceOrderDetail
     {
         #region Property
 

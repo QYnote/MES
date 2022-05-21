@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Project_MES.Model._01_Sales
 {
-    internal class Sales_OrderMaster
+    internal class Sales_PlaceOrderMaster
     {
         #region Property
 
@@ -16,8 +16,8 @@ namespace Project_MES.Model._01_Sales
         public string OrderNo { get; set; }
         public string OrderCustCode { get; set; }
         public string OutCustCode { get; set; }
-        public DateTime OrderDate { get; set; }
-        public DateTime EndDate { get; set; }
+        public string OrderDate { get; set; }
+        public string EndDate { get; set; }
         public string Remark { get; set; }
         public char UseYN { get; set; }
 
@@ -38,6 +38,13 @@ namespace Project_MES.Model._01_Sales
                                                 '{Search_CustName}')";
 
             return db.GetDataTable_MySQL(query);
+        }
+
+        public bool CU_PlaceOrderMaster()
+        {
+            query = "";
+
+            return db.ExcuteQuery_MySQL(query);
         }
     }
 }

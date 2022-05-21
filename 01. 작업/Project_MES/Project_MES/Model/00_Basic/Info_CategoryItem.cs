@@ -35,7 +35,7 @@ namespace Project_MES.Model._00_Basic
             return db.GetDataTable_MySQL(query);
         }
 
-        public void Insert_Frm_Info_CategoryItem()
+        public bool Insert_Frm_Info_CategoryItem()
         {
             query = $@"CALL Info_CategoryItem_CU('{GroupCode}',
                                                  '{ItemCode}',
@@ -43,16 +43,14 @@ namespace Project_MES.Model._00_Basic
                                                  '{Remark}',
                                                  '{Global_DataStorage.ClientName}',
                                                  '{Global_DataStorage.ClientIP}')";
-
-            db.ExcuteQuery_MySQL(query);
+            return db.ExcuteQuery_MySQL(query);
         }
 
-        public void Delete_Frm_Info_CategoryItem()
+        public bool Delete_Frm_Info_CategoryItem()
         {
             query = $@"CALL Info_CategoryItem_D('{GroupCode}',
                                                 '{ItemCode}')";
-
-            db.ExcuteQuery_MySQL(query);
+            return db.ExcuteQuery_MySQL(query);
         }
 
         public DataTable Select_Cbo()

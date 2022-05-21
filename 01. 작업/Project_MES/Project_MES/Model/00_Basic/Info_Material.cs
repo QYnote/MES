@@ -38,7 +38,7 @@ namespace Project_MES.Model._00_Basic
             return db.GetDataTable_MySQL(query);
         }
 
-        public void InsertUpdate_Frm_Info_Material()
+        public bool InsertUpdate_Frm_Info_Material()
         {
             query = $@"CALL Info_Material_CU('{MaterialCode}',
                                              '{MaterialName}',
@@ -53,16 +53,16 @@ namespace Project_MES.Model._00_Basic
                                              '{Global_DataStorage.ClientName}',
                                              '{Global_DataStorage.ClientIP}')";
 
-            db.ExcuteQuery_MySQL(query);
+            return db.ExcuteQuery_MySQL(query);
         }
 
-        public void Delete_Frm_Info_Material()
+        public bool Delete_Frm_Info_Material()
         {
             query = $@"CALL Info_Material_D('{MaterialCode}',
                                             '{Global_DataStorage.ClientName}',
                                             '{Global_DataStorage.ClientIP}')";
 
-            db.ExcuteQuery_MySQL(query);
+            return db.ExcuteQuery_MySQL(query);
         }
 
         public DataTable Select_Cbo()
@@ -75,7 +75,7 @@ namespace Project_MES.Model._00_Basic
             return db.GetDataTable_MySQL(query);
         }
 
-        public DataTable Select_InitCbo_SalesOrder()
+        public DataTable Select_InitCbo_Product()
         {
             //조건 : 거래사용중, 완제품
             query = @"SELECT ma.MaterialCode, ma.MaterialName, ma.Alias, ma.Spec, ma.CustCode,

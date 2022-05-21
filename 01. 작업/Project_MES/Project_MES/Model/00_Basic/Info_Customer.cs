@@ -44,37 +44,37 @@ namespace Project_MES.Model._00_Basic
             return db.GetDataTable_MySQL(query);
         }
 
-        public void InsertUpdate_Frm_Info_Customer()
+        public bool InsertUpdate_Frm_Info_Customer()
         {
-            query = $@"CALL Info_Customer_CU('{CustCode   }',
-                                             '{CustName   }',
-                                             '{CustType   }',
-                                             '{CustNo     }',
-                                             '{Presi      }',
+            query = $@"CALL Info_Customer_CU('{CustCode}',
+                                             '{CustName}',
+                                             '{CustType}',
+                                             '{CustNo}',
+                                             '{Presi}',
                                             
-                                             '{Address    }',
-                                             '{Post       }',
-                                             '{Tel        }',
-                                             '{Fax        }',
-                                             '{Mail       }',
+                                             '{Address}',
+                                             '{Post}',
+                                             '{Tel}',
+                                             '{Fax}',
+                                             '{Mail}',
                                             
-                                             '{Category   }',
-                                             '{Condition  }',
-                                             '{Remark     }',
+                                             '{Category}',
+                                             '{Condition}',
+                                             '{Remark}',
                                                          
                                              '{Global_DataStorage.ClientName}',
                                              '{Global_DataStorage.ClientIP}')";
 
-            db.ExcuteQuery_MySQL(query);
+            return db.ExcuteQuery_MySQL(query);
         }
 
-        public void Delete_Frm_Info_Customer()
+        public bool Delete_Frm_Info_Customer()
         {
             query = $@"CALL Info_Customer_D('{CustCode}',
                                             '{Global_DataStorage.ClientName}',
                                             '{Global_DataStorage.ClientIP}')";
 
-            db.ExcuteQuery_MySQL(query);
+            return db.ExcuteQuery_MySQL(query);
         }
 
         public DataTable Select_Cbo()
