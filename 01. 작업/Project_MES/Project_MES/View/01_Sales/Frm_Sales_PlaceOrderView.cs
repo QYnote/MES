@@ -96,7 +96,7 @@ namespace Project_MES.View._01_Sales
         private void DisplayData()
         {
             //OrderMaster
-            Sales_OrderMaster om = new Sales_OrderMaster();
+            Sales_PlaceOrderMaster om = new Sales_PlaceOrderMaster();
             om.Search_StartDate = uc_LblDtp_OrderDate.DtpStartDate.Value.ToString("yyyyMMdd");   //조회시작일
             om.Search_EndDate = uc_LblDtp_OrderDate.DtpEndDate.Value.ToString("yyyyMMdd") + DateTime.Now.ToString("HHmmss");  //조회 종료일
             om.Search_CustName = uc_LblTxt_CustName.TxtContents.Text;   //수주처명
@@ -117,7 +117,7 @@ namespace Project_MES.View._01_Sales
 
         private void DisplayOrderDetail(string lotNo)
         {
-            Sales_OrderDetail od = new Sales_OrderDetail();
+            Sales_PlaceOrderDetail od = new Sales_PlaceOrderDetail();
             od.HighLotNo = lotNo;
 
             od.Select_FrmSalesOrder();

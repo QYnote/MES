@@ -12,6 +12,12 @@ namespace Project_MES.Model._01_Sales
     {
         #region Property
 
+        public string OrderNo { get; set; }
+        public int Seq { get; set; }
+        public string ProductCode { get; set; }
+        public double OrderQty { get; set; }
+        public string Remark { get; set; }
+
         //입력용
         public string HighLotNo { get; set; }
 
@@ -25,6 +31,13 @@ namespace Project_MES.Model._01_Sales
             query = $@"CALL Sales_OrderDetail_R('{HighLotNo}')";
 
             return db.GetDataTable_MySQL(query);
+        }
+
+        public bool CU_PlaceOrderDetail()
+        {
+            query = "";
+
+            return db.ExcuteQuery_MySQL(query);
         }
     }
 }

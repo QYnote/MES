@@ -33,7 +33,7 @@ namespace Project_MES.View._01_Sales
             this.Pnl_SalesOrderDetail = new System.Windows.Forms.Panel();
             this.Lbl_Contents1 = new System.Windows.Forms.Label();
             this.Btn_Delete = new System.Windows.Forms.Button();
-            this.GvOrderDetail = new System.Windows.Forms.DataGridView();
+            this.GvPlaceOrderDetail = new System.Windows.Forms.DataGridView();
             this.Col_Seq = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_ProductCode = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Col_ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,7 +58,7 @@ namespace Project_MES.View._01_Sales
             this.uc_LblTxt_OrderNo = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
             this.Pnl_Contents.SuspendLayout();
             this.Pnl_SalesOrderDetail.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GvOrderDetail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GvPlaceOrderDetail)).BeginInit();
             this.Pnl_MailTitle.SuspendLayout();
             this.Pnl_SalesOrderMaster.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -70,7 +70,7 @@ namespace Project_MES.View._01_Sales
             this.Pnl_Contents.ColumnCount = 1;
             this.Pnl_Contents.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.Pnl_Contents.Controls.Add(this.Pnl_SalesOrderDetail, 0, 3);
-            this.Pnl_Contents.Controls.Add(this.GvOrderDetail, 0, 4);
+            this.Pnl_Contents.Controls.Add(this.GvPlaceOrderDetail, 0, 4);
             this.Pnl_Contents.Controls.Add(this.Lbl_Contents0, 0, 1);
             this.Pnl_Contents.Controls.Add(this.Pnl_MailTitle, 0, 0);
             this.Pnl_Contents.Controls.Add(this.Pnl_SalesOrderMaster, 0, 2);
@@ -118,10 +118,10 @@ namespace Project_MES.View._01_Sales
             this.Btn_Delete.Text = "Btn_Delete";
             this.Btn_Delete.UseVisualStyleBackColor = true;
             // 
-            // GvOrderDetail
+            // GvPlaceOrderDetail
             // 
-            this.GvOrderDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GvOrderDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.GvPlaceOrderDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GvPlaceOrderDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Col_Seq,
             this.Col_ProductCode,
             this.Col_ProductName,
@@ -130,13 +130,13 @@ namespace Project_MES.View._01_Sales
             this.Col_Qty,
             this.Col_Unit,
             this.Col_Remark});
-            this.GvOrderDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GvOrderDetail.Location = new System.Drawing.Point(3, 199);
-            this.GvOrderDetail.Name = "GvOrderDetail";
-            this.GvOrderDetail.RowTemplate.Height = 23;
-            this.GvOrderDetail.Size = new System.Drawing.Size(992, 440);
-            this.GvOrderDetail.TabIndex = 5;
-            this.GvOrderDetail.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.GvOrderDetail_CellEndEdit);
+            this.GvPlaceOrderDetail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GvPlaceOrderDetail.Location = new System.Drawing.Point(3, 199);
+            this.GvPlaceOrderDetail.Name = "GvPlaceOrderDetail";
+            this.GvPlaceOrderDetail.RowTemplate.Height = 23;
+            this.GvPlaceOrderDetail.Size = new System.Drawing.Size(992, 440);
+            this.GvPlaceOrderDetail.TabIndex = 5;
+            this.GvPlaceOrderDetail.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.GvOrderDetail_CellEndEdit);
             // 
             // Col_Seq
             // 
@@ -356,18 +356,18 @@ namespace Project_MES.View._01_Sales
             this.uc_LblTxt_OrderNo.TabIndex = 0;
             this.uc_LblTxt_OrderNo.TxtWdith = 150;
             // 
-            // Frm_Sales_OrderCreate
+            // Frm_Sales_PlaceOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(998, 642);
             this.Controls.Add(this.Pnl_Contents);
-            this.Name = "Frm_Sales_OrderCreate";
-            this.Text = "Frm_Sales_Order";
+            this.Name = "Frm_Sales_PlaceOrder";
+            this.Text = "Frm_Sales_PlaceOrder";
             this.Pnl_Contents.ResumeLayout(false);
             this.Pnl_Contents.PerformLayout();
             this.Pnl_SalesOrderDetail.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GvOrderDetail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GvPlaceOrderDetail)).EndInit();
             this.Pnl_MailTitle.ResumeLayout(false);
             this.Pnl_SalesOrderMaster.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -384,7 +384,7 @@ namespace Project_MES.View._01_Sales
         private System.Windows.Forms.Label Lbl_MailTitle;
         private System.Windows.Forms.Button Btn_Save;
         private System.Windows.Forms.Button Btn_Close;
-        private System.Windows.Forms.DataGridView GvOrderDetail;
+        private System.Windows.Forms.DataGridView GvPlaceOrderDetail;
         private System.Windows.Forms.Panel Pnl_SalesOrderDetail;
         private System.Windows.Forms.Label Lbl_Contents1;
         private System.Windows.Forms.Button Btn_Delete;
