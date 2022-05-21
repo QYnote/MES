@@ -118,23 +118,17 @@
     <Compile Include="View\00_Basic\Frm_Info_Process.Designer.cs">
       <DependentUpon>Frm_Info_Process.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\01_Sales\Frm_Sales_Order_Create.cs">
+    <Compile Include="View\01_Sales\Frm_Sales_PlaceOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\01_Sales\Frm_Sales_Order_Create.Designer.cs">
-      <DependentUpon>Frm_Sales_Order_Create.cs</DependentUpon>
+    <Compile Include="View\01_Sales\Frm_Sales_PlaceOrder.Designer.cs">
+      <DependentUpon>Frm_Sales_PlaceOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\01_Sales\Frm_Sales_Order.cs">
+    <Compile Include="View\01_Sales\Frm_Sales_PlaceOrderView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\01_Sales\Frm_Sales_Order.Designer.cs">
-      <DependentUpon>Frm_Sales_Order.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\02_Product\Frm_Product_WorkPlan_Write.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\02_Product\Frm_Product_WorkPlan_Write.Designer.cs">
-      <DependentUpon>Frm_Product_WorkPlan_Write.cs</DependentUpon>
+    <Compile Include="View\01_Sales\Frm_Sales_PlaceOrderView.Designer.cs">
+      <DependentUpon>Frm_Sales_PlaceOrderView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\02_Product\Frm_Product_WorkOrder.cs">
       <SubType>Form</SubType>
@@ -183,14 +177,11 @@
     <EmbeddedResource Include="View\00_Basic\Frm_Info_Process.resx">
       <DependentUpon>Frm_Info_Process.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\01_Sales\Frm_Sales_Order_Create.resx">
-      <DependentUpon>Frm_Sales_Order_Create.cs</DependentUpon>
+    <EmbeddedResource Include="View\01_Sales\Frm_Sales_PlaceOrder.resx">
+      <DependentUpon>Frm_Sales_PlaceOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\01_Sales\Frm_Sales_Order.resx">
-      <DependentUpon>Frm_Sales_Order.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\02_Product\Frm_Product_WorkPlan_Write.resx">
-      <DependentUpon>Frm_Product_WorkPlan_Write.cs</DependentUpon>
+    <EmbeddedResource Include="View\01_Sales\Frm_Sales_PlaceOrderView.resx">
+      <DependentUpon>Frm_Sales_PlaceOrderView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\02_Product\Frm_Product_WorkOrder.resx">
       <DependentUpon>Frm_Product_WorkOrder.cs</DependentUpon>

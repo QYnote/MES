@@ -1,7 +1,7 @@
 ﻿
 namespace Project_MES.View._01_Sales
 {
-    partial class Frm_Sales_Order
+    partial class Frm_Sales_PlaceOrderView
     {
         /// <summary>
         /// Required designer variable.
@@ -31,14 +31,6 @@ namespace Project_MES.View._01_Sales
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.gvOrderDetail = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.uc_LblTxt_CustName = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
             this.uc_LblDtp_OrderDate = new Project_MES.Control.CustomUc.Common.Uc_LblDtp();
@@ -56,7 +48,16 @@ namespace Project_MES.View._01_Sales
             this.Col_OutCustName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_OrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_OrderEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Remark_OM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Seq = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_ProductCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_ProductAlias = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_ProductSpec = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Remark_OD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_PlanStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvOrderDetail)).BeginInit();
             this.panel1.SuspendLayout();
@@ -89,68 +90,26 @@ namespace Project_MES.View._01_Sales
             // 
             // gvOrderDetail
             // 
+            this.gvOrderDetail.AllowUserToAddRows = false;
+            this.gvOrderDetail.AllowUserToDeleteRows = false;
             this.gvOrderDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvOrderDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.Column1,
-            this.Column2,
-            this.dataGridViewTextBoxColumn6});
+            this.Col_Seq,
+            this.Col_ProductCode,
+            this.Col_ProductName,
+            this.Col_ProductAlias,
+            this.Col_ProductSpec,
+            this.Col_Qty,
+            this.Col_Unit,
+            this.Col_Remark_OD,
+            this.Col_PlanStatus});
             this.gvOrderDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gvOrderDetail.Location = new System.Drawing.Point(3, 413);
             this.gvOrderDetail.Name = "gvOrderDetail";
+            this.gvOrderDetail.ReadOnly = true;
             this.gvOrderDetail.RowTemplate.Height = 23;
             this.gvOrderDetail.Size = new System.Drawing.Size(992, 226);
             this.gvOrderDetail.TabIndex = 5;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "순번";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "제품코드";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "제품명";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "제품번호";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Spec";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "수량";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "단위";
-            this.Column2.Name = "Column2";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "비고";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // panel1
             // 
@@ -282,6 +241,8 @@ namespace Project_MES.View._01_Sales
             // 
             // gvOrderMaster
             // 
+            this.gvOrderMaster.AllowUserToAddRows = false;
+            this.gvOrderMaster.AllowUserToDeleteRows = false;
             this.gvOrderMaster.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvOrderMaster.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Col_OrderNo,
@@ -289,13 +250,17 @@ namespace Project_MES.View._01_Sales
             this.Col_OutCustName,
             this.Col_OrderDate,
             this.Col_OrderEndDate,
-            this.Col_Remark});
+            this.Col_Remark_OM});
             this.gvOrderMaster.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gvOrderMaster.Location = new System.Drawing.Point(3, 132);
+            this.gvOrderMaster.MultiSelect = false;
             this.gvOrderMaster.Name = "gvOrderMaster";
+            this.gvOrderMaster.ReadOnly = true;
             this.gvOrderMaster.RowTemplate.Height = 23;
+            this.gvOrderMaster.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvOrderMaster.Size = new System.Drawing.Size(992, 225);
             this.gvOrderMaster.TabIndex = 4;
+            this.gvOrderMaster.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvOrderMaster_RowEnter);
             // 
             // Col_OrderNo
             // 
@@ -327,19 +292,82 @@ namespace Project_MES.View._01_Sales
             this.Col_OrderEndDate.Name = "Col_OrderEndDate";
             this.Col_OrderEndDate.ReadOnly = true;
             // 
-            // Col_Remark
+            // Col_Remark_OM
             // 
-            this.Col_Remark.HeaderText = "비고";
-            this.Col_Remark.Name = "Col_Remark";
-            this.Col_Remark.ReadOnly = true;
+            this.Col_Remark_OM.HeaderText = "비고";
+            this.Col_Remark_OM.Name = "Col_Remark_OM";
+            this.Col_Remark_OM.ReadOnly = true;
             // 
-            // Frm_SalesOrder
+            // Col_Seq
+            // 
+            this.Col_Seq.Frozen = true;
+            this.Col_Seq.HeaderText = "순번";
+            this.Col_Seq.Name = "Col_Seq";
+            this.Col_Seq.ReadOnly = true;
+            // 
+            // Col_ProductCode
+            // 
+            this.Col_ProductCode.Frozen = true;
+            this.Col_ProductCode.HeaderText = "제품코드";
+            this.Col_ProductCode.Name = "Col_ProductCode";
+            this.Col_ProductCode.ReadOnly = true;
+            // 
+            // Col_ProductName
+            // 
+            this.Col_ProductName.Frozen = true;
+            this.Col_ProductName.HeaderText = "제품명";
+            this.Col_ProductName.Name = "Col_ProductName";
+            this.Col_ProductName.ReadOnly = true;
+            // 
+            // Col_ProductAlias
+            // 
+            this.Col_ProductAlias.Frozen = true;
+            this.Col_ProductAlias.HeaderText = "제품번호";
+            this.Col_ProductAlias.Name = "Col_ProductAlias";
+            this.Col_ProductAlias.ReadOnly = true;
+            // 
+            // Col_ProductSpec
+            // 
+            this.Col_ProductSpec.Frozen = true;
+            this.Col_ProductSpec.HeaderText = "Spec";
+            this.Col_ProductSpec.Name = "Col_ProductSpec";
+            this.Col_ProductSpec.ReadOnly = true;
+            // 
+            // Col_Qty
+            // 
+            this.Col_Qty.Frozen = true;
+            this.Col_Qty.HeaderText = "수량";
+            this.Col_Qty.Name = "Col_Qty";
+            this.Col_Qty.ReadOnly = true;
+            // 
+            // Col_Unit
+            // 
+            this.Col_Unit.Frozen = true;
+            this.Col_Unit.HeaderText = "단위";
+            this.Col_Unit.Name = "Col_Unit";
+            this.Col_Unit.ReadOnly = true;
+            // 
+            // Col_Remark_OD
+            // 
+            this.Col_Remark_OD.Frozen = true;
+            this.Col_Remark_OD.HeaderText = "비고";
+            this.Col_Remark_OD.Name = "Col_Remark_OD";
+            this.Col_Remark_OD.ReadOnly = true;
+            // 
+            // Col_PlanStatus
+            // 
+            this.Col_PlanStatus.Frozen = true;
+            this.Col_PlanStatus.HeaderText = "계획상태";
+            this.Col_PlanStatus.Name = "Col_PlanStatus";
+            this.Col_PlanStatus.ReadOnly = true;
+            // 
+            // Frm_Sales_Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(998, 642);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "Frm_SalesOrder";
+            this.Name = "Frm_Sales_Order";
             this.Text = "Frm_SalesOrder";
             this.Load += new System.EventHandler(this.Frm_Sales_Order_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -365,22 +393,23 @@ namespace Project_MES.View._01_Sales
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button Btn_Search;
         private System.Windows.Forms.DataGridView gvOrderMaster;
+        private System.Windows.Forms.DataGridView gvOrderDetail;
+        private Control.CustomUc.Common.Uc_LblDtp uc_LblDtp_OrderDate;
+        private Control.CustomUc.Common.Uc_LblTxt uc_LblTxt_CustName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_OrderNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_CustName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_OutCustName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_OrderDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_OrderEndDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Remark;
-        private System.Windows.Forms.DataGridView gvOrderDetail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private Control.CustomUc.Common.Uc_LblDtp uc_LblDtp_OrderDate;
-        private Control.CustomUc.Common.Uc_LblTxt uc_LblTxt_CustName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Remark_OM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Seq;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_ProductCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_ProductName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_ProductAlias;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_ProductSpec;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Qty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Unit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Remark_OD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_PlanStatus;
     }
 }

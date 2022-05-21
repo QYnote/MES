@@ -41,7 +41,7 @@ namespace Project_MES.View
                 case "InfoProcess":  frm = new Frm_Info_Process(); break;           //공정관리
 
                 //////////////////영업관리//////////////////
-                case "SalesOrder": frm = new Frm_Sales_Order(); break;   //수주관리
+                case "SalesOrder": frm = new Frm_Sales_PlaceOrderView(); break;   //수주관리
                 //case "SalesOut":   frm = new Frm_Sales_Out(); break;     //출하관리
 
                 //////////////////생산관리//////////////////

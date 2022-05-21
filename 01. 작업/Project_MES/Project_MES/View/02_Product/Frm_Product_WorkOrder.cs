@@ -32,7 +32,14 @@ namespace Project_MES.View._02_Product
 
             //컨텐츠 영역
             Lbl_Contents0.Text = "생산계획 내역";
+            gvWorkPlan.ReadOnly = true; //읽기전용
+            gvWorkPlan.SelectionMode = DataGridViewSelectionMode.FullRowSelect; //행선택 모드
+            gvWorkPlan.MultiSelect = false; //다중선택 방지
+
             Lbl_Contents1.Text = "작업공정 내역";
+            gvWorkOrder.ReadOnly = true;
+            gvWorkOrder.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            gvWorkOrder.MultiSelect = false;
         }
 
         #endregion UI 디자인 Setting

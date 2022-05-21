@@ -30,7 +30,7 @@ namespace Project_MES.View._02_Product
         private void InitializeComponent()
         {
             this.TableLayoutMain = new System.Windows.Forms.TableLayoutPanel();
-            this.gvPlanDetail = new System.Windows.Forms.DataGridView();
+            this.gvWorkOrder = new System.Windows.Forms.DataGridView();
             this.Col_Seq = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_ProcessType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_ProcessName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,7 +53,7 @@ namespace Project_MES.View._02_Product
             this.Pnl_MailTitle = new System.Windows.Forms.Panel();
             this.Lbl_MailTitle = new System.Windows.Forms.Label();
             this.Btn_Order = new System.Windows.Forms.Button();
-            this.gvPlanMaster = new System.Windows.Forms.DataGridView();
+            this.gvWorkPlan = new System.Windows.Forms.DataGridView();
             this.Col_PlanNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_CustCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_CustName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,24 +66,24 @@ namespace Project_MES.View._02_Product
             this.Col_Remark_SO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_PlanStatus_MPM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TableLayoutMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvPlanDetail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvWorkOrder)).BeginInit();
             this.Pnl_SearchMain.SuspendLayout();
             this.Pnl_Search1.SuspendLayout();
             this.Pnl_Search0.SuspendLayout();
             this.Pnl_MailTitle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvPlanMaster)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvWorkPlan)).BeginInit();
             this.SuspendLayout();
             // 
             // TableLayoutMain
             // 
             this.TableLayoutMain.ColumnCount = 1;
             this.TableLayoutMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.TableLayoutMain.Controls.Add(this.gvPlanDetail, 0, 5);
+            this.TableLayoutMain.Controls.Add(this.gvWorkOrder, 0, 5);
             this.TableLayoutMain.Controls.Add(this.Pnl_SearchMain, 0, 1);
             this.TableLayoutMain.Controls.Add(this.Lbl_Contents0, 0, 2);
             this.TableLayoutMain.Controls.Add(this.Lbl_Contents1, 0, 4);
             this.TableLayoutMain.Controls.Add(this.Pnl_MailTitle, 0, 0);
-            this.TableLayoutMain.Controls.Add(this.gvPlanMaster, 0, 3);
+            this.TableLayoutMain.Controls.Add(this.gvWorkPlan, 0, 3);
             this.TableLayoutMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TableLayoutMain.Location = new System.Drawing.Point(0, 0);
             this.TableLayoutMain.Name = "TableLayoutMain";
@@ -97,10 +97,10 @@ namespace Project_MES.View._02_Product
             this.TableLayoutMain.Size = new System.Drawing.Size(998, 642);
             this.TableLayoutMain.TabIndex = 3;
             // 
-            // gvPlanDetail
+            // gvWorkOrder
             // 
-            this.gvPlanDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvPlanDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gvWorkOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvWorkOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Col_Seq,
             this.Col_ProcessType,
             this.Col_ProcessName,
@@ -110,12 +110,12 @@ namespace Project_MES.View._02_Product
             this.Col_Qty,
             this.Col_Unit_WO,
             this.Col_Remark_WO});
-            this.gvPlanDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvPlanDetail.Location = new System.Drawing.Point(3, 425);
-            this.gvPlanDetail.Name = "gvPlanDetail";
-            this.gvPlanDetail.RowTemplate.Height = 23;
-            this.gvPlanDetail.Size = new System.Drawing.Size(992, 214);
-            this.gvPlanDetail.TabIndex = 5;
+            this.gvWorkOrder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvWorkOrder.Location = new System.Drawing.Point(3, 425);
+            this.gvWorkOrder.Name = "gvWorkOrder";
+            this.gvWorkOrder.RowTemplate.Height = 23;
+            this.gvWorkOrder.Size = new System.Drawing.Size(992, 214);
+            this.gvWorkOrder.TabIndex = 5;
             // 
             // Col_Seq
             // 
@@ -322,10 +322,10 @@ namespace Project_MES.View._02_Product
             this.Btn_Order.Text = "Btn_Order";
             this.Btn_Order.UseVisualStyleBackColor = true;
             // 
-            // gvPlanMaster
+            // gvWorkPlan
             // 
-            this.gvPlanMaster.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvPlanMaster.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gvWorkPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvWorkPlan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Col_PlanNo,
             this.Col_CustCode,
             this.Col_CustName,
@@ -337,12 +337,12 @@ namespace Project_MES.View._02_Product
             this.Col_PlanStartDate,
             this.Col_Remark_SO,
             this.Col_PlanStatus_MPM});
-            this.gvPlanMaster.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvPlanMaster.Location = new System.Drawing.Point(3, 155);
-            this.gvPlanMaster.Name = "gvPlanMaster";
-            this.gvPlanMaster.RowTemplate.Height = 23;
-            this.gvPlanMaster.Size = new System.Drawing.Size(992, 214);
-            this.gvPlanMaster.TabIndex = 4;
+            this.gvWorkPlan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvWorkPlan.Location = new System.Drawing.Point(3, 155);
+            this.gvWorkPlan.Name = "gvWorkPlan";
+            this.gvWorkPlan.RowTemplate.Height = 23;
+            this.gvWorkPlan.Size = new System.Drawing.Size(992, 214);
+            this.gvWorkPlan.TabIndex = 4;
             // 
             // Col_PlanNo
             // 
@@ -431,12 +431,12 @@ namespace Project_MES.View._02_Product
             this.Text = "작업지시";
             this.TableLayoutMain.ResumeLayout(false);
             this.TableLayoutMain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvPlanDetail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvWorkOrder)).EndInit();
             this.Pnl_SearchMain.ResumeLayout(false);
             this.Pnl_Search1.ResumeLayout(false);
             this.Pnl_Search0.ResumeLayout(false);
             this.Pnl_MailTitle.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gvPlanMaster)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvWorkPlan)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -444,7 +444,7 @@ namespace Project_MES.View._02_Product
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel TableLayoutMain;
-        private System.Windows.Forms.DataGridView gvPlanDetail;
+        private System.Windows.Forms.DataGridView gvWorkOrder;
         private System.Windows.Forms.Panel Pnl_SearchMain;
         private System.Windows.Forms.Panel Pnl_Search1;
         private Control.CustomUc.Common.Uc_LblTxt uc_LblTxt_ProductAlias;
@@ -458,7 +458,7 @@ namespace Project_MES.View._02_Product
         private System.Windows.Forms.Panel Pnl_MailTitle;
         private System.Windows.Forms.Label Lbl_MailTitle;
         private System.Windows.Forms.Button Btn_Order;
-        private System.Windows.Forms.DataGridView gvPlanMaster;
+        private System.Windows.Forms.DataGridView gvWorkPlan;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Seq;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_ProcessType;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_ProcessName;
