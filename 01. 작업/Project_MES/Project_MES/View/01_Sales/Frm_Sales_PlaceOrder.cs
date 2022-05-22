@@ -94,7 +94,6 @@ namespace Project_MES.View._01_Sales
 
         #endregion UI 디자인 Setting End
 
-        #region 저장
 
         /// <summary>
         /// 수주처 변경 시 제품코드 ComboBox의 리스트를 수주처에 맞추어 변경
@@ -184,6 +183,7 @@ namespace Project_MES.View._01_Sales
             return false;
         }
 
+        #region 저장
         private bool SaveProcess_PlaceOrder()
         {
             //Sales_PlaceOrderMaster 저장
@@ -213,6 +213,7 @@ namespace Project_MES.View._01_Sales
         private bool Save_PlaceOrderMaster()
         {
             Sales_PlaceOrderMaster om = new Sales_PlaceOrderMaster();
+            om.OrderNo = uc_LblTxt_OrderNo.TxtContents.Text;                                //수주번호
             om.OrderCustCode = uc_LblCbo_OrderCust.CboContents.SelectedValue.ToString();    //수주 거래처
             om.OutCustCode = uc_LblCbo_OrderOutCust.CboContents.SelectedValue.ToString();   //납품 거래처
             om.OutCustCode = uc_LblCbo_OrderOutCust.CboContents.SelectedValue.ToString();   //납품 거래처
@@ -238,6 +239,12 @@ namespace Project_MES.View._01_Sales
             od.Remark = dataRow.Cells[Col_Remark.Name].Value == null ? "" : dataRow.Cells[Col_Remark.Name].Value.ToString();  //비고
 
             return od.CU_PlaceOrderDetail();
+        }
+
+        private void Delete_PlaceOrder_ByError()
+        {
+            Sales_PlaceOrderMaster om = new Sales_PlaceOrderMaster();
+            Sales_PlaceOrderDetail od = new Sales_PlaceOrderDetail();
         }
 
         #endregion 저장 End

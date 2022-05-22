@@ -42,9 +42,25 @@ namespace Project_MES.Model._01_Sales
 
         public bool CU_PlaceOrderMaster()
         {
-            query = "";
+            query = $@"CALL Sales_PlaceOrderMaster_CU('{OrderNo}',
+                                                      '{OrderCustCode}',
+                                                      '{OutCustCode}',
+                                                      '{OrderDate}',
+                                                      '{EndDate}',
+
+                                                      '{Remark}',
+                                                      
+                                                      '{Global_DataStorage.ClientName}',
+                                                      '{Global_DataStorage.ClientIP}')";
 
             return db.ExcuteQuery_MySQL(query);
+        }
+
+        public void D_PlaceOrderMaster_ByCreateError()
+        {
+            query = "";
+
+            db.ExcuteQuery_MySQL(query);
         }
     }
 }
