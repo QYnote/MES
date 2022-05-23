@@ -254,35 +254,25 @@ namespace Project_MES.View._00_Basic
         {
             if (gv_CateItem.SelectedCells.Count < 0) return;
 
-            //카테고리 코드가 비어있는 신규row는 삭제
-            int rowidx = gv_CateItem.SelectedCells[0].RowIndex;
-            DataRow selectedRow = (gv_CateItem.Rows[rowidx].DataBoundItem as DataRowView).Row;
+            DataGridViewRow selectedRow = gv_CateItem.SelectedCells[0].OwningRow;
 
-            gv_CateItem.Rows.Remove(gv_CateItem.Rows[rowidx]);      //해당Row 삭제
+            dicCateItem.Remove(selectedRow.Index);  //Dictionay 삭제
 
-            if (selectedRow["ItemCode"].ToString() == "")
+            if(selectedRow.Cells[Col_ItemCode.Name].Value != null)
             {
-                dicCateItem.Remove(rowidx);  //Dictionary 삭제
-                return;
+                //코드값이 입력된 행이면 데이터 삭제
+                DeleteItem(selectedRow);
             }
 
-            if (dicCateItem.Count > 0)
-            {
-                if (MessageBox.Show("작성내역이 저장됩니다.\n화면을 변경하시겠습니까?", "경고", MessageBoxButtons.YesNo) == DialogResult.No)
-                {
-                    return;
-                }
-            }
-
-            SaveItem();
-            DeleteItem(selectedRow);
+            gv_CateItem.Rows.Remove(selectedRow);      //해당Row 삭제
         }
+        
 
-        private void DeleteItem(DataRow row)
+        private void DeleteItem(DataGridViewRow row)
         {
             Info_CategoryItem cateItem = new Info_CategoryItem();
             cateItem.GroupCode = SelectedGroupCode; //그룹코드
-            cateItem.ItemCode = row["ItemCode"].ToString();
+            cateItem.ItemCode = row.Cells[Col_ItemCode.Name].Value.ToString();
 
             cateItem.Delete_Frm_Info_CategoryItem();
         }
