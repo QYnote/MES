@@ -383,7 +383,6 @@
             this.uc_LblDtp_OrderDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.uc_LblDtp_OrderDate.DisplayFormat = System.Windows.Forms.DateTimePickerFormat.Short;
             this.uc_LblDtp_OrderDate.Dock = System.Windows.Forms.DockStyle.Left;
-            this.uc_LblDtp_OrderDate.DtpDefaultDate = new System.DateTime(2022, 5, 1, 21, 0, 43, 183);
             this.uc_LblDtp_OrderDate.DtpRange = true;
             this.uc_LblDtp_OrderDate.LblText = "수주일자";
             this.uc_LblDtp_OrderDate.LblWidth = 100;

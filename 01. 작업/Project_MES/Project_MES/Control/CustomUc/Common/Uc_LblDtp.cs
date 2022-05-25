@@ -17,7 +17,6 @@ namespace Project_MES.Control.CustomUc.Common
         public int LblWidth { get; set; } = 100;
         private int DtpWidth = 150;
         public string LblText { get; set; } = "Label명";
-        public DateTime DtpDefaultDate { get; set; } = DateTime.Now;
         public DateTimePickerFormat DisplayFormat { get; set; } = DateTimePickerFormat.Short;
         public bool DtpRange { get; set; } = false;
 
@@ -71,7 +70,6 @@ namespace Project_MES.Control.CustomUc.Common
             //DatetimePicker StartDate 셋팅
             //정보 셋팅
             DtpStartDate.Size = new Size(DtpWidth, 23);
-            DtpStartDate.Value = DtpDefaultDate;
             DtpStartDate.Format = DisplayFormat;
             DtpStartDate.Parent = this;
 
@@ -106,7 +104,6 @@ namespace Project_MES.Control.CustomUc.Common
                 //EndDate 셋팅
                 //정보 셋팅
                 DtpEndDate.Size = new Size(DtpWidth, 23);
-                DtpEndDate.Value = DtpDefaultDate;
                 DtpEndDate.Format = DisplayFormat;
                 DtpEndDate.Parent = this;
 
