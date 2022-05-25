@@ -31,11 +31,11 @@ namespace Project_MES.Model._01_Sales
         string query = "";
         Global_Database db = new Global_Database();
 
-        public DataTable Select_FrmSalesOrder()
+        public DataTable R_PlaceOrderMaster()
         {
-            query = $@"CALL Sales_OrderMaster_R('{Search_StartDate}',
-                                                '{Search_EndDate}',
-                                                '{Search_CustName}')";
+            query = $@"CALL Sales_PlaceOrderMaster_R('{Search_StartDate}',
+                                                     '{Search_EndDate}',
+                                                     '{Search_CustName}')";
 
             return db.GetDataTable_MySQL(query);
         }
@@ -52,7 +52,6 @@ namespace Project_MES.Model._01_Sales
                                                       
                                                       '{Global_DataStorage.ClientName}',
                                                       '{Global_DataStorage.ClientIP}')";
-
             return db.ExcuteQuery_MySQL(query);
         }
 

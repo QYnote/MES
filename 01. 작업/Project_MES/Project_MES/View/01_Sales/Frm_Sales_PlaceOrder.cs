@@ -14,13 +14,23 @@ namespace Project_MES.View._01_Sales
 {
     public partial class Frm_Sales_PlaceOrder : Form
     {
+
         //등록화면 호출시 완제품리스트 보관용
+        private string FrmStatus;
         private DataTable dtMaterialCbo;
 
-        public Frm_Sales_PlaceOrder()
+        //수정시 마스터정보
+        public DataGridViewRow MasterRow;
+
+        /// <summary>
+        /// PlaceOrder 등록화면
+        /// </summary>
+        /// <param name="status">오픈 형태 신규생성 : Create, 수정 : Update</param>
+        public Frm_Sales_PlaceOrder(string status)
         {
             InitializeComponent();
             SetDefaultDesign();
+            FrmStatus = status;
         }
 
         #region UI 디자인 Setting
@@ -36,6 +46,8 @@ namespace Project_MES.View._01_Sales
             Lbl_Contents0.Text = "수주사항";
             uc_LblTxt_OrderNo.TxtContents.ReadOnly = true;
             uc_LblCbo_OrderCust.CboContents.SelectedIndexChanged += new EventHandler(CboOrderCust_SelectedIndexChanged);
+            uc_LblDtp_OrderDate.DtpStartDate.Value = DateTime.Now;
+            uc_LblDtp_EndDate.DtpEndDate.Value = DateTime.Now;
 
             Lbl_Contents1.Text = "수주내역";
             Btn_Delete.Text = "삭제";
@@ -82,19 +94,53 @@ namespace Project_MES.View._01_Sales
             GvPlaceOrderDetail.AutoGenerateColumns = false; //DataSource Column생성 방지
 
             //Grid Field명 지정
-            Col_Seq.DataPropertyName = "LotSeq";
+            Col_Seq.DataPropertyName = "Seq";
             Col_ProductCode.DataPropertyName = "ProductCode";
-            Col_ProductName.DataPropertyName = "ProductName";
+            Col_ProductName.DataPropertyName = "MaterialName";
             Col_Alias.DataPropertyName = "Alias";
             Col_Spec.DataPropertyName = "Spec";
             Col_Qty.DataPropertyName = "OrderQty";
-            Col_Unit.DataPropertyName = "Unit";
+            Col_Unit.DataPropertyName = "ItemValue";
             Col_Remark.DataPropertyName = "Remark";
         }
 
         #endregion UI 디자인 Setting End
 
 
+        private void Frm_Sales_PlaceOrder_Load(object sender, EventArgs e)
+        {
+            //수정일 시 데이터 입력
+            if (FrmStatus == "Update")
+            {
+                //데이터 입력
+                InitPlaceOrder();
+
+                //수정 불가
+                uc_LblCbo_OrderCust.CboContents.Enabled = false; //수주처
+                Btn_Delete.Visible = false;
+            }
+        }
+
+        private void InitPlaceOrder()
+        {
+            //수정일 경우 데이터 입력
+            //Master Info
+            uc_LblTxt_OrderNo.TxtContents.Text = MasterRow.Cells["Col_OrderNo"].Value.ToString();                               //수주번호
+            uc_LblCbo_OrderCust.CboContents.SelectedValue = MasterRow.Cells["Col_CustName"].Value ?? "";                        //수주처
+            uc_LblCbo_OrderOutCust.CboContents.SelectedValue = MasterRow.Cells["Col_OutCustName"].Value ?? "";                  //납품처
+            uc_LblDtp_OrderDate.DtpStartDate.Value = Convert.ToDateTime(MasterRow.Cells["Col_OrderDate"].Value.ToString());     //수주일
+            uc_LblDtp_EndDate.DtpStartDate.Value = Convert.ToDateTime(MasterRow.Cells["Col_OrderEndDate"].Value.ToString());    //마감일
+            uc_LblTxt_Remark.TxtContents.Text = MasterRow.Cells["Col_Remark_OM"].Value == null ? "": MasterRow.Cells["Col_Remark_OM"].Value.ToString(); //비고
+
+            //Detail Info
+            Sales_PlaceOrderDetail od = new Sales_PlaceOrderDetail();
+            od.OrderNo = MasterRow.Cells["Col_OrderNo"].Value.ToString();
+
+            GvPlaceOrderDetail.DataSource = od.R_PlaceOrderDetail();
+        }
+
+
+        #region 입력보조
         /// <summary>
         /// 수주처 변경 시 제품코드 ComboBox의 리스트를 수주처에 맞추어 변경
         /// </summary>
@@ -147,12 +193,10 @@ namespace Project_MES.View._01_Sales
                 GvPlaceOrderDetail.CurrentRow.Cells[Col_Unit.Name].Value        = item[0]["UnitName"].ToString();        //단위
             }
         }
+        #endregion 입력보조End
 
         private void Btn_Save_Click(object sender, EventArgs e)
         {
-            //필수사항 입력 체크
-            if (Check_SaveError()) return;
-
             //저장 프로세스 진행
             if (SaveProcess_PlaceOrder())
             {
@@ -162,11 +206,55 @@ namespace Project_MES.View._01_Sales
             }
         }
 
+        private void Btn_Delete_Click(object sender, EventArgs e)
+        {
+            //현재행 데이터 가져오기
+            DataGridViewRow dataRow = GvPlaceOrderDetail.CurrentRow;
+
+            GvPlaceOrderDetail.Rows.Remove(dataRow);
+        }
+
+        #region 저장
+
+        private bool SaveProcess_PlaceOrder()
+        {
+            //필수사항 입력 체크
+            if (Check_SaveError()) return false;
+
+            //Sales_PlaceOrderMaster 저장
+            //저장 중 에러 발생시 저장 중단
+            if (!Save_PlaceOrderMaster()) return false;
+
+            //Sales_PlaceOrderDetail 저장
+            foreach (DataGridViewRow dataRow in GvPlaceOrderDetail.Rows)
+            {
+                //마지막행인 새입력 열일경우 스킵
+                if (dataRow.Index == GvPlaceOrderDetail.Rows.Count - 1) continue;
+
+                //저장중 에러 발생시 저장 중단
+                if (!Save_PlaceOrderDetail(dataRow))
+                {
+                    //신규생성일때 실행 오류 시 정보 삭제
+                    if(FrmStatus == "Create")
+                    {
+                        Delete_PlaceOrder_ByError();
+                    }
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// 저장 전 에러체크
+        /// </summary>
+        /// <returns></returns>
         private bool Check_SaveError()
         {
             //수주내역 1줄이상 입력 했는지
             if (GvPlaceOrderDetail.Rows.Count <= 1) return true;
-            
+
             //입력된 모든행 확인
             foreach (DataGridViewRow dataRow in GvPlaceOrderDetail.Rows)
             {
@@ -181,29 +269,6 @@ namespace Project_MES.View._01_Sales
             }
 
             return false;
-        }
-
-        #region 저장
-        private bool SaveProcess_PlaceOrder()
-        {
-            //Sales_PlaceOrderMaster 저장
-            //저장 중 에러 발생시 저장 중단
-            if (!Save_PlaceOrderMaster()) return false;
-
-            //Sales_PlaceOrderDetail 저장
-            foreach (DataGridViewRow dataRow in GvPlaceOrderDetail.Rows)
-            {
-                //마지막행인 새입력 열일경우 스킵
-                if (dataRow.Index == GvPlaceOrderDetail.Rows.Count - 1) continue;
-
-                //저장중 에러 발생시 저장 중단
-                if (!Save_PlaceOrderDetail(dataRow))
-                {
-                    return false;
-                }
-            }
-
-            return true;
         }
 
         /// <summary>
@@ -232,10 +297,10 @@ namespace Project_MES.View._01_Sales
         private bool Save_PlaceOrderDetail(DataGridViewRow dataRow)
         {
             Sales_PlaceOrderDetail od = new Sales_PlaceOrderDetail();
-            od.OrderNo = uc_LblTxt_OrderNo.TxtContents.Text;    //수주번호
-            od.Seq = dataRow.Cells[Col_ProductCode.Name].Value == null ? 0 : (int)dataRow.Cells[Col_ProductCode.Name].Value;   //순번
-            od.ProductCode = dataRow.Cells[Col_ProductCode.Name].Value.ToString();  //제품코드
-            od.OrderQty = Convert.ToDouble(dataRow.Cells[Col_Qty.Name].Value);      //수량
+            od.OrderNo = uc_LblTxt_OrderNo.TxtContents.Text;                       //수주번호
+            od.Seq = dataRow.Index + 1;                                            //순번
+            od.ProductCode = dataRow.Cells[Col_ProductCode.Name].Value.ToString(); //제품코드
+            od.OrderQty = Convert.ToDouble(dataRow.Cells[Col_Qty.Name].Value);     //수량
             od.Remark = dataRow.Cells[Col_Remark.Name].Value == null ? "" : dataRow.Cells[Col_Remark.Name].Value.ToString();  //비고
 
             return od.CU_PlaceOrderDetail();
@@ -243,10 +308,23 @@ namespace Project_MES.View._01_Sales
 
         private void Delete_PlaceOrder_ByError()
         {
-            Sales_PlaceOrderMaster om = new Sales_PlaceOrderMaster();
             Sales_PlaceOrderDetail od = new Sales_PlaceOrderDetail();
+            Sales_PlaceOrderMaster om = new Sales_PlaceOrderMaster();
+
         }
 
         #endregion 저장 End
+
+        private void Btn_Close_Click(object sender, EventArgs e)
+        {
+            //저장하지 않고 종료
+            DialogResult = DialogResult.Cancel;
+        }
+
+        private void Frm_Sales_PlaceOrder_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //화면 종료시 Heap 찌꺼기 데이터 제거
+            Dispose();
+        }
     }
 }

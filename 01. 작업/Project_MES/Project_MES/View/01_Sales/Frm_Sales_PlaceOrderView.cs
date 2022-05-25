@@ -31,6 +31,8 @@ namespace Project_MES.View._01_Sales
 
             //조회영역
             Btn_Search.Text = "조회";
+            uc_LblDtp_OrderDate.DtpStartDate.Value = DateTime.Now.AddDays(-7);
+            uc_LblDtp_OrderDate.DtpEndDate.Value = DateTime.Now;
 
             //컨텐츠 영역
             Lbl_Contents0.Text = "수주내역";
@@ -52,8 +54,8 @@ namespace Project_MES.View._01_Sales
 
             //Grid Field명 지정
             Col_OrderNo.DataPropertyName = "OrderNo";
-            Col_CustName.DataPropertyName = "OrderCustName";
-            Col_OutCustName.DataPropertyName = "OutCustName";
+            Col_CustName.DataPropertyName = "OrderCustCode";
+            Col_OutCustName.DataPropertyName = "OutCustCode";
             Col_OrderDate.DataPropertyName = "OrderDate";
             Col_OrderEndDate.DataPropertyName = "EndDate";
             Col_Remark_OM.DataPropertyName = "Remark";
@@ -65,7 +67,7 @@ namespace Project_MES.View._01_Sales
             gvOrderDetail.AutoGenerateColumns = false; //DataSource Column생성 방지
 
             //Grid Field명 지정
-            Col_Seq.DataPropertyName = "LotSeq";
+            Col_Seq.DataPropertyName = "Seq";
             Col_ProductCode.DataPropertyName = "ProductCode";
             Col_ProductName.DataPropertyName = "MaterialName";
             Col_ProductAlias.DataPropertyName = "Alias";
@@ -85,9 +87,22 @@ namespace Project_MES.View._01_Sales
 
         private void Btn_Create_Click(object sender, EventArgs e)
         {
-            Frm_Sales_PlaceOrder frmCreate = new Frm_Sales_PlaceOrder();
+            Frm_Sales_PlaceOrder frmCreate = new Frm_Sales_PlaceOrder("Create");
             
             if(frmCreate.ShowDialog() == DialogResult.OK)
+            {
+                DisplayData();
+            }
+        }
+
+        private void Btn_Update_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow masterRow = gvOrderMaster.SelectedRows[0];
+
+            Frm_Sales_PlaceOrder frmCreate = new Frm_Sales_PlaceOrder("Update");
+            frmCreate.MasterRow = masterRow;    //Master정보
+
+            if (frmCreate.ShowDialog() == DialogResult.OK)
             {
                 DisplayData();
             }
@@ -101,16 +116,14 @@ namespace Project_MES.View._01_Sales
             om.Search_EndDate = uc_LblDtp_OrderDate.DtpEndDate.Value.ToString("yyyyMMdd") + DateTime.Now.ToString("HHmmss");  //조회 종료일
             om.Search_CustName = uc_LblTxt_CustName.TxtContents.Text;   //수주처명
 
-            gvOrderMaster.DataSource = om.Select_FrmSalesOrder();
-
-            //OrderDetail
+            gvOrderMaster.DataSource = om.R_PlaceOrderMaster();
         }
 
         private void gvOrderMaster_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            if (gvOrderMaster.Rows[e.RowIndex].DataBoundItem == null) return;
+            if (gvOrderMaster.SelectedRows.Count == 0) return;
 
-            string orderNo = (gvOrderMaster.Rows[e.RowIndex].DataBoundItem as DataRowView).Row["OrderNo"].ToString();   //선택된Row LotNo
+            string orderNo = gvOrderMaster.SelectedRows[0].Cells[Col_OrderNo.Name].Value.ToString(); //선택된Row LotNo
 
             DisplayOrderDetail(orderNo);
         }
@@ -118,9 +131,10 @@ namespace Project_MES.View._01_Sales
         private void DisplayOrderDetail(string lotNo)
         {
             Sales_PlaceOrderDetail od = new Sales_PlaceOrderDetail();
-            od.HighLotNo = lotNo;
+            od.OrderNo = lotNo;
 
-            od.Select_FrmSalesOrder();
+            gvOrderDetail.DataSource = od.R_PlaceOrderDetail();
         }
+
     }
 }

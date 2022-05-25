@@ -18,24 +18,34 @@ namespace Project_MES.Model._01_Sales
         public double OrderQty { get; set; }
         public string Remark { get; set; }
 
-        //입력용
-        public string HighLotNo { get; set; }
-
         #endregion Property End
 
         string query = "";
         Global_Database db = new Global_Database();
 
-        public DataTable Select_FrmSalesOrder()
+        public DataTable R_PlaceOrderDetail()
         {
-            query = $@"CALL Sales_OrderDetail_R('{HighLotNo}')";
+            query = $@"CALL Sales_PlaceOrderDetail_R('{OrderNo}')";
 
             return db.GetDataTable_MySQL(query);
         }
 
         public bool CU_PlaceOrderDetail()
         {
-            query = "";
+            query = $@"CALL Sales_PlaceOrderDetail_CU('{OrderNo}',
+                                                       {Seq},
+                                                      '{ProductCode}',
+                                                       {OrderQty},
+                                                      '{Remark}',
+                                                      '{Global_DataStorage.ClientName}',
+                                                      '{Global_DataStorage.ClientIP}' )";
+
+            return db.ExcuteQuery_MySQL(query);
+        }
+
+        public bool D_PlaceOrderDetail()
+        {
+            query = $@"";
 
             return db.ExcuteQuery_MySQL(query);
         }
