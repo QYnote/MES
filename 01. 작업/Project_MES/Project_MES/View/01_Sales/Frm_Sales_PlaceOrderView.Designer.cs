@@ -31,15 +31,6 @@ namespace Project_MES.View._01_Sales
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.gvOrderDetail = new System.Windows.Forms.DataGridView();
-            this.Col_Seq = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_ProductCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_ProductAlias = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_ProductSpec = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_Remark_OD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_PlanStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.uc_LblTxt_CustName = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
             this.uc_LblDtp_OrderDate = new Project_MES.Control.CustomUc.Common.Uc_LblDtp();
@@ -52,9 +43,18 @@ namespace Project_MES.View._01_Sales
             this.Btn_Update = new System.Windows.Forms.Button();
             this.Btn_Delete = new System.Windows.Forms.Button();
             this.gvOrderMaster = new System.Windows.Forms.DataGridView();
+            this.Col_Seq = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_ProductCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_ProductAlias = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_ProductSpec = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Remark_OD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_PlanStatus = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Col_OrderNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_CustName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_OutCustName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_CustCode = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Col_OutCustCode = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Col_OrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_OrderEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_Remark_OM = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -111,69 +111,6 @@ namespace Project_MES.View._01_Sales
             this.gvOrderDetail.Size = new System.Drawing.Size(992, 226);
             this.gvOrderDetail.TabIndex = 5;
             // 
-            // Col_Seq
-            // 
-            this.Col_Seq.Frozen = true;
-            this.Col_Seq.HeaderText = "순번";
-            this.Col_Seq.Name = "Col_Seq";
-            this.Col_Seq.ReadOnly = true;
-            // 
-            // Col_ProductCode
-            // 
-            this.Col_ProductCode.Frozen = true;
-            this.Col_ProductCode.HeaderText = "제품코드";
-            this.Col_ProductCode.Name = "Col_ProductCode";
-            this.Col_ProductCode.ReadOnly = true;
-            // 
-            // Col_ProductName
-            // 
-            this.Col_ProductName.Frozen = true;
-            this.Col_ProductName.HeaderText = "제품명";
-            this.Col_ProductName.Name = "Col_ProductName";
-            this.Col_ProductName.ReadOnly = true;
-            // 
-            // Col_ProductAlias
-            // 
-            this.Col_ProductAlias.Frozen = true;
-            this.Col_ProductAlias.HeaderText = "제품번호";
-            this.Col_ProductAlias.Name = "Col_ProductAlias";
-            this.Col_ProductAlias.ReadOnly = true;
-            // 
-            // Col_ProductSpec
-            // 
-            this.Col_ProductSpec.Frozen = true;
-            this.Col_ProductSpec.HeaderText = "Spec";
-            this.Col_ProductSpec.Name = "Col_ProductSpec";
-            this.Col_ProductSpec.ReadOnly = true;
-            // 
-            // Col_Qty
-            // 
-            this.Col_Qty.Frozen = true;
-            this.Col_Qty.HeaderText = "수량";
-            this.Col_Qty.Name = "Col_Qty";
-            this.Col_Qty.ReadOnly = true;
-            // 
-            // Col_Unit
-            // 
-            this.Col_Unit.Frozen = true;
-            this.Col_Unit.HeaderText = "단위";
-            this.Col_Unit.Name = "Col_Unit";
-            this.Col_Unit.ReadOnly = true;
-            // 
-            // Col_Remark_OD
-            // 
-            this.Col_Remark_OD.Frozen = true;
-            this.Col_Remark_OD.HeaderText = "비고";
-            this.Col_Remark_OD.Name = "Col_Remark_OD";
-            this.Col_Remark_OD.ReadOnly = true;
-            // 
-            // Col_PlanStatus
-            // 
-            this.Col_PlanStatus.Frozen = true;
-            this.Col_PlanStatus.HeaderText = "계획상태";
-            this.Col_PlanStatus.Name = "Col_PlanStatus";
-            this.Col_PlanStatus.ReadOnly = true;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.uc_LblTxt_CustName);
@@ -221,6 +158,7 @@ namespace Project_MES.View._01_Sales
             this.Btn_Search.TabIndex = 1;
             this.Btn_Search.Text = "Btn_Search";
             this.Btn_Search.UseVisualStyleBackColor = true;
+            this.Btn_Search.Click += new System.EventHandler(this.Btn_Search_Click);
             // 
             // Lbl_Contents0
             // 
@@ -301,6 +239,7 @@ namespace Project_MES.View._01_Sales
             this.Btn_Delete.TabIndex = 1;
             this.Btn_Delete.Text = "Btn_Delete";
             this.Btn_Delete.UseVisualStyleBackColor = true;
+            this.Btn_Delete.Click += new System.EventHandler(this.Btn_Delete_Click);
             // 
             // gvOrderMaster
             // 
@@ -309,8 +248,8 @@ namespace Project_MES.View._01_Sales
             this.gvOrderMaster.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvOrderMaster.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Col_OrderNo,
-            this.Col_CustName,
-            this.Col_OutCustName,
+            this.Col_CustCode,
+            this.Col_OutCustCode,
             this.Col_OrderDate,
             this.Col_OrderEndDate,
             this.Col_Remark_OM});
@@ -325,23 +264,95 @@ namespace Project_MES.View._01_Sales
             this.gvOrderMaster.TabIndex = 4;
             this.gvOrderMaster.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvOrderMaster_RowEnter);
             // 
+            // Col_Seq
+            // 
+            this.Col_Seq.Frozen = true;
+            this.Col_Seq.HeaderText = "순번";
+            this.Col_Seq.Name = "Col_Seq";
+            this.Col_Seq.ReadOnly = true;
+            // 
+            // Col_ProductCode
+            // 
+            this.Col_ProductCode.Frozen = true;
+            this.Col_ProductCode.HeaderText = "제품코드";
+            this.Col_ProductCode.Name = "Col_ProductCode";
+            this.Col_ProductCode.ReadOnly = true;
+            // 
+            // Col_ProductName
+            // 
+            this.Col_ProductName.Frozen = true;
+            this.Col_ProductName.HeaderText = "제품명";
+            this.Col_ProductName.Name = "Col_ProductName";
+            this.Col_ProductName.ReadOnly = true;
+            // 
+            // Col_ProductAlias
+            // 
+            this.Col_ProductAlias.Frozen = true;
+            this.Col_ProductAlias.HeaderText = "제품번호";
+            this.Col_ProductAlias.Name = "Col_ProductAlias";
+            this.Col_ProductAlias.ReadOnly = true;
+            // 
+            // Col_ProductSpec
+            // 
+            this.Col_ProductSpec.Frozen = true;
+            this.Col_ProductSpec.HeaderText = "Spec";
+            this.Col_ProductSpec.Name = "Col_ProductSpec";
+            this.Col_ProductSpec.ReadOnly = true;
+            // 
+            // Col_Qty
+            // 
+            this.Col_Qty.Frozen = true;
+            this.Col_Qty.HeaderText = "수량";
+            this.Col_Qty.Name = "Col_Qty";
+            this.Col_Qty.ReadOnly = true;
+            // 
+            // Col_Unit
+            // 
+            this.Col_Unit.Frozen = true;
+            this.Col_Unit.HeaderText = "단위";
+            this.Col_Unit.Name = "Col_Unit";
+            this.Col_Unit.ReadOnly = true;
+            // 
+            // Col_Remark_OD
+            // 
+            this.Col_Remark_OD.Frozen = true;
+            this.Col_Remark_OD.HeaderText = "비고";
+            this.Col_Remark_OD.Name = "Col_Remark_OD";
+            this.Col_Remark_OD.ReadOnly = true;
+            // 
+            // Col_PlanStatus
+            // 
+            this.Col_PlanStatus.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Col_PlanStatus.Frozen = true;
+            this.Col_PlanStatus.HeaderText = "계획상태";
+            this.Col_PlanStatus.Name = "Col_PlanStatus";
+            this.Col_PlanStatus.ReadOnly = true;
+            this.Col_PlanStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Col_PlanStatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // Col_OrderNo
             // 
             this.Col_OrderNo.HeaderText = "수주번호";
             this.Col_OrderNo.Name = "Col_OrderNo";
             this.Col_OrderNo.ReadOnly = true;
             // 
-            // Col_CustName
+            // Col_CustCode
             // 
-            this.Col_CustName.HeaderText = "수주처";
-            this.Col_CustName.Name = "Col_CustName";
-            this.Col_CustName.ReadOnly = true;
+            this.Col_CustCode.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Col_CustCode.HeaderText = "수주처";
+            this.Col_CustCode.Name = "Col_CustCode";
+            this.Col_CustCode.ReadOnly = true;
+            this.Col_CustCode.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Col_CustCode.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // Col_OutCustName
+            // Col_OutCustCode
             // 
-            this.Col_OutCustName.HeaderText = "납품처";
-            this.Col_OutCustName.Name = "Col_OutCustName";
-            this.Col_OutCustName.ReadOnly = true;
+            this.Col_OutCustCode.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Col_OutCustCode.HeaderText = "납품처";
+            this.Col_OutCustCode.Name = "Col_OutCustCode";
+            this.Col_OutCustCode.ReadOnly = true;
+            this.Col_OutCustCode.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Col_OutCustCode.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Col_OrderDate
             // 
@@ -396,12 +407,6 @@ namespace Project_MES.View._01_Sales
         private System.Windows.Forms.DataGridView gvOrderDetail;
         private Control.CustomUc.Common.Uc_LblDtp uc_LblDtp_OrderDate;
         private Control.CustomUc.Common.Uc_LblTxt uc_LblTxt_CustName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_OrderNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_CustName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_OutCustName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_OrderDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_OrderEndDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Remark_OM;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Seq;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_ProductCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_ProductName;
@@ -410,6 +415,12 @@ namespace Project_MES.View._01_Sales
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Qty;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Unit;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Remark_OD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_PlanStatus;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Col_PlanStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_OrderNo;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Col_CustCode;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Col_OutCustCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_OrderDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_OrderEndDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Remark_OM;
     }
 }

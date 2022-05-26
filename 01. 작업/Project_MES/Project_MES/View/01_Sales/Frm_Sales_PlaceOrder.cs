@@ -206,14 +206,6 @@ namespace Project_MES.View._01_Sales
             }
         }
 
-        private void Btn_Delete_Click(object sender, EventArgs e)
-        {
-            //현재행 데이터 가져오기
-            DataGridViewRow dataRow = GvPlaceOrderDetail.CurrentRow;
-
-            GvPlaceOrderDetail.Rows.Remove(dataRow);
-        }
-
         #region 저장
 
         private bool SaveProcess_PlaceOrder()
@@ -314,6 +306,14 @@ namespace Project_MES.View._01_Sales
         }
 
         #endregion 저장 End
+
+        private void Btn_Delete_Click(object sender, EventArgs e)
+        {
+            //현재행 데이터 가져오기
+            DataGridViewRow dataRow = GvPlaceOrderDetail.CurrentRow;
+
+            GvPlaceOrderDetail.Rows.Remove(dataRow);
+        }
 
         private void Btn_Close_Click(object sender, EventArgs e)
         {
