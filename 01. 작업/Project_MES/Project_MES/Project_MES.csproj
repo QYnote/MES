@@ -85,6 +85,7 @@
     <Compile Include="Control\CustomUc\Common\Uc_LblTxt.Designer.cs">
       <DependentUpon>Uc_LblTxt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\CustomUc\Gv\DtpCell.cs" />
     <Compile Include="Control\Global\Global_Database.cs" />
     <Compile Include="Control\Global\Global_DataStorage.cs" />
     <Compile Include="Model\00_Basic\Info_CategoryGroup.cs" />
@@ -94,6 +95,7 @@
     <Compile Include="Model\00_Basic\Info_Process.cs" />
     <Compile Include="Model\01_Sales\Sales_PlaceOrderDetail.cs" />
     <Compile Include="Model\01_Sales\Sales_PlaceOrderMaster.cs" />
+    <Compile Include="Model\02_Product\Product_WorkPlan.cs" />
     <Compile Include="View\00_Basic\Frm_Info_CategoryItem.cs">
       <SubType>Form</SubType>
     </Compile>

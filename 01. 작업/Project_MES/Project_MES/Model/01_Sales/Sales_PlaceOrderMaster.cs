@@ -16,14 +16,14 @@ namespace Project_MES.Model._01_Sales
         public string OrderNo { get; set; }
         public string OrderCustCode { get; set; }
         public string OutCustCode { get; set; }
-        public string OrderDate { get; set; }
-        public string EndDate { get; set; }
+        public DateTime OrderDate { get; set; }
+        public DateTime EndDate { get; set; }
         public string Remark { get; set; }
         public char UseYN { get; set; }
 
         //조회용
-        public string Search_StartDate { get; set; }
-        public string Search_EndDate { get; set; }
+        public DateTime Search_StartDate { get; set; }
+        public DateTime Search_EndDate { get; set; }
         public string Search_CustName { get; set; }
 
         #endregion Property End
@@ -33,8 +33,8 @@ namespace Project_MES.Model._01_Sales
 
         public DataTable R_PlaceOrderMaster()
         {
-            query = $@"CALL Sales_PlaceOrderMaster_R('{Search_StartDate}',
-                                                     '{Search_EndDate}',
+            query = $@"CALL Sales_PlaceOrderMaster_R('{Search_StartDate.ToString("yyyyMMdd")}',
+                                                     '{Search_EndDate.ToString("yyyyMMdd") + DateTime.Now.ToString("HHmmss")}',
                                                      '{Search_CustName}')";
 
             return db.GetDataTable_MySQL(query);
@@ -45,8 +45,8 @@ namespace Project_MES.Model._01_Sales
             query = $@"CALL Sales_PlaceOrderMaster_CU('{OrderNo}',
                                                       '{OrderCustCode}',
                                                       '{OutCustCode}',
-                                                      '{OrderDate}',
-                                                      '{EndDate}',
+                                                      '{OrderDate.ToString("yyyyMMdd")}',
+                                                      '{EndDate.ToString("yyyyMMdd")}',
 
                                                       '{Remark}',
                                                       
@@ -65,16 +65,8 @@ namespace Project_MES.Model._01_Sales
 
         public bool D_PlaceOrderMaster()
         {
-            query = $@"CALL Sales_PlaceOrderMaster_CU('{OrderNo}',
-                                                      '{OrderCustCode}',
-                                                      '{OutCustCode}',
-                                                      '{OrderDate}',
-                                                      '{EndDate}',
+            query = $@"CALL Sales_PlaceOrderMaster_D('{OrderNo}')";
 
-                                                      '{Remark}',
-                                                      
-                                                      '{Global_DataStorage.ClientName}',
-                                                      '{Global_DataStorage.ClientIP}')";
             return db.ExcuteQuery_MySQL(query);
         }
     }

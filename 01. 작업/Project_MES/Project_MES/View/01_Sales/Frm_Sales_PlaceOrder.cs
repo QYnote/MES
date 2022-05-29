@@ -106,6 +106,7 @@ namespace Project_MES.View._01_Sales
 
         #endregion UI 디자인 Setting End
 
+        #region 조회
 
         private void Frm_Sales_PlaceOrder_Load(object sender, EventArgs e)
         {
@@ -136,9 +137,10 @@ namespace Project_MES.View._01_Sales
             Sales_PlaceOrderDetail od = new Sales_PlaceOrderDetail();
             od.OrderNo = MasterRow.Cells["Col_OrderNo"].Value.ToString();
 
-            GvPlaceOrderDetail.DataSource = od.R_PlaceOrderDetail();
+            GvPlaceOrderDetail.DataSource = od.R_PlaceOrderDetail_ByOrderNo();
         }
 
+        #endregion 조회 End
 
         #region 입력보조
         /// <summary>
@@ -195,6 +197,8 @@ namespace Project_MES.View._01_Sales
         }
         #endregion 입력보조End
 
+        #region 저장
+
         private void Btn_Save_Click(object sender, EventArgs e)
         {
             //저장 프로세스 진행
@@ -205,8 +209,6 @@ namespace Project_MES.View._01_Sales
                 Close();
             }
         }
-
-        #region 저장
 
         private bool SaveProcess_PlaceOrder()
         {
@@ -274,8 +276,8 @@ namespace Project_MES.View._01_Sales
             om.OrderCustCode = uc_LblCbo_OrderCust.CboContents.SelectedValue.ToString();    //수주 거래처
             om.OutCustCode = uc_LblCbo_OrderOutCust.CboContents.SelectedValue.ToString();   //납품 거래처
             om.OutCustCode = uc_LblCbo_OrderOutCust.CboContents.SelectedValue.ToString();   //납품 거래처
-            om.OrderDate = uc_LblDtp_OrderDate.DtpStartDate.Value.ToString("yyyyMMdd");     //수주일자
-            om.EndDate = uc_LblDtp_EndDate.DtpStartDate.Value.ToString("yyyyMMdd");         //마감일자
+            om.OrderDate = uc_LblDtp_OrderDate.DtpStartDate.Value;     //수주일자
+            om.EndDate = uc_LblDtp_EndDate.DtpStartDate.Value;         //마감일자
             om.Remark = uc_LblTxt_Remark.TxtContents.Text;                                  //비고
 
             return om.CU_PlaceOrderMaster();

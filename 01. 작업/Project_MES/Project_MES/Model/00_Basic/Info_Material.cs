@@ -65,12 +65,12 @@ namespace Project_MES.Model._00_Basic
             return db.ExcuteQuery_MySQL(query);
         }
 
-        public DataTable Select_Cbo()
+        public DataTable Select_Cbo_All()
         {
-            query = $@"SELECT MaterialCode AS '자재코드',
-                              MaterialName AS '자재명'
-                         FROM Info_Material
-                        WHERE UseYn = 'Y'";
+            query = $@"SELECT ma.MaterialCode, ma.MaterialName, ma.Alias, ma.Spec, ci.ItemValue AS UnitName
+                         FROM Info_Material ma
+                   INNER JOIN Info_CategoryItem ci ON ci.ItemCode = ma.UnitCode
+                                                 AND ci.GroupCode = 'CG000402'";
 
             return db.GetDataTable_MySQL(query);
         }

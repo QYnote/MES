@@ -45,11 +45,11 @@ namespace Project_MES.View._01_Sales
 
         private void GvSet()
         {
-            GvSet_OrderMaster();
-            GvSet_OrderDetail();
+            GvSet_PlaceOrderMaster();
+            GvSet_PlaceOrderDetail();
         }
 
-        private void GvSet_OrderMaster()
+        private void GvSet_PlaceOrderMaster()
         {
             //DataGridView 셋팅
             gvOrderMaster.AutoGenerateColumns = false; //DataSource Column생성 방지
@@ -63,7 +63,7 @@ namespace Project_MES.View._01_Sales
             Col_Remark_OM.DataPropertyName = "Remark";
         }
 
-        private void GvSet_OrderDetail()
+        private void GvSet_PlaceOrderDetail()
         {
             //DataGridView 셋팅
             gvOrderDetail.AutoGenerateColumns = false; //DataSource Column생성 방지
@@ -113,7 +113,6 @@ namespace Project_MES.View._01_Sales
             DisplayData();
         }
 
-
         private void Btn_Search_Click(object sender, EventArgs e)
         {
             DisplayData();
@@ -125,28 +124,26 @@ namespace Project_MES.View._01_Sales
         {
             //OrderMaster
             Sales_PlaceOrderMaster om = new Sales_PlaceOrderMaster();
-            om.Search_StartDate = uc_LblDtp_OrderDate.DtpStartDate.Value.ToString("yyyyMMdd");   //조회시작일
-            om.Search_EndDate = uc_LblDtp_OrderDate.DtpEndDate.Value.ToString("yyyyMMdd") + DateTime.Now.ToString("HHmmss");  //조회 종료일
-            om.Search_CustName = uc_LblTxt_CustName.TxtContents.Text;   //수주처명
+            om.Search_StartDate = uc_LblDtp_OrderDate.DtpStartDate.Value;   //조회시작일
+            om.Search_EndDate = uc_LblDtp_OrderDate.DtpEndDate.Value;       //조회 종료일
+            om.Search_CustName = uc_LblTxt_CustName.TxtContents.Text;       //수주처명
 
             gvOrderMaster.DataSource = om.R_PlaceOrderMaster();
         }
 
         private void gvOrderMaster_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            if (gvOrderMaster.SelectedRows.Count == 0) return;
+            if (gvOrderMaster.SelectedRows.Count < 1) return;
 
-            string orderNo = gvOrderMaster.SelectedRows[0].Cells[Col_OrderNo.Name].Value.ToString(); //선택된Row LotNo
-
-            DisplayOrderDetail(orderNo);
+            DisplayOrderDetail();
         }
 
-        private void DisplayOrderDetail(string lotNo)
+        private void DisplayOrderDetail()
         {
             Sales_PlaceOrderDetail od = new Sales_PlaceOrderDetail();
-            od.OrderNo = lotNo;
+            od.OrderNo = gvOrderMaster.SelectedRows[0].Cells[Col_OrderNo.Name].Value.ToString(); //선택된Row LotNo;
 
-            gvOrderDetail.DataSource = od.R_PlaceOrderDetail();
+            gvOrderDetail.DataSource = od.R_PlaceOrderDetail_ByOrderNo();
         }
 
 

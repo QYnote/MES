@@ -55,7 +55,10 @@ namespace Project_MES.Model._00_Basic
 
         public DataTable Select_Cbo()
         {
-            query = $@"SELECT ItemCode AS {Code_FieldName},
+            query = $@"SELECT '' AS {Code_FieldName},
+                              '' AS {Value_FieldName} 
+                        UNION ALL
+                       SELECT ItemCode AS {Code_FieldName},
                               ItemValue AS {Value_FieldName} 
                          FROM Info_CategoryItem
                         WHERE GroupCode = '{GroupCode}'";

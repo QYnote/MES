@@ -29,54 +29,54 @@ namespace Project_MES.View._02_Product
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TableLayoutMain = new System.Windows.Forms.TableLayoutPanel();
             this.Pnl_SearchMain = new System.Windows.Forms.Panel();
             this.Pnl_Search1 = new System.Windows.Forms.Panel();
-            this.uc_LblTxt_ProductAlias = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
-            this.uc_LblTxt_ProductName = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
             this.Pnl_Search0 = new System.Windows.Forms.Panel();
-            this.uc_LblTxt_CustName = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
-            this.uc_LblDtp_OrderDate = new Project_MES.Control.CustomUc.Common.Uc_LblDtp();
             this.Btn_Search = new System.Windows.Forms.Button();
             this.Lbl_Contents0 = new System.Windows.Forms.Label();
             this.Pnl_MailTitle = new System.Windows.Forms.Panel();
             this.Lbl_MailTitle = new System.Windows.Forms.Label();
-            this.gvPlaceOrderDetail = new System.Windows.Forms.DataGridView();
-            this.gvWorkPlan = new System.Windows.Forms.DataGridView();
-            this.Lbl_Contents1 = new System.Windows.Forms.Label();
-            this.uc_LblTxt_PlanQty = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
-            this.uc_LblTxt_RemainQty = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
-            this.uc_LblTxt_OrderQty = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
+            this.GvPlaceOrderDetail = new System.Windows.Forms.DataGridView();
+            this.GvWorkPlan = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Btn_Save = new System.Windows.Forms.Button();
             this.Btn_Delete = new System.Windows.Forms.Button();
-            this.Col_OrderNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_OrderSeq = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_CustName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_ProductCode_SO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_ProductName_SO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_ProductAlias_SO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_UnitNmae_Sales = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_OrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_OrderEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_Remark_SO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lbl_Contents1 = new System.Windows.Forms.Label();
             this.Col_PlanNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_PlanQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_Unit_MP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_Remark_MP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Unit_WP = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Col_Remark_WP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_PlanStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_WorkStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_WorkStatus = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.uc_LblTxt_ProductAlias = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
+            this.uc_LblTxt_ProductName = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
+            this.uc_LblTxt_CustName = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
+            this.uc_LblDtp_OrderDate = new Project_MES.Control.CustomUc.Common.Uc_LblDtp();
+            this.uc_LblTxt_PlanQty = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
+            this.uc_LblTxt_OrderQty = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
+            this.uc_LblTxt_RemainQty = new Project_MES.Control.CustomUc.Common.Uc_LblTxt();
+            this.Col_OrderNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_OrderSeq = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_CustName = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Col_ProductCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_ProductName = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Col_ProductAlias = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Col_OrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_OrderEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_PlanStatus = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Col_Remark_SO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Hide_OrderQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TableLayoutMain.SuspendLayout();
             this.Pnl_SearchMain.SuspendLayout();
             this.Pnl_Search1.SuspendLayout();
             this.Pnl_Search0.SuspendLayout();
             this.Pnl_MailTitle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvPlaceOrderDetail)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvWorkPlan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GvPlaceOrderDetail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GvWorkPlan)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -89,8 +89,8 @@ namespace Project_MES.View._02_Product
             this.TableLayoutMain.Controls.Add(this.Pnl_SearchMain, 0, 1);
             this.TableLayoutMain.Controls.Add(this.Lbl_Contents0, 0, 2);
             this.TableLayoutMain.Controls.Add(this.Pnl_MailTitle, 0, 0);
-            this.TableLayoutMain.Controls.Add(this.gvPlaceOrderDetail, 0, 3);
-            this.TableLayoutMain.Controls.Add(this.gvWorkPlan, 1, 5);
+            this.TableLayoutMain.Controls.Add(this.GvPlaceOrderDetail, 0, 3);
+            this.TableLayoutMain.Controls.Add(this.GvWorkPlan, 1, 5);
             this.TableLayoutMain.Controls.Add(this.tableLayoutPanel1, 0, 5);
             this.TableLayoutMain.Controls.Add(this.panel1, 0, 4);
             this.TableLayoutMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -130,32 +130,6 @@ namespace Project_MES.View._02_Product
             this.Pnl_Search1.Size = new System.Drawing.Size(923, 29);
             this.Pnl_Search1.TabIndex = 10;
             // 
-            // uc_LblTxt_ProductAlias
-            // 
-            this.uc_LblTxt_ProductAlias.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_LblTxt_ProductAlias.DisplayText = "Default Text";
-            this.uc_LblTxt_ProductAlias.Dock = System.Windows.Forms.DockStyle.Left;
-            this.uc_LblTxt_ProductAlias.LblText = "제품번";
-            this.uc_LblTxt_ProductAlias.LblWidth = 100;
-            this.uc_LblTxt_ProductAlias.Location = new System.Drawing.Point(264, 0);
-            this.uc_LblTxt_ProductAlias.Name = "uc_LblTxt_ProductAlias";
-            this.uc_LblTxt_ProductAlias.Size = new System.Drawing.Size(264, 29);
-            this.uc_LblTxt_ProductAlias.TabIndex = 11;
-            this.uc_LblTxt_ProductAlias.TxtWdith = 150;
-            // 
-            // uc_LblTxt_ProductName
-            // 
-            this.uc_LblTxt_ProductName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_LblTxt_ProductName.DisplayText = "Default Text";
-            this.uc_LblTxt_ProductName.Dock = System.Windows.Forms.DockStyle.Left;
-            this.uc_LblTxt_ProductName.LblText = "제품명";
-            this.uc_LblTxt_ProductName.LblWidth = 100;
-            this.uc_LblTxt_ProductName.Location = new System.Drawing.Point(0, 0);
-            this.uc_LblTxt_ProductName.Name = "uc_LblTxt_ProductName";
-            this.uc_LblTxt_ProductName.Size = new System.Drawing.Size(264, 29);
-            this.uc_LblTxt_ProductName.TabIndex = 10;
-            this.uc_LblTxt_ProductName.TxtWdith = 150;
-            // 
             // Pnl_Search0
             // 
             this.Pnl_Search0.Controls.Add(this.uc_LblTxt_CustName);
@@ -166,32 +140,6 @@ namespace Project_MES.View._02_Product
             this.Pnl_Search0.Size = new System.Drawing.Size(923, 29);
             this.Pnl_Search0.TabIndex = 4;
             // 
-            // uc_LblTxt_CustName
-            // 
-            this.uc_LblTxt_CustName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_LblTxt_CustName.DisplayText = "Default Text";
-            this.uc_LblTxt_CustName.Dock = System.Windows.Forms.DockStyle.Left;
-            this.uc_LblTxt_CustName.LblText = "수주처명";
-            this.uc_LblTxt_CustName.LblWidth = 100;
-            this.uc_LblTxt_CustName.Location = new System.Drawing.Point(338, 0);
-            this.uc_LblTxt_CustName.Name = "uc_LblTxt_CustName";
-            this.uc_LblTxt_CustName.Size = new System.Drawing.Size(264, 29);
-            this.uc_LblTxt_CustName.TabIndex = 9;
-            this.uc_LblTxt_CustName.TxtWdith = 150;
-            // 
-            // uc_LblDtp_OrderDate
-            // 
-            this.uc_LblDtp_OrderDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_LblDtp_OrderDate.DisplayFormat = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.uc_LblDtp_OrderDate.Dock = System.Windows.Forms.DockStyle.Left;
-            this.uc_LblDtp_OrderDate.DtpRange = true;
-            this.uc_LblDtp_OrderDate.LblText = "수주일자";
-            this.uc_LblDtp_OrderDate.LblWidth = 100;
-            this.uc_LblDtp_OrderDate.Location = new System.Drawing.Point(0, 0);
-            this.uc_LblDtp_OrderDate.Name = "uc_LblDtp_OrderDate";
-            this.uc_LblDtp_OrderDate.Size = new System.Drawing.Size(338, 29);
-            this.uc_LblDtp_OrderDate.TabIndex = 8;
-            // 
             // Btn_Search
             // 
             this.Btn_Search.Dock = System.Windows.Forms.DockStyle.Right;
@@ -201,6 +149,7 @@ namespace Project_MES.View._02_Product
             this.Btn_Search.TabIndex = 1;
             this.Btn_Search.Text = "Btn_Search";
             this.Btn_Search.UseVisualStyleBackColor = true;
+            this.Btn_Search.Click += new System.EventHandler(this.Btn_Search_Click);
             // 
             // Lbl_Contents0
             // 
@@ -237,96 +186,51 @@ namespace Project_MES.View._02_Product
             this.Lbl_MailTitle.Text = "Lbl_MainTitle";
             this.Lbl_MailTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // gvPlaceOrderDetail
+            // GvPlaceOrderDetail
             // 
-            this.gvPlaceOrderDetail.AllowUserToAddRows = false;
-            this.gvPlaceOrderDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvPlaceOrderDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.GvPlaceOrderDetail.AllowUserToAddRows = false;
+            this.GvPlaceOrderDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GvPlaceOrderDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Col_OrderNo,
             this.Col_OrderSeq,
             this.Col_CustName,
-            this.Col_ProductCode_SO,
-            this.Col_ProductName_SO,
-            this.Col_ProductAlias_SO,
-            this.Col_UnitNmae_Sales,
+            this.Col_ProductCode,
+            this.Col_ProductName,
+            this.Col_ProductAlias,
             this.Col_OrderDate,
             this.Col_OrderEndDate,
+            this.Col_PlanStatus,
             this.Col_Remark_SO,
-            this.Col_Status});
-            this.TableLayoutMain.SetColumnSpan(this.gvPlaceOrderDetail, 2);
-            this.gvPlaceOrderDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvPlaceOrderDetail.Location = new System.Drawing.Point(3, 155);
-            this.gvPlaceOrderDetail.MultiSelect = false;
-            this.gvPlaceOrderDetail.Name = "gvPlaceOrderDetail";
-            this.gvPlaceOrderDetail.ReadOnly = true;
-            this.gvPlaceOrderDetail.RowTemplate.Height = 23;
-            this.gvPlaceOrderDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvPlaceOrderDetail.Size = new System.Drawing.Size(992, 217);
-            this.gvPlaceOrderDetail.TabIndex = 4;
+            this.Col_Hide_OrderQty});
+            this.TableLayoutMain.SetColumnSpan(this.GvPlaceOrderDetail, 2);
+            this.GvPlaceOrderDetail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GvPlaceOrderDetail.Location = new System.Drawing.Point(3, 155);
+            this.GvPlaceOrderDetail.MultiSelect = false;
+            this.GvPlaceOrderDetail.Name = "GvPlaceOrderDetail";
+            this.GvPlaceOrderDetail.ReadOnly = true;
+            this.GvPlaceOrderDetail.RowTemplate.Height = 23;
+            this.GvPlaceOrderDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GvPlaceOrderDetail.Size = new System.Drawing.Size(992, 217);
+            this.GvPlaceOrderDetail.TabIndex = 4;
+            this.GvPlaceOrderDetail.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.GvPlaceOrderDetail_RowEnter);
             // 
-            // gvWorkPlan
+            // GvWorkPlan
             // 
-            this.gvWorkPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvWorkPlan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.GvWorkPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GvWorkPlan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Col_PlanNo,
             this.Col_PlanQty,
-            this.Col_Unit_MP,
-            this.Col_Remark_MP,
+            this.Col_Unit_WP,
+            this.Col_Remark_WP,
             this.Col_PlanStartDate,
             this.Col_WorkStatus});
-            this.gvWorkPlan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvWorkPlan.Location = new System.Drawing.Point(273, 422);
-            this.gvWorkPlan.Name = "gvWorkPlan";
-            this.gvWorkPlan.RowTemplate.Height = 23;
-            this.gvWorkPlan.Size = new System.Drawing.Size(722, 217);
-            this.gvWorkPlan.TabIndex = 5;
-            // 
-            // Lbl_Contents1
-            // 
-            this.Lbl_Contents1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Lbl_Contents1.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Bold);
-            this.Lbl_Contents1.Location = new System.Drawing.Point(0, 0);
-            this.Lbl_Contents1.Name = "Lbl_Contents1";
-            this.Lbl_Contents1.Size = new System.Drawing.Size(998, 44);
-            this.Lbl_Contents1.TabIndex = 1;
-            this.Lbl_Contents1.Text = "Lbl_PlanMaster";
-            this.Lbl_Contents1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // uc_LblTxt_PlanQty
-            // 
-            this.uc_LblTxt_PlanQty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_LblTxt_PlanQty.DisplayText = "0";
-            this.uc_LblTxt_PlanQty.LblText = "계획 수량";
-            this.uc_LblTxt_PlanQty.LblWidth = 100;
-            this.uc_LblTxt_PlanQty.Location = new System.Drawing.Point(3, 38);
-            this.uc_LblTxt_PlanQty.Name = "uc_LblTxt_PlanQty";
-            this.uc_LblTxt_PlanQty.Size = new System.Drawing.Size(264, 29);
-            this.uc_LblTxt_PlanQty.TabIndex = 12;
-            this.uc_LblTxt_PlanQty.TxtWdith = 150;
-            // 
-            // uc_LblTxt_RemainQty
-            // 
-            this.uc_LblTxt_RemainQty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_LblTxt_RemainQty.DisplayText = "0";
-            this.uc_LblTxt_RemainQty.LblText = "미계획 수량";
-            this.uc_LblTxt_RemainQty.LblWidth = 100;
-            this.uc_LblTxt_RemainQty.Location = new System.Drawing.Point(3, 73);
-            this.uc_LblTxt_RemainQty.Name = "uc_LblTxt_RemainQty";
-            this.uc_LblTxt_RemainQty.Size = new System.Drawing.Size(264, 29);
-            this.uc_LblTxt_RemainQty.TabIndex = 11;
-            this.uc_LblTxt_RemainQty.TxtWdith = 150;
-            // 
-            // uc_LblTxt_OrderQty
-            // 
-            this.uc_LblTxt_OrderQty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_LblTxt_OrderQty.DisplayText = "0";
-            this.uc_LblTxt_OrderQty.LblText = "수주수량";
-            this.uc_LblTxt_OrderQty.LblWidth = 100;
-            this.uc_LblTxt_OrderQty.Location = new System.Drawing.Point(3, 3);
-            this.uc_LblTxt_OrderQty.Name = "uc_LblTxt_OrderQty";
-            this.uc_LblTxt_OrderQty.Size = new System.Drawing.Size(264, 29);
-            this.uc_LblTxt_OrderQty.TabIndex = 10;
-            this.uc_LblTxt_OrderQty.TxtWdith = 150;
+            this.GvWorkPlan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GvWorkPlan.Location = new System.Drawing.Point(273, 422);
+            this.GvWorkPlan.Name = "GvWorkPlan";
+            this.GvWorkPlan.RowTemplate.Height = 23;
+            this.GvWorkPlan.Size = new System.Drawing.Size(722, 217);
+            this.GvWorkPlan.TabIndex = 5;
+            this.GvWorkPlan.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.GvWorkPlan_CellEndEdit);
             // 
             // tableLayoutPanel1
             // 
@@ -368,6 +272,7 @@ namespace Project_MES.View._02_Product
             this.Btn_Save.TabIndex = 4;
             this.Btn_Save.Text = "Btn_Create";
             this.Btn_Save.UseVisualStyleBackColor = true;
+            this.Btn_Save.Click += new System.EventHandler(this.Btn_Save_Click);
             // 
             // Btn_Delete
             // 
@@ -376,102 +281,51 @@ namespace Project_MES.View._02_Product
             this.Btn_Delete.Name = "Btn_Delete";
             this.Btn_Delete.Size = new System.Drawing.Size(75, 44);
             this.Btn_Delete.TabIndex = 5;
-            this.Btn_Delete.Text = "Btn_Update";
+            this.Btn_Delete.Text = "Btn_Delete";
             this.Btn_Delete.UseVisualStyleBackColor = true;
+            this.Btn_Delete.Click += new System.EventHandler(this.Btn_Delete_Click);
             // 
-            // Col_OrderNo
+            // Lbl_Contents1
             // 
-            this.Col_OrderNo.HeaderText = "수주번호";
-            this.Col_OrderNo.Name = "Col_OrderNo";
-            this.Col_OrderNo.ReadOnly = true;
-            // 
-            // Col_OrderSeq
-            // 
-            this.Col_OrderSeq.HeaderText = "순번";
-            this.Col_OrderSeq.Name = "Col_OrderSeq";
-            this.Col_OrderSeq.ReadOnly = true;
-            // 
-            // Col_CustName
-            // 
-            this.Col_CustName.HeaderText = "수주처";
-            this.Col_CustName.Name = "Col_CustName";
-            this.Col_CustName.ReadOnly = true;
-            // 
-            // Col_ProductCode_SO
-            // 
-            this.Col_ProductCode_SO.HeaderText = "제품코드";
-            this.Col_ProductCode_SO.Name = "Col_ProductCode_SO";
-            this.Col_ProductCode_SO.ReadOnly = true;
-            // 
-            // Col_ProductName_SO
-            // 
-            this.Col_ProductName_SO.HeaderText = "제품명";
-            this.Col_ProductName_SO.Name = "Col_ProductName_SO";
-            this.Col_ProductName_SO.ReadOnly = true;
-            // 
-            // Col_ProductAlias_SO
-            // 
-            this.Col_ProductAlias_SO.HeaderText = "제품번";
-            this.Col_ProductAlias_SO.Name = "Col_ProductAlias_SO";
-            this.Col_ProductAlias_SO.ReadOnly = true;
-            // 
-            // Col_UnitNmae_Sales
-            // 
-            this.Col_UnitNmae_Sales.HeaderText = "단위";
-            this.Col_UnitNmae_Sales.Name = "Col_UnitNmae_Sales";
-            this.Col_UnitNmae_Sales.ReadOnly = true;
-            // 
-            // Col_OrderDate
-            // 
-            this.Col_OrderDate.HeaderText = "수주일자";
-            this.Col_OrderDate.Name = "Col_OrderDate";
-            this.Col_OrderDate.ReadOnly = true;
-            // 
-            // Col_OrderEndDate
-            // 
-            this.Col_OrderEndDate.HeaderText = "마감임자";
-            this.Col_OrderEndDate.Name = "Col_OrderEndDate";
-            this.Col_OrderEndDate.ReadOnly = true;
-            // 
-            // Col_Remark_SO
-            // 
-            this.Col_Remark_SO.HeaderText = "비고";
-            this.Col_Remark_SO.Name = "Col_Remark_SO";
-            this.Col_Remark_SO.ReadOnly = true;
-            // 
-            // Col_Status
-            // 
-            this.Col_Status.HeaderText = "진행상태";
-            this.Col_Status.Name = "Col_Status";
-            this.Col_Status.ReadOnly = true;
+            this.Lbl_Contents1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Lbl_Contents1.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Bold);
+            this.Lbl_Contents1.Location = new System.Drawing.Point(0, 0);
+            this.Lbl_Contents1.Name = "Lbl_Contents1";
+            this.Lbl_Contents1.Size = new System.Drawing.Size(998, 44);
+            this.Lbl_Contents1.TabIndex = 1;
+            this.Lbl_Contents1.Text = "Lbl_PlanMaster";
+            this.Lbl_Contents1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Col_PlanNo
             // 
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Col_PlanNo.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Format = "d";
+            dataGridViewCellStyle9.NullValue = null;
+            this.Col_PlanNo.DefaultCellStyle = dataGridViewCellStyle9;
             this.Col_PlanNo.HeaderText = "계획번호";
             this.Col_PlanNo.Name = "Col_PlanNo";
             this.Col_PlanNo.ReadOnly = true;
             // 
             // Col_PlanQty
             // 
-            dataGridViewCellStyle2.Format = "N";
-            dataGridViewCellStyle2.NullValue = "0";
-            this.Col_PlanQty.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Format = "N";
+            dataGridViewCellStyle10.NullValue = "0";
+            this.Col_PlanQty.DefaultCellStyle = dataGridViewCellStyle10;
             this.Col_PlanQty.HeaderText = "계획수량";
             this.Col_PlanQty.Name = "Col_PlanQty";
             // 
-            // Col_Unit_MP
+            // Col_Unit_WP
             // 
-            this.Col_Unit_MP.HeaderText = "단위";
-            this.Col_Unit_MP.Name = "Col_Unit_MP";
-            this.Col_Unit_MP.ReadOnly = true;
+            this.Col_Unit_WP.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Col_Unit_WP.HeaderText = "단위";
+            this.Col_Unit_WP.Name = "Col_Unit_WP";
+            this.Col_Unit_WP.ReadOnly = true;
+            this.Col_Unit_WP.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Col_Unit_WP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // Col_Remark_MP
+            // Col_Remark_WP
             // 
-            this.Col_Remark_MP.HeaderText = "비고";
-            this.Col_Remark_MP.Name = "Col_Remark_MP";
+            this.Col_Remark_WP.HeaderText = "비고";
+            this.Col_Remark_WP.Name = "Col_Remark_WP";
             // 
             // Col_PlanStartDate
             // 
@@ -480,8 +334,188 @@ namespace Project_MES.View._02_Product
             // 
             // Col_WorkStatus
             // 
+            this.Col_WorkStatus.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.Col_WorkStatus.HeaderText = "작업상태";
             this.Col_WorkStatus.Name = "Col_WorkStatus";
+            this.Col_WorkStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Col_WorkStatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // uc_LblTxt_ProductAlias
+            // 
+            this.uc_LblTxt_ProductAlias.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uc_LblTxt_ProductAlias.DisplayText = "";
+            this.uc_LblTxt_ProductAlias.Dock = System.Windows.Forms.DockStyle.Left;
+            this.uc_LblTxt_ProductAlias.LblText = "제품번호";
+            this.uc_LblTxt_ProductAlias.LblWidth = 100;
+            this.uc_LblTxt_ProductAlias.Location = new System.Drawing.Point(264, 0);
+            this.uc_LblTxt_ProductAlias.Name = "uc_LblTxt_ProductAlias";
+            this.uc_LblTxt_ProductAlias.Size = new System.Drawing.Size(264, 29);
+            this.uc_LblTxt_ProductAlias.TabIndex = 11;
+            this.uc_LblTxt_ProductAlias.TxtWdith = 150;
+            // 
+            // uc_LblTxt_ProductName
+            // 
+            this.uc_LblTxt_ProductName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uc_LblTxt_ProductName.DisplayText = "";
+            this.uc_LblTxt_ProductName.Dock = System.Windows.Forms.DockStyle.Left;
+            this.uc_LblTxt_ProductName.LblText = "제품명";
+            this.uc_LblTxt_ProductName.LblWidth = 100;
+            this.uc_LblTxt_ProductName.Location = new System.Drawing.Point(0, 0);
+            this.uc_LblTxt_ProductName.Name = "uc_LblTxt_ProductName";
+            this.uc_LblTxt_ProductName.Size = new System.Drawing.Size(264, 29);
+            this.uc_LblTxt_ProductName.TabIndex = 10;
+            this.uc_LblTxt_ProductName.TxtWdith = 150;
+            // 
+            // uc_LblTxt_CustName
+            // 
+            this.uc_LblTxt_CustName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uc_LblTxt_CustName.DisplayText = "";
+            this.uc_LblTxt_CustName.Dock = System.Windows.Forms.DockStyle.Left;
+            this.uc_LblTxt_CustName.LblText = "수주처명";
+            this.uc_LblTxt_CustName.LblWidth = 100;
+            this.uc_LblTxt_CustName.Location = new System.Drawing.Point(338, 0);
+            this.uc_LblTxt_CustName.Name = "uc_LblTxt_CustName";
+            this.uc_LblTxt_CustName.Size = new System.Drawing.Size(264, 29);
+            this.uc_LblTxt_CustName.TabIndex = 9;
+            this.uc_LblTxt_CustName.TxtWdith = 150;
+            // 
+            // uc_LblDtp_OrderDate
+            // 
+            this.uc_LblDtp_OrderDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uc_LblDtp_OrderDate.DisplayFormat = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.uc_LblDtp_OrderDate.Dock = System.Windows.Forms.DockStyle.Left;
+            this.uc_LblDtp_OrderDate.DtpRange = true;
+            this.uc_LblDtp_OrderDate.LblText = "수주일자";
+            this.uc_LblDtp_OrderDate.LblWidth = 100;
+            this.uc_LblDtp_OrderDate.Location = new System.Drawing.Point(0, 0);
+            this.uc_LblDtp_OrderDate.Name = "uc_LblDtp_OrderDate";
+            this.uc_LblDtp_OrderDate.Size = new System.Drawing.Size(338, 29);
+            this.uc_LblDtp_OrderDate.TabIndex = 8;
+            // 
+            // uc_LblTxt_PlanQty
+            // 
+            this.uc_LblTxt_PlanQty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uc_LblTxt_PlanQty.DisplayText = "0";
+            this.uc_LblTxt_PlanQty.LblText = "계획 수량";
+            this.uc_LblTxt_PlanQty.LblWidth = 100;
+            this.uc_LblTxt_PlanQty.Location = new System.Drawing.Point(3, 38);
+            this.uc_LblTxt_PlanQty.Name = "uc_LblTxt_PlanQty";
+            this.uc_LblTxt_PlanQty.Size = new System.Drawing.Size(264, 29);
+            this.uc_LblTxt_PlanQty.TabIndex = 12;
+            this.uc_LblTxt_PlanQty.TxtWdith = 150;
+            // 
+            // uc_LblTxt_OrderQty
+            // 
+            this.uc_LblTxt_OrderQty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uc_LblTxt_OrderQty.DisplayText = "0";
+            this.uc_LblTxt_OrderQty.LblText = "수주수량";
+            this.uc_LblTxt_OrderQty.LblWidth = 100;
+            this.uc_LblTxt_OrderQty.Location = new System.Drawing.Point(3, 3);
+            this.uc_LblTxt_OrderQty.Name = "uc_LblTxt_OrderQty";
+            this.uc_LblTxt_OrderQty.Size = new System.Drawing.Size(264, 29);
+            this.uc_LblTxt_OrderQty.TabIndex = 10;
+            this.uc_LblTxt_OrderQty.TxtWdith = 150;
+            // 
+            // uc_LblTxt_RemainQty
+            // 
+            this.uc_LblTxt_RemainQty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uc_LblTxt_RemainQty.DisplayText = "0";
+            this.uc_LblTxt_RemainQty.LblText = "미계획 수량";
+            this.uc_LblTxt_RemainQty.LblWidth = 100;
+            this.uc_LblTxt_RemainQty.Location = new System.Drawing.Point(3, 73);
+            this.uc_LblTxt_RemainQty.Name = "uc_LblTxt_RemainQty";
+            this.uc_LblTxt_RemainQty.Size = new System.Drawing.Size(264, 29);
+            this.uc_LblTxt_RemainQty.TabIndex = 11;
+            this.uc_LblTxt_RemainQty.TxtWdith = 150;
+            // 
+            // Col_OrderNo
+            // 
+            this.Col_OrderNo.Frozen = true;
+            this.Col_OrderNo.HeaderText = "수주번호";
+            this.Col_OrderNo.Name = "Col_OrderNo";
+            this.Col_OrderNo.ReadOnly = true;
+            // 
+            // Col_OrderSeq
+            // 
+            this.Col_OrderSeq.Frozen = true;
+            this.Col_OrderSeq.HeaderText = "순번";
+            this.Col_OrderSeq.Name = "Col_OrderSeq";
+            this.Col_OrderSeq.ReadOnly = true;
+            // 
+            // Col_CustName
+            // 
+            this.Col_CustName.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Col_CustName.Frozen = true;
+            this.Col_CustName.HeaderText = "수주처";
+            this.Col_CustName.Name = "Col_CustName";
+            this.Col_CustName.ReadOnly = true;
+            this.Col_CustName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Col_CustName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Col_ProductCode
+            // 
+            this.Col_ProductCode.Frozen = true;
+            this.Col_ProductCode.HeaderText = "제품코드";
+            this.Col_ProductCode.Name = "Col_ProductCode";
+            this.Col_ProductCode.ReadOnly = true;
+            // 
+            // Col_ProductName
+            // 
+            this.Col_ProductName.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Col_ProductName.Frozen = true;
+            this.Col_ProductName.HeaderText = "제품명";
+            this.Col_ProductName.Name = "Col_ProductName";
+            this.Col_ProductName.ReadOnly = true;
+            this.Col_ProductName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Col_ProductName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Col_ProductAlias
+            // 
+            this.Col_ProductAlias.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Col_ProductAlias.Frozen = true;
+            this.Col_ProductAlias.HeaderText = "제품번";
+            this.Col_ProductAlias.Name = "Col_ProductAlias";
+            this.Col_ProductAlias.ReadOnly = true;
+            this.Col_ProductAlias.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Col_ProductAlias.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Col_OrderDate
+            // 
+            this.Col_OrderDate.Frozen = true;
+            this.Col_OrderDate.HeaderText = "수주일자";
+            this.Col_OrderDate.Name = "Col_OrderDate";
+            this.Col_OrderDate.ReadOnly = true;
+            // 
+            // Col_OrderEndDate
+            // 
+            this.Col_OrderEndDate.Frozen = true;
+            this.Col_OrderEndDate.HeaderText = "마감임자";
+            this.Col_OrderEndDate.Name = "Col_OrderEndDate";
+            this.Col_OrderEndDate.ReadOnly = true;
+            // 
+            // Col_PlanStatus
+            // 
+            this.Col_PlanStatus.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Col_PlanStatus.Frozen = true;
+            this.Col_PlanStatus.HeaderText = "진행상태";
+            this.Col_PlanStatus.Name = "Col_PlanStatus";
+            this.Col_PlanStatus.ReadOnly = true;
+            this.Col_PlanStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Col_PlanStatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Col_Remark_SO
+            // 
+            this.Col_Remark_SO.Frozen = true;
+            this.Col_Remark_SO.HeaderText = "비고";
+            this.Col_Remark_SO.Name = "Col_Remark_SO";
+            this.Col_Remark_SO.ReadOnly = true;
+            // 
+            // Col_Hide_OrderQty
+            // 
+            this.Col_Hide_OrderQty.HeaderText = "수주수량";
+            this.Col_Hide_OrderQty.Name = "Col_Hide_OrderQty";
+            this.Col_Hide_OrderQty.ReadOnly = true;
+            this.Col_Hide_OrderQty.Visible = false;
             // 
             // Frm_Product_WorkPlan
             // 
@@ -491,14 +525,16 @@ namespace Project_MES.View._02_Product
             this.Controls.Add(this.TableLayoutMain);
             this.Name = "Frm_Product_WorkPlan";
             this.Text = "생산계획";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_Product_WorkPlan_FormClosed);
+            this.Load += new System.EventHandler(this.Frm_Product_WorkPlan_Load);
             this.TableLayoutMain.ResumeLayout(false);
             this.TableLayoutMain.PerformLayout();
             this.Pnl_SearchMain.ResumeLayout(false);
             this.Pnl_Search1.ResumeLayout(false);
             this.Pnl_Search0.ResumeLayout(false);
             this.Pnl_MailTitle.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gvPlaceOrderDetail)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvWorkPlan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GvPlaceOrderDetail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GvWorkPlan)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -508,7 +544,7 @@ namespace Project_MES.View._02_Product
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel TableLayoutMain;
-        private System.Windows.Forms.DataGridView gvWorkPlan;
+        private System.Windows.Forms.DataGridView GvWorkPlan;
         private System.Windows.Forms.Panel Pnl_SearchMain;
         private System.Windows.Forms.Panel Pnl_Search1;
         private Control.CustomUc.Common.Uc_LblTxt uc_LblTxt_ProductAlias;
@@ -521,7 +557,7 @@ namespace Project_MES.View._02_Product
         private System.Windows.Forms.Label Lbl_Contents1;
         private System.Windows.Forms.Panel Pnl_MailTitle;
         private System.Windows.Forms.Label Lbl_MailTitle;
-        private System.Windows.Forms.DataGridView gvPlaceOrderDetail;
+        private System.Windows.Forms.DataGridView GvPlaceOrderDetail;
         private Control.CustomUc.Common.Uc_LblTxt uc_LblTxt_PlanQty;
         private Control.CustomUc.Common.Uc_LblTxt uc_LblTxt_RemainQty;
         private Control.CustomUc.Common.Uc_LblTxt uc_LblTxt_OrderQty;
@@ -529,22 +565,22 @@ namespace Project_MES.View._02_Product
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button Btn_Save;
         private System.Windows.Forms.Button Btn_Delete;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_OrderNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_OrderSeq;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_CustName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_ProductCode_SO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_ProductName_SO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_ProductAlias_SO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_UnitNmae_Sales;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_OrderDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_OrderEndDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Remark_SO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Status;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_PlanNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_PlanQty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Unit_MP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Remark_MP;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Col_Unit_WP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Remark_WP;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_PlanStartDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_WorkStatus;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Col_WorkStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_OrderNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_OrderSeq;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Col_CustName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_ProductCode;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Col_ProductName;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Col_ProductAlias;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_OrderDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_OrderEndDate;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Col_PlanStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Remark_SO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Hide_OrderQty;
     }
 }
