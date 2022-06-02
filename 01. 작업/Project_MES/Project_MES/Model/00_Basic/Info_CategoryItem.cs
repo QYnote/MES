@@ -53,6 +53,11 @@ namespace Project_MES.Model._00_Basic
             return db.ExcuteQuery_MySQL(query);
         }
 
+
+        /// <summary>
+        /// ComboBox 데이터 삽입용 DataTalbe / Code_FieldName : 조회코드, Value_FieldName : 조회값, GroupCode : 해당 그룹코드
+        /// </summary>
+        /// <returns></returns>
         public DataTable Select_Cbo()
         {
             query = $@"SELECT '' AS {Code_FieldName},

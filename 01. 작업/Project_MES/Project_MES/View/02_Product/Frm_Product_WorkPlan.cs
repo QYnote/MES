@@ -164,7 +164,14 @@ namespace Project_MES.View._02_Product
 
         private void Btn_Search_Click(object sender, EventArgs e)
         {
+            DisplayData();
+        }
+
+        private void DisplayData()
+        {
             DisplayData_OrderDetail();
+            DisplayData_WorkPlan();
+            DisplayData_Qty();
         }
 
         private void DisplayData_OrderDetail()
@@ -323,8 +330,7 @@ namespace Project_MES.View._02_Product
             //정상 진행시 추가 진행
             if (SaveProcess_WorkOrder())
             {
-                DisplayData_OrderDetail();
-                DisplayData_WorkPlan();
+                DisplayData();
             }
         }
 
@@ -432,7 +438,6 @@ namespace Project_MES.View._02_Product
             //정상진행 감지
             if (DeleteProcess_WorkPlan())
             {
-                
             }
         }
 
@@ -485,7 +490,7 @@ namespace Project_MES.View._02_Product
 
         private void Frm_Product_WorkPlan_Load(object sender, EventArgs e)
         {
-            DisplayData_OrderDetail();
+            DisplayData();
         }
 
     }

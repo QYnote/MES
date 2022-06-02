@@ -8,17 +8,19 @@ using System.Threading.Tasks;
 
 namespace Project_MES.Model._02_Product
 {
-    internal class Product_WorkPlan
+    internal class Product_WorkOrder
     {
         #region Property
 
         //입력용
+        public string WorkOrderNo { get; set; }
         public string PlanNo { get; set; }
-        public string OrderNo { get; set; }
-        public int OrderSeq { get; set; }
         public string ProductCode { get; set; }
-        public double PlanQty { get; set; }
-        public DateTime PlanDate { get; set; }
+        public double WorkOrderQty { get; set; }
+        public double WorkQty { get; set; }
+        public double GoodQty { get; set; }
+        public double BadQty { get; set; }
+        public DateTime WorkOrderDate { get; set; }
         public string WorkStatus { get; set; }
         public string Remark { get; set; }
         public char UseYN { get; set; }
@@ -37,8 +39,7 @@ namespace Project_MES.Model._02_Product
 
         public DataTable R_WorkPlan_ByOrderNoSeq()
         {
-            query = $@"CALL Product_WorkPlan_R_ByOrderNoSeq('{OrderNo}',
-                                                            '{OrderSeq}')";
+            query = $@"CALL Product_WorkPlan_R_ByOrderNoSeq('{PlanNo}')";
 
             return db.GetDataTable_MySQL(query);
         }
@@ -54,36 +55,22 @@ namespace Project_MES.Model._02_Product
             return db.GetDataTable_MySQL(query);
         }
 
-        public bool CU_WorkPlan()
+        public bool CU_WorkOrder()
         {
-            query = $@"CALL Product_WorkPlan_CU('{PlanNo}',
-                                                '{OrderNo}',
-                                                 {OrderSeq},
-                                                '{ProductCode}',
-                                                 {PlanQty},
-
-                                                '{PlanDate:yyyyMMdd}',
-                                                '{Remark}',
-                                                
-                                                '{Global_DataStorage.ClientName}',
-                                                '{Global_DataStorage.ClientIP}')";
+            query = $@"CALL Product_WorkOrder_CU('{WorkOrderNo}',
+                                                 '{PlanNo}',
+                                                 '{ProductCode}',
+                                                 '{WorkOrderQty}',
+                                                 '{Remark}',
+                                                 
+                                                 '{Global_DataStorage.ClientName}',
+                                                 '{Global_DataStorage.ClientIP}')";
             return db.ExcuteQuery_MySQL(query);
         }
 
         public bool D_WorkPlan()
         {
-            query = $@"CALL Product_WorkPlan_D('{PlanNo}')";
-
-            return db.ExcuteQuery_MySQL(query);
-        }
-
-        public bool U_WorkPlan_ByWorkOrderSave()
-        {
-            query = $@"CALL Product_WorkPlan_U_ByWorkOrderSave('{PlanNo}',
-                                                               '{WorkStatus}',
-
-                                                               '{Global_DataStorage.ClientName}',
-                                                               '{Global_DataStorage.ClientIP}' )";
+            query = $@"CALL Product_WorkPlan_D('{WorkOrderNo}')";
 
             return db.ExcuteQuery_MySQL(query);
         }
