@@ -345,22 +345,31 @@ namespace Project_MES.View._02_Product
 
         private bool Update_WorkPlanStatus(DataGridViewRow dataRow)
         {
+            double planQty = Convert.ToDouble(dataRow.Cells[Col_PlanQty.Name].Value);
             double remainQty = Convert.ToDouble(dataRow.Cells[Col_RemainOrderQty.Name].Value);
             double workOrderQty = Convert.ToDouble(dataRow.Cells[Col_WorkOrderQty.Name].Value);
-            string status = "";
+            string status;
 
-            //
-            if(workOrderQty == 0)
+            if( (planQty == remainQty) && (workOrderQty == 0) )
             {
+                //지시대기
+                status = "CI02";
+                
+            }
+            else if( (workOrderQty != 0) && (remainQty != workOrderQty) )
+            {
+                //지시중
                 status = "CI01";
             }
-            else if(remainQty > workOrderQty)
+            else if ( (remainQty == 0) || (remainQty == workOrderQty))
             {
-                status = "CI02";
-            }
-            else if (remainQty == workOrderQty)
-            {
+                //지시완료
                 status = "CI03";
+            }
+            else
+            {
+                MessageBox.Show("PlanStatus Error\n개발자에게 문의하세요");
+                return false; ;
             }
 
             Product_WorkPlan wp = new Product_WorkPlan();

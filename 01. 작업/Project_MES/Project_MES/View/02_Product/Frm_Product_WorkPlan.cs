@@ -188,16 +188,16 @@ namespace Project_MES.View._02_Product
 
         private void GvPlaceOrderDetail_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            if (GvPlaceOrderDetail.SelectedRows.Count < 1) return;
-
             DisplayData_WorkPlan();
             DisplayData_Qty();
         }
 
         private void DisplayData_WorkPlan()
         {
-            Product_WorkPlan wp = new Product_WorkPlan();
+            if (GvPlaceOrderDetail.SelectedRows.Count < 1) return;
+
             DataGridViewRow row = GvPlaceOrderDetail.SelectedRows[0];
+            Product_WorkPlan wp = new Product_WorkPlan();
             wp.OrderNo = row.Cells[Col_OrderNo.Name].Value.ToString(); //선택된Row LotNo;
             wp.OrderSeq = Convert.ToInt32(row.Cells[Col_OrderSeq.Name].Value);
 
@@ -206,6 +206,8 @@ namespace Project_MES.View._02_Product
 
         private void DisplayData_Qty()
         {
+            if (GvPlaceOrderDetail.SelectedRows.Count < 1) return;
+
             //수주수량 : 수주목록에서 숨겨놓은 Column 에서 데이터 가져오기
             double orderQty = GvPlaceOrderDetail.SelectedRows[0].Cells[Col_Hide_OrderQty.Name].Value == null
                               ? 0 : Convert.ToDouble(GvPlaceOrderDetail.SelectedRows[0].Cells[Col_Hide_OrderQty.Name].Value);
