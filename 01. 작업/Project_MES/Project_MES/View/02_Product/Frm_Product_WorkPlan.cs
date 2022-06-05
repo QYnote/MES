@@ -287,8 +287,17 @@ namespace Project_MES.View._02_Product
 
             foreach (DataGridViewRow row in GvWorkPlan.Rows)
             {
-                totalQty += row.Cells[Col_PlanQty.Name].Value == null
-                            ? 0 : Convert.ToDouble(row.Cells[Col_PlanQty.Name].Value);
+                object rowPlanQty = row.Cells[Col_PlanQty.Name].Value;
+                if (rowPlanQty == null || rowPlanQty.ToString() == "")
+                {
+                    //계획수량이 0이거나 빈칸이면 스킵
+                    continue;
+                }
+                else
+                {
+                    //계획수량이 입력되면 합계 계산
+                    totalQty += Convert.ToDouble(rowPlanQty);
+                }
             }
 
             if (orderQty < totalQty)

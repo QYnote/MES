@@ -253,7 +253,7 @@ namespace Project_MES.View._02_Product
         {
             if (SaveProcess_WorkOrder())
             {
-
+                DisplayData();
             }
         }
 
