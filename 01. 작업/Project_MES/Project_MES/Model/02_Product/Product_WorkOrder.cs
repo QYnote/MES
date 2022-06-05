@@ -37,20 +37,13 @@ namespace Project_MES.Model._02_Product
         string query = "";
         Global_Database db = new Global_Database();
 
-        public DataTable R_WorkPlan_ByOrderNoSeq()
+        public DataTable R_WorkOrder_BySearch()
         {
-            query = $@"CALL Product_WorkPlan_R_ByOrderNoSeq('{PlanNo}')";
-
-            return db.GetDataTable_MySQL(query);
-        }
-
-        public DataTable R_WorkPlan_BySearch()
-        {
-            query = $@"CALL Product_WorkPlan_R_BySearch('{Search_StartDate.ToString("yyyyMMdd")}',
-                                                        '{Search_EndDate.ToString("yyyyMMdd") + DateTime.Now.ToString("HHmmss")}',
-                                                        '{Search_CustName}',
-                                                        '{Search_ProductName}',
-                                                        '{Search_ProductAlias}' )";
+            query = $@"CALL Product_WorkOrder_R_BySearch('{Search_StartDate.ToString("yyyyMMdd")}',
+                                                         '{Search_EndDate.ToString("yyyyMMdd") + DateTime.Now.ToString("HHmmss")}',
+                                                         '{Search_CustName}',
+                                                         '{Search_ProductName}',
+                                                         '{Search_ProductAlias}' )";
 
             return db.GetDataTable_MySQL(query);
         }
@@ -68,10 +61,14 @@ namespace Project_MES.Model._02_Product
             return db.ExcuteQuery_MySQL(query);
         }
 
-        public bool D_WorkPlan()
+        public bool U_WorkOrder_ByBadQty()
         {
-            query = $@"CALL Product_WorkPlan_D('{WorkOrderNo}')";
-
+            query = $@"CALL Product_WorkOrder_U_ByBadQty('{WorkOrderNo}',
+                                                          {GoodQty},
+                                                          {BadQty},
+                                                         
+                                                         '{Global_DataStorage.ClientName}',
+                                                         '{Global_DataStorage.ClientIP}')";
             return db.ExcuteQuery_MySQL(query);
         }
     }

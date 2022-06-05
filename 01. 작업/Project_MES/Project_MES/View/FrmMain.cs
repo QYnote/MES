@@ -41,15 +41,16 @@ namespace Project_MES.View
                 case "InfoProcess":  frm = new Frm_Info_Process(); break;           //공정관리
 
                 //////////////////영업관리//////////////////
-                case "SalesOrder": frm = new Frm_Sales_PlaceOrderView(); break;   //수주관리
+                case "SalesOrder": frm = new Frm_Sales_PlaceOrderView(); break; //수주관리
                 case "SalesOut":   frm = new Frm_Sales_SalesOrder(); break;     //출하관리
 
                 //////////////////생산관리//////////////////
-                case "WorkPlan":  frm = new Frm_Product_WorkPlan(); break;  //생산계획
-                case "WorkOrder": frm = new Frm_Product_WorkOrder(); break; //작업지시
+                case "WorkPlan":  frm = new Frm_Product_WorkPlan(); break;     //생산계획
+                case "WorkOrder": frm = new Frm_Product_WorkOrder(); break;    //작업지시
+                case "WorkPerformance": frm = new Frm_Product_WorkOrderPerformance(); break;  //생산실적
 
                 /////////////////// POP ///////////////////
-                case "Product": frm = new Frm_POP_Product(); break;    //실적등록
+                //case "Product": frm = new Frm_POP_Product(); break;    //실적등록
             }
 
             if(frm != null)

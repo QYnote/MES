@@ -145,6 +145,12 @@
     <Compile Include="View\02_Product\Frm_Product_WorkOrder.Designer.cs">
       <DependentUpon>Frm_Product_WorkOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\02_Product\Frm_Product_WorkOrderPerformance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\02_Product\Frm_Product_WorkOrderPerformance.Designer.cs">
+      <DependentUpon>Frm_Product_WorkOrderPerformance.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\02_Product\Frm_Product_WorkPlan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\02_Product\Frm_Product_WorkOrder.resx">
       <DependentUpon>Frm_Product_WorkOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\02_Product\Frm_Product_WorkOrderPerformance.resx">
+      <DependentUpon>Frm_Product_WorkOrderPerformance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\02_Product\Frm_Product_WorkPlan.resx">
       <DependentUpon>Frm_Product_WorkPlan.cs</DependentUpon>
