@@ -37,13 +37,13 @@ namespace Project_MES.Model._02_Product
         string query = "";
         Global_Database db = new Global_Database();
 
-        public DataTable R_WorkOrder_BySearch()
+        public DataTable R_WorkOrder_ByPerformance()
         {
-            query = $@"CALL Product_WorkOrder_R_BySearch('{Search_StartDate.ToString("yyyyMMdd")}',
-                                                         '{Search_EndDate.ToString("yyyyMMdd") + DateTime.Now.ToString("HHmmss")}',
-                                                         '{Search_CustName}',
-                                                         '{Search_ProductName}',
-                                                         '{Search_ProductAlias}' )";
+            query = $@"CALL Product_WorkOrder_R_ByPerformance('{Search_StartDate.ToString("yyyyMMdd")}',
+                                                              '{Search_EndDate.ToString("yyyyMMdd") + DateTime.Now.ToString("HHmmss")}',
+                                                              '{Search_CustName}',
+                                                              '{Search_ProductName}',
+                                                              '{Search_ProductAlias}' )";
 
             return db.GetDataTable_MySQL(query);
         }

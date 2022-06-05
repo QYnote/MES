@@ -139,7 +139,7 @@ namespace Project_MES.View._02_Product
             wo.Search_ProductName = uc_LblTxt_ProductName.TxtContents.Text;
             wo.Search_ProductAlias = uc_LblTxt_ProductAlias.TxtContents.Text;
 
-            GvWorkOrder.DataSource = wo.R_WorkOrder_BySearch();
+            GvWorkOrder.DataSource = wo.R_WorkOrder_ByPerformance();
         }
 
         #endregion 조회 End
