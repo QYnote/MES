@@ -68,6 +68,8 @@ namespace Project_MES.View._02_Product
             Col_WorkOrderDate.DataPropertyName = "WorkOrderDate";
             Col_Remark.DataPropertyName = "Remark";
 
+            Col_WorkOrderDate.DefaultCellStyle.Format = "d";  //날짜 표기 형식 설정
+
             //수정 불가 셋팅
             Col_WorkOrderNo.ReadOnly = true;
             Col_CustCode.ReadOnly = true;
@@ -118,7 +120,7 @@ namespace Project_MES.View._02_Product
 
         #endregion UI 디자인 Setting
 
-        #region 조회
+        #region 조회 
 
         private void Btn_Search_Click(object sender, EventArgs e)
         {
@@ -232,13 +234,18 @@ namespace Project_MES.View._02_Product
             //Double Type으로 변환 가능한지 체크
             try
             {
+                if(GvWorkOrder.CurrentCell.Value.ToString() == "")
+                {
+                    GvWorkOrder.CurrentCell.Value = 0;
+                }
+
                 Convert.ToDouble(GvWorkOrder.CurrentCell.Value);
 
                 return true;
             }
             catch
             {
-                MessageBox.Show("0 또는 잘못된 값을 입력하였습니다.");
+                MessageBox.Show("잘못된 값을 입력하였습니다.");
                 return false;
             }
         }

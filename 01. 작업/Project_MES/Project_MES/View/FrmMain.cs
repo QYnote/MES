@@ -42,7 +42,7 @@ namespace Project_MES.View
 
                 //////////////////영업관리//////////////////
                 case "SalesOrder": frm = new Frm_Sales_PlaceOrderView(); break; //수주관리
-                case "SalesOut":   frm = new Frm_Sales_SalesOrder(); break;     //출하관리
+                case "SalesOut":   frm = new Frm_Sales_DeliverOrder(); break;     //출하관리
 
                 //////////////////생산관리//////////////////
                 case "WorkPlan":  frm = new Frm_Product_WorkPlan(); break;     //생산계획

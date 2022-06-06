@@ -49,6 +49,17 @@ namespace Project_MES.Model._01_Sales
             return db.GetDataTable_MySQL(query);
         }
 
+        public DataTable R_PlaceOrderDetail_InDeliveryOrder()
+        {
+            query = $@"CALL Sales_PlaceOrderDetail_R_InDeliverOrder('{Search_StartDate.ToString("yyyyMMdd")}',
+                                                                    '{Search_EndDate.ToString("yyyyMMdd") + DateTime.Now.ToString("HHmmss")}',
+                                                                    '{Search_CustName}',
+                                                                    '{Search_ProductName}',
+                                                                    '{Search_Alias}')";
+
+            return db.GetDataTable_MySQL(query);
+        }
+
         public bool CU_PlaceOrderDetail()
         {
             query = $@"CALL Sales_PlaceOrderDetail_CU('{OrderNo}',

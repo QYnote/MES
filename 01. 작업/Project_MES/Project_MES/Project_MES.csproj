@@ -93,6 +93,7 @@
     <Compile Include="Model\00_Basic\Info_Customer.cs" />
     <Compile Include="Model\00_Basic\Info_Material.cs" />
     <Compile Include="Model\00_Basic\Info_Process.cs" />
+    <Compile Include="Model\01_Sales\Sales_DeliveryOrder.cs" />
     <Compile Include="Model\01_Sales\Sales_PlaceOrderDetail.cs" />
     <Compile Include="Model\01_Sales\Sales_PlaceOrderMaster.cs" />
     <Compile Include="Model\02_Product\Product_WorkOrder.cs" />
@@ -133,11 +134,11 @@
     <Compile Include="View\01_Sales\Frm_Sales_PlaceOrderView.Designer.cs">
       <DependentUpon>Frm_Sales_PlaceOrderView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\01_Sales\Frm_Sales_SalesOrder.cs">
+    <Compile Include="View\01_Sales\Frm_Sales_DeliverOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\01_Sales\Frm_Sales_SalesOrder.Designer.cs">
-      <DependentUpon>Frm_Sales_SalesOrder.cs</DependentUpon>
+    <Compile Include="View\01_Sales\Frm_Sales_DeliverOrder.Designer.cs">
+      <DependentUpon>Frm_Sales_DeliverOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="View\02_Product\Frm_Product_WorkOrder.cs">
       <SubType>Form</SubType>
@@ -198,8 +199,8 @@
     <EmbeddedResource Include="View\01_Sales\Frm_Sales_PlaceOrderView.resx">
       <DependentUpon>Frm_Sales_PlaceOrderView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\01_Sales\Frm_Sales_SalesOrder.resx">
-      <DependentUpon>Frm_Sales_SalesOrder.cs</DependentUpon>
+    <EmbeddedResource Include="View\01_Sales\Frm_Sales_DeliverOrder.resx">
+      <DependentUpon>Frm_Sales_DeliverOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\02_Product\Frm_Product_WorkOrder.resx">
       <DependentUpon>Frm_Product_WorkOrder.cs</DependentUpon>
